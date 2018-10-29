@@ -1,5 +1,5 @@
 # The Code Shoulder
-[![Waffle.io - Columns and their card count](https://badge.waffle.io/brandoryan/CS1D.svg?columns=all)](https://waffle.io/brandoryan/Project2)
+[![Waffle.io - Columns and their card count](https://badge.waffle.io/brandoryan/Project2.svg?columns=all)](https://waffle.io/brandoryan/Project2)
 [![User_Stories Click_here_to_add_to_them](https://img.shields.io/badge/User_Stories-Click_here_to_add_to_them-brightgreen.svg)](https://docs.google.com/document/d/1s9Zaw9iBnphgStZRYuNk4K135d8SuGtKAeCuRCSd43s/edit?usp=sharing)
 [![Test_Plan Click_here_to_edit](https://img.shields.io/badge/Test_Plan-Click_here_to_edit-blue.svg)](https://docs.google.com/document/d/1QChXEVFnApp0Nlxj5EDJrOz1zrkLLpZEAuYMzHQEyWE/edit?usp=sharing)
 [![Test_Plan_Sheet Click_here_to_edit](https://img.shields.io/badge/Test_Plan_Sheet-Click_here_to_edit-FF69AF.svg)]()
