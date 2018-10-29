@@ -1,7 +1,7 @@
 # The Code Shoulder
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/brandoryan/CS1D.svg?columns=all)](https://waffle.io/brandoryan/CS1D)
 [![User_Stories Click_here_to_add_to_them](https://img.shields.io/badge/User_Stories-Click_here_to_add_to_them-brightgreen.svg)](https://docs.google.com/document/d/1s9Zaw9iBnphgStZRYuNk4K135d8SuGtKAeCuRCSd43s/edit?usp=sharing)
-[![Test_Plan Click_here_to_edit](https://img.shields.io/badge/Test_Plan-Click_here_to_edit-blue.svg)](https://docs.google.com/document/d/1hdCe1iY9e1Thh5TmTkfhOWxaTwroUpDJyc_Dn73rRtQ/edit)
+[![Test_Plan Click_here_to_edit](https://img.shields.io/badge/Test_Plan-Click_here_to_edit-blue.svg)](https://docs.google.com/document/d/1QChXEVFnApp0Nlxj5EDJrOz1zrkLLpZEAuYMzHQEyWE/edit?usp=sharing)
 [![Test_Plan_Sheet Click_here_to_edit](https://img.shields.io/badge/Test_Plan_Sheet-Click_here_to_edit-FF69AF.svg)](https://docs.google.com/spreadsheets/d/1T1FAUySQCoXmwpuzVW2q-5Yt0dQH-_O9dDAiWnF0jQ8/edit#gid=550833943)
 [![Class_Diagram View](https://img.shields.io/badge/Class_Diagram-View-lightgray.svg)](https://drive.google.com/file/d/1P4iKkdUj5enlYLriGnl8fEQK7IL1puA7/view?usp=sharing)
 [![Use_Cases View](https://img.shields.io/badge/Use_Cases-View-red.svg)](https://docs.google.com/document/d/1A9SytrlmkSlkpCbC9QHXYcHQuZBsVeDL2j4AJYyLBNI/edit?usp=sharing)
