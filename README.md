@@ -7,5 +7,3 @@
 [![Use_Cases View](https://img.shields.io/badge/Use_Cases-View-red.svg)](https://docs.google.com/document/d/1A9SytrlmkSlkpCbC9QHXYcHQuZBsVeDL2j4AJYyLBNI/edit?usp=sharing)
 [![State_Machine_1 View](https://img.shields.io/badge/State_Machine_1-View-AD00FE.svg)](https://www.draw.io/#G1lSo4tyEUY26cLZGq0GZzVKvJG6PfP8St)
 [![State Machine 2 & 3 View](https://img.shields.io/badge/State_Machine_2_&_3-View-900C3F.svg)](https://www.draw.io/#G1grcf5Gb335PdY8h-o5VaEdaG8T4Uxwsa)
-
-![alt text](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe9Uu3mtwOMfqnpXJfdhh1tFmfoYQm5ITMx1FuuaVbewsZFAMT)
