@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui widgets
+QT       += sql
 
 TARGET = NBABasketball
 TEMPLATE = app
@@ -24,18 +25,21 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp \
-    admin.cpp
+        admin.cpp \
+    login.cpp
 
 HEADERS += \
-        mainwindow.h \
-    admin.h
+        admin.h \
+    login.h
 
 FORMS += \
-        mainwindow.ui \
-    admin.ui
+        admin.ui \
+    login.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+        resources.qrc

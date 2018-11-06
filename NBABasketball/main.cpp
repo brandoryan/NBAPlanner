@@ -1,11 +1,22 @@
-#include "mainwindow.h"
+#include "login.h"
 #include <QApplication>
-
+#include <QtSql>
 
 int main(int argc, char *argv[])
 {
+    QSqlDatabase db = QSqlDatabase::addDatabase(("QSQLITE"));
+    db.setDatabaseName(QString("/Users/brandonryan/Desktop/GitHub/Project2/NBABasketball/nba.db"));
+
+    // Checking if database successfully opened
+    if(db.open()) {
+        qDebug() << "Opened";
+    }
+    else {
+        qDebug() << "Error";
+    }
+
     QApplication a(argc, argv);
-    MainWindow w;
+    Login w;
     w.show();
 
     return a.exec();
