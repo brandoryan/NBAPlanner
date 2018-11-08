@@ -1,11 +1,14 @@
 #include "login.h"
 #include <QApplication>
 #include <QtSql>
+#include <QtDebug>
 
 int main(int argc, char *argv[])
 {
+    // Gets relative path to SQL Database
     QSqlDatabase db = QSqlDatabase::addDatabase(("QSQLITE"));
-    db.setDatabaseName(QString("/Users/brandonryan/Desktop/GitHub/Project2/NBABasketball/nba.db"));
+    QDir path;
+    db.setDatabaseName(path.absoluteFilePath("nba.db"));
 
     // Checking if database successfully opened
     if(db.open()) {
