@@ -216,6 +216,7 @@ Makefile: ../NBABasketball/NBABasketball.pro ../../5.11.1/mingw53_32/mkspecs/win
 		../../5.11.1/mingw53_32/mkspecs/features/qt_config.prf \
 		../../5.11.1/mingw53_32/mkspecs/win32-g++/qmake.conf \
 		../../5.11.1/mingw53_32/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../5.11.1/mingw53_32/mkspecs/features/exclusive_builds.prf \
 		../../5.11.1/mingw53_32/mkspecs/features/toolchain.prf \
 		../../5.11.1/mingw53_32/mkspecs/features/default_pre.prf \
@@ -242,6 +243,7 @@ Makefile: ../NBABasketball/NBABasketball.pro ../../5.11.1/mingw53_32/mkspecs/win
 		../../5.11.1/mingw53_32/lib/qtmaind.prl \
 		../../5.11.1/mingw53_32/lib/Qt5Widgets.prl \
 		../../5.11.1/mingw53_32/lib/Qt5Gui.prl \
+		../../5.11.1/mingw53_32/lib/Qt5Sql.prl \
 		../../5.11.1/mingw53_32/lib/Qt5Core.prl
 	$(QMAKE) -o Makefile ..\NBABasketball\NBABasketball.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 ../../5.11.1/mingw53_32/mkspecs/features/spec_pre.prf:
@@ -399,6 +401,7 @@ Makefile: ../NBABasketball/NBABasketball.pro ../../5.11.1/mingw53_32/mkspecs/win
 ../../5.11.1/mingw53_32/mkspecs/features/qt_config.prf:
 ../../5.11.1/mingw53_32/mkspecs/win32-g++/qmake.conf:
 ../../5.11.1/mingw53_32/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../5.11.1/mingw53_32/mkspecs/features/exclusive_builds.prf:
 ../../5.11.1/mingw53_32/mkspecs/features/toolchain.prf:
 ../../5.11.1/mingw53_32/mkspecs/features/default_pre.prf:
@@ -425,6 +428,7 @@ Makefile: ../NBABasketball/NBABasketball.pro ../../5.11.1/mingw53_32/mkspecs/win
 ../../5.11.1/mingw53_32/lib/qtmaind.prl:
 ../../5.11.1/mingw53_32/lib/Qt5Widgets.prl:
 ../../5.11.1/mingw53_32/lib/Qt5Gui.prl:
+../../5.11.1/mingw53_32/lib/Qt5Sql.prl:
 ../../5.11.1/mingw53_32/lib/Qt5Core.prl:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ..\NBABasketball\NBABasketball.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
