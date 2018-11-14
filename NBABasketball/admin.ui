@@ -26,43 +26,43 @@
     <string>Data Viewer</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="teamsByTeamName">
    <property name="geometry">
     <rect>
      <x>360</x>
-     <y>500</y>
+     <y>530</y>
      <width>311</width>
      <height>32</height>
     </rect>
    </property>
    <property name="text">
-    <string>All Teams By Team Name</string>
+    <string>Teams By Team Name</string>
    </property>
    <property name="autoDefault">
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="teamsByArenaName">
    <property name="geometry">
     <rect>
      <x>360</x>
-     <y>560</y>
+     <y>590</y>
      <width>311</width>
      <height>32</height>
     </rect>
    </property>
    <property name="text">
-    <string>All Teams By Arena Name</string>
+    <string>Teams By Arena Name</string>
    </property>
    <property name="autoDefault">
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_3">
+  <widget class="QPushButton" name="easternTeamsByTeamName">
    <property name="geometry">
     <rect>
      <x>360</x>
-     <y>580</y>
+     <y>610</y>
      <width>311</width>
      <height>31</height>
     </rect>
@@ -74,11 +74,11 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_4">
+  <widget class="QPushButton" name="southeastDivisionEasternTeamsByTeamName">
    <property name="geometry">
     <rect>
      <x>250</x>
-     <y>620</y>
+     <y>650</y>
      <width>521</width>
      <height>32</height>
     </rect>
@@ -90,49 +90,49 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_5">
+  <widget class="QPushButton" name="coachesAndTeamsByTeamName">
    <property name="geometry">
     <rect>
      <x>360</x>
-     <y>520</y>
+     <y>550</y>
      <width>311</width>
      <height>32</height>
     </rect>
    </property>
    <property name="text">
-    <string>Coaches and Team Names by Team name</string>
+    <string>Teams and Coaches by Team Name</string>
    </property>
    <property name="autoDefault">
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_6">
+  <widget class="QPushButton" name="arenasAndTeamsBySeatingCapacity">
    <property name="geometry">
     <rect>
      <x>360</x>
-     <y>540</y>
+     <y>570</y>
      <width>311</width>
      <height>32</height>
     </rect>
    </property>
    <property name="text">
-    <string>NBA Arenas and Teams by Seating Capacity</string>
+    <string>Teams and Arenas by Seating Capacity</string>
    </property>
    <property name="autoDefault">
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_7">
+  <widget class="QPushButton" name="teamAndArenaNamesByAscendingYearJoined">
    <property name="geometry">
     <rect>
      <x>250</x>
-     <y>600</y>
+     <y>630</y>
      <width>521</width>
      <height>32</height>
     </rect>
    </property>
    <property name="text">
-    <string>NBA Teams, Arena Names, and Year Joined Sorted by Year in ascending order</string>
+    <string>Teams, Arenas, and Year Joined by Year in Ascending Order</string>
    </property>
    <property name="autoDefault">
     <bool>false</bool>
@@ -174,7 +174,7 @@
    <property name="geometry">
     <rect>
      <x>760</x>
-     <y>500</y>
+     <y>530</y>
      <width>161</width>
      <height>91</height>
     </rect>
@@ -194,7 +194,7 @@
     <rect>
      <x>10</x>
      <y>30</y>
-     <width>991</width>
+     <width>990</width>
      <height>431</height>
     </rect>
    </property>
@@ -203,13 +203,57 @@
    <property name="geometry">
     <rect>
      <x>670</x>
-     <y>545</y>
+     <y>575</y>
      <width>91</width>
      <height>16</height>
     </rect>
    </property>
    <property name="text">
     <string>&lt;-------------</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="allInformation">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>510</y>
+     <width>311</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Display All Information</string>
+   </property>
+   <property name="autoDefault">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="capacityText">
+   <property name="geometry">
+    <rect>
+     <x>860</x>
+     <y>470</y>
+     <width>141</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Total Seating Capacity</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="capacityNumber">
+   <property name="geometry">
+    <rect>
+     <x>873</x>
+     <y>490</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>15</pointsize>
+    </font>
    </property>
   </widget>
  </widget>
