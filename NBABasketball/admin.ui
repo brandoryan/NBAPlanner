@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1020</width>
-    <height>730</height>
+    <width>1022</width>
+    <height>873</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -26,122 +26,10 @@
     <string>Data Viewer</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="teamsByTeamName">
-   <property name="geometry">
-    <rect>
-     <x>360</x>
-     <y>530</y>
-     <width>311</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Teams By Team Name</string>
-   </property>
-   <property name="autoDefault">
-    <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="teamsByArenaName">
-   <property name="geometry">
-    <rect>
-     <x>360</x>
-     <y>590</y>
-     <width>311</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Teams By Arena Name</string>
-   </property>
-   <property name="autoDefault">
-    <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="easternTeamsByTeamName">
-   <property name="geometry">
-    <rect>
-     <x>360</x>
-     <y>610</y>
-     <width>311</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Eastern Conference Teams by Team Name</string>
-   </property>
-   <property name="autoDefault">
-    <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="southeastDivisionEasternTeamsByTeamName">
-   <property name="geometry">
-    <rect>
-     <x>250</x>
-     <y>650</y>
-     <width>521</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Southeast Division Teams of Eastern Conference by Team Name</string>
-   </property>
-   <property name="autoDefault">
-    <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="coachesAndTeamsByTeamName">
-   <property name="geometry">
-    <rect>
-     <x>360</x>
-     <y>550</y>
-     <width>311</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Teams and Coaches by Team Name</string>
-   </property>
-   <property name="autoDefault">
-    <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="arenasAndTeamsBySeatingCapacity">
-   <property name="geometry">
-    <rect>
-     <x>360</x>
-     <y>570</y>
-     <width>311</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Teams and Arenas by Seating Capacity</string>
-   </property>
-   <property name="autoDefault">
-    <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="teamAndArenaNamesByAscendingYearJoined">
-   <property name="geometry">
-    <rect>
-     <x>250</x>
-     <y>630</y>
-     <width>521</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Teams, Arenas, and Year Joined by Year in Ascending Order</string>
-   </property>
-   <property name="autoDefault">
-    <bool>false</bool>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>460</x>
+     <x>420</x>
      <y>480</y>
      <width>101</width>
      <height>16</height>
@@ -154,8 +42,8 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>70</x>
-     <y>500</y>
+     <x>60</x>
+     <y>530</y>
      <width>171</width>
      <height>51</height>
     </rect>
@@ -173,7 +61,7 @@
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>760</x>
+     <x>750</x>
      <y>530</y>
      <width>161</width>
      <height>91</height>
@@ -203,29 +91,13 @@
    <property name="geometry">
     <rect>
      <x>670</x>
-     <y>575</y>
+     <y>560</y>
      <width>91</width>
      <height>16</height>
     </rect>
    </property>
    <property name="text">
     <string>&lt;-------------</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="allInformation">
-   <property name="geometry">
-    <rect>
-     <x>360</x>
-     <y>510</y>
-     <width>311</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Display All Information</string>
-   </property>
-   <property name="autoDefault">
-    <bool>false</bool>
    </property>
   </widget>
   <widget class="QLabel" name="capacityText">
@@ -255,6 +127,98 @@
      <pointsize>15</pointsize>
     </font>
    </property>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>520</y>
+     <width>380</width>
+     <height>275</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QPushButton" name="allInformation">
+      <property name="text">
+       <string>Display All Information</string>
+      </property>
+      <property name="autoDefault">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="coachesAndTeamsByTeamName">
+      <property name="text">
+       <string>Teams and Coaches by Team Name</string>
+      </property>
+      <property name="autoDefault">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="southeastDivisionEasternTeamsByTeamName">
+      <property name="text">
+       <string>Southeast Division Teams of Eastern Conference by Team Name</string>
+      </property>
+      <property name="autoDefault">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="teamAndArenaNamesByAscendingYearJoined">
+      <property name="text">
+       <string>Teams, Arenas, and Year Joined by Year in Ascending Order</string>
+      </property>
+      <property name="autoDefault">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="easternTeamsByTeamName">
+      <property name="text">
+       <string>Eastern Conference Teams by Team Name</string>
+      </property>
+      <property name="autoDefault">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="arenasAndTeamsBySeatingCapacity">
+      <property name="text">
+       <string>Teams and Arenas by Seating Capacity</string>
+      </property>
+      <property name="autoDefault">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="teamsByTeamName">
+      <property name="text">
+       <string>Teams By Team Name</string>
+      </property>
+      <property name="autoDefault">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="teamsByArenaName">
+      <property name="text">
+       <string>Teams By Arena Name</string>
+      </property>
+      <property name="autoDefault">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources/>
