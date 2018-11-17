@@ -1,5 +1,8 @@
 <RCC>
     <qresource prefix="/">
         <file>nba.db</file>
+        <file>refresh.png</file>
+        <file>map.png</file>
+        <file>marker.png</file>
     </qresource>
 </RCC>

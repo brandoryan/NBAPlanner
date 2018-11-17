@@ -9,13 +9,9 @@
 int main(int argc, char *argv[])
 {
     QSqlDatabase db = QSqlDatabase::addDatabase(("QSQLITE"));
-    //db.setDatabaseName(QString("/Users/brandonryan/Desktop/GitHub/Project2/NBABasketball/nba.db"));
-
     QDir databaseDir(QStandardPaths::writableLocation(QStandardPaths::DesktopLocation));
 
-
     qDebug() << "Looking here for the database: " << databaseDir.absoluteFilePath(DB_FILENAME);
-
 
     if(QFile::exists(databaseDir.absoluteFilePath(DB_FILENAME)))
     {
@@ -28,7 +24,7 @@ int main(int argc, char *argv[])
         }
         else
         {
-            qDebug() << "Datbase connection successful";
+            qDebug() << "Database connection successful";
         }
     }
     else{

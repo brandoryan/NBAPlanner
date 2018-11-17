@@ -419,3 +419,10 @@ void admin::on_allInformation_clicked()
         qDebug() << query.lastError();
     }
 }
+
+void admin::on_logoutButton_clicked()
+{
+    // Emits the signal to login widget to transition back to login window
+    emit LogoutButtonClicked();
+    this->close();
+}

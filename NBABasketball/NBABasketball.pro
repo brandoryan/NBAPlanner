@@ -26,15 +26,24 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         admin.cpp \
-    login.cpp
+    login.cpp \
+    fan.cpp \
+    tripselection.cpp \
+    map.cpp
 
 HEADERS += \
         admin.h \
-    login.h
+    login.h \
+    fan.h \
+    tripselection.h \
+    map.h
 
 FORMS += \
         admin.ui \
-    login.ui
+    login.ui \
+    fan.ui \
+    tripselection.ui \
+    map.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

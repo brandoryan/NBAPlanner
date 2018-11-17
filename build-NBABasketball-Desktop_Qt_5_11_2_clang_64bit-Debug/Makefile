@@ -52,15 +52,27 @@ OBJECTS_DIR   = ./
 
 SOURCES       = ../NBABasketball/main.cpp \
 		../NBABasketball/admin.cpp \
-		../NBABasketball/login.cpp qrc_resources.cpp \
+		../NBABasketball/login.cpp \
+		../NBABasketball/fan.cpp \
+		../NBABasketball/tripselection.cpp \
+		../NBABasketball/map.cpp qrc_resources.cpp \
 		moc_admin.cpp \
-		moc_login.cpp
+		moc_login.cpp \
+		moc_fan.cpp \
+		moc_tripselection.cpp \
+		moc_map.cpp
 OBJECTS       = main.o \
 		admin.o \
 		login.o \
+		fan.o \
+		tripselection.o \
+		map.o \
 		qrc_resources.o \
 		moc_admin.o \
-		moc_login.o
+		moc_login.o \
+		moc_fan.o \
+		moc_tripselection.o \
+		moc_map.o
 DIST          = ../../../../Qt/5.11.2/clang_64/mkspecs/features/spec_pre.prf \
 		../../../../Qt/5.11.2/clang_64/mkspecs/qdevice.pri \
 		../../../../Qt/5.11.2/clang_64/mkspecs/features/device_config.prf \
@@ -228,9 +240,15 @@ DIST          = ../../../../Qt/5.11.2/clang_64/mkspecs/features/spec_pre.prf \
 		../../../../Qt/5.11.2/clang_64/mkspecs/features/yacc.prf \
 		../../../../Qt/5.11.2/clang_64/mkspecs/features/lex.prf \
 		../NBABasketball/NBABasketball.pro ../NBABasketball/admin.h \
-		../NBABasketball/login.h ../NBABasketball/main.cpp \
+		../NBABasketball/login.h \
+		../NBABasketball/fan.h \
+		../NBABasketball/tripselection.h \
+		../NBABasketball/map.h ../NBABasketball/main.cpp \
 		../NBABasketball/admin.cpp \
-		../NBABasketball/login.cpp
+		../NBABasketball/login.cpp \
+		../NBABasketball/fan.cpp \
+		../NBABasketball/tripselection.cpp \
+		../NBABasketball/map.cpp
 QMAKE_TARGET  = NBABasketball
 DESTDIR       = 
 TARGET        = NBABasketball.app/Contents/MacOS/NBABasketball
@@ -247,7 +265,7 @@ include /Users/brandonryan/Qt/5.11.2/clang_64/mkspecs/features/mac/sdk.mk
 first: all
 ####### Build rules
 
-$(TARGET): ui_admin.h ui_login.h $(OBJECTS)  
+$(TARGET): ui_admin.h ui_login.h ui_fan.h ui_tripselection.h ui_map.h $(OBJECTS)  
 	@test -d NBABasketball.app/Contents/MacOS/ || mkdir -p NBABasketball.app/Contents/MacOS/
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
@@ -627,9 +645,9 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../NBABasketball/resources.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents ../../../../Qt/5.11.2/clang_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../NBABasketball/admin.h ../NBABasketball/login.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../NBABasketball/main.cpp ../NBABasketball/admin.cpp ../NBABasketball/login.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../NBABasketball/admin.ui ../NBABasketball/login.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../NBABasketball/admin.h ../NBABasketball/login.h ../NBABasketball/fan.h ../NBABasketball/tripselection.h ../NBABasketball/map.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../NBABasketball/main.cpp ../NBABasketball/admin.cpp ../NBABasketball/login.cpp ../NBABasketball/fan.cpp ../NBABasketball/tripselection.cpp ../NBABasketball/map.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../NBABasketball/admin.ui ../NBABasketball/login.ui ../NBABasketball/fan.ui ../NBABasketball/tripselection.ui ../NBABasketball/map.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -658,7 +676,10 @@ compiler_rcc_clean:
 	-$(DEL_FILE) qrc_resources.cpp
 qrc_resources.cpp: ../NBABasketball/resources.qrc \
 		../../../../Qt/5.11.2/clang_64/bin/rcc \
-		../NBABasketball/nba.db
+		../NBABasketball/nba.db \
+		../NBABasketball/marker.png \
+		../NBABasketball/map.png \
+		../NBABasketball/refresh.png
 	/Users/brandonryan/Qt/5.11.2/clang_64/bin/rcc -name resources ../NBABasketball/resources.qrc -o qrc_resources.cpp
 
 compiler_moc_predefs_make_all: moc_predefs.h
@@ -667,9 +688,9 @@ compiler_moc_predefs_clean:
 moc_predefs.h: ../../../../Qt/5.11.2/clang_64/mkspecs/features/data/dummy.cpp
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -pipe -stdlib=libc++ -g -std=gnu++11 $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk -mmacosx-version-min=10.11 -Wall -W -dM -E -o moc_predefs.h ../../../../Qt/5.11.2/clang_64/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_admin.cpp moc_login.cpp
+compiler_moc_header_make_all: moc_admin.cpp moc_login.cpp moc_fan.cpp moc_tripselection.cpp moc_map.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_admin.cpp moc_login.cpp
+	-$(DEL_FILE) moc_admin.cpp moc_login.cpp moc_fan.cpp moc_tripselection.cpp moc_map.cpp
 moc_admin.cpp: ../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
 		../NBABasketball/admin.h \
@@ -679,18 +700,45 @@ moc_admin.cpp: ../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/QD
 
 moc_login.cpp: ../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../NBABasketball/admin.h \
+		../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		../NBABasketball/fan.h \
+		../NBABasketball/tripselection.h \
 		../NBABasketball/login.h \
 		moc_predefs.h \
 		../../../../Qt/5.11.2/clang_64/bin/moc
 	/Users/brandonryan/Qt/5.11.2/clang_64/bin/moc $(DEFINES) --include /Users/brandonryan/Desktop/GitHub/Project2/build-NBABasketball-Desktop_Qt_5_11_2_clang_64bit-Debug/moc_predefs.h -I/Users/brandonryan/Qt/5.11.2/clang_64/mkspecs/macx-clang -I/Users/brandonryan/Desktop/GitHub/Project2/NBABasketball -I/Users/brandonryan/Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers -I/Users/brandonryan/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers -I/Users/brandonryan/Qt/5.11.2/clang_64/lib/QtSql.framework/Headers -I/Users/brandonryan/Qt/5.11.2/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include -F/Users/brandonryan/Qt/5.11.2/clang_64/lib ../NBABasketball/login.h -o moc_login.cpp
 
+moc_fan.cpp: ../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		../NBABasketball/tripselection.h \
+		../NBABasketball/fan.h \
+		moc_predefs.h \
+		../../../../Qt/5.11.2/clang_64/bin/moc
+	/Users/brandonryan/Qt/5.11.2/clang_64/bin/moc $(DEFINES) --include /Users/brandonryan/Desktop/GitHub/Project2/build-NBABasketball-Desktop_Qt_5_11_2_clang_64bit-Debug/moc_predefs.h -I/Users/brandonryan/Qt/5.11.2/clang_64/mkspecs/macx-clang -I/Users/brandonryan/Desktop/GitHub/Project2/NBABasketball -I/Users/brandonryan/Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers -I/Users/brandonryan/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers -I/Users/brandonryan/Qt/5.11.2/clang_64/lib/QtSql.framework/Headers -I/Users/brandonryan/Qt/5.11.2/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include -F/Users/brandonryan/Qt/5.11.2/clang_64/lib ../NBABasketball/fan.h -o moc_fan.cpp
+
+moc_tripselection.cpp: ../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		../NBABasketball/tripselection.h \
+		moc_predefs.h \
+		../../../../Qt/5.11.2/clang_64/bin/moc
+	/Users/brandonryan/Qt/5.11.2/clang_64/bin/moc $(DEFINES) --include /Users/brandonryan/Desktop/GitHub/Project2/build-NBABasketball-Desktop_Qt_5_11_2_clang_64bit-Debug/moc_predefs.h -I/Users/brandonryan/Qt/5.11.2/clang_64/mkspecs/macx-clang -I/Users/brandonryan/Desktop/GitHub/Project2/NBABasketball -I/Users/brandonryan/Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers -I/Users/brandonryan/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers -I/Users/brandonryan/Qt/5.11.2/clang_64/lib/QtSql.framework/Headers -I/Users/brandonryan/Qt/5.11.2/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include -F/Users/brandonryan/Qt/5.11.2/clang_64/lib ../NBABasketball/tripselection.h -o moc_tripselection.cpp
+
+moc_map.cpp: ../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		../NBABasketball/map.h \
+		moc_predefs.h \
+		../../../../Qt/5.11.2/clang_64/bin/moc
+	/Users/brandonryan/Qt/5.11.2/clang_64/bin/moc $(DEFINES) --include /Users/brandonryan/Desktop/GitHub/Project2/build-NBABasketball-Desktop_Qt_5_11_2_clang_64bit-Debug/moc_predefs.h -I/Users/brandonryan/Qt/5.11.2/clang_64/mkspecs/macx-clang -I/Users/brandonryan/Desktop/GitHub/Project2/NBABasketball -I/Users/brandonryan/Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers -I/Users/brandonryan/Qt/5.11.2/clang_64/lib/QtGui.framework/Headers -I/Users/brandonryan/Qt/5.11.2/clang_64/lib/QtSql.framework/Headers -I/Users/brandonryan/Qt/5.11.2/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include -F/Users/brandonryan/Qt/5.11.2/clang_64/lib ../NBABasketball/map.h -o moc_map.cpp
+
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_admin.h ui_login.h
+compiler_uic_make_all: ui_admin.h ui_login.h ui_fan.h ui_tripselection.h ui_map.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_admin.h ui_login.h
+	-$(DEL_FILE) ui_admin.h ui_login.h ui_fan.h ui_tripselection.h ui_map.h
 ui_admin.h: ../NBABasketball/admin.ui \
 		../../../../Qt/5.11.2/clang_64/bin/uic
 	/Users/brandonryan/Qt/5.11.2/clang_64/bin/uic ../NBABasketball/admin.ui -o ui_admin.h
@@ -698,6 +746,18 @@ ui_admin.h: ../NBABasketball/admin.ui \
 ui_login.h: ../NBABasketball/login.ui \
 		../../../../Qt/5.11.2/clang_64/bin/uic
 	/Users/brandonryan/Qt/5.11.2/clang_64/bin/uic ../NBABasketball/login.ui -o ui_login.h
+
+ui_fan.h: ../NBABasketball/fan.ui \
+		../../../../Qt/5.11.2/clang_64/bin/uic
+	/Users/brandonryan/Qt/5.11.2/clang_64/bin/uic ../NBABasketball/fan.ui -o ui_fan.h
+
+ui_tripselection.h: ../NBABasketball/tripselection.ui \
+		../../../../Qt/5.11.2/clang_64/bin/uic
+	/Users/brandonryan/Qt/5.11.2/clang_64/bin/uic ../NBABasketball/tripselection.ui -o ui_tripselection.h
+
+ui_map.h: ../NBABasketball/map.ui \
+		../../../../Qt/5.11.2/clang_64/bin/uic
+	/Users/brandonryan/Qt/5.11.2/clang_64/bin/uic ../NBABasketball/map.ui -o ui_map.h
 
 compiler_rez_source_make_all:
 compiler_rez_source_clean:
@@ -714,6 +774,11 @@ compiler_clean: compiler_rcc_clean compiler_moc_predefs_clean compiler_moc_heade
 main.o: ../NBABasketball/main.cpp ../NBABasketball/login.h \
 		../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../NBABasketball/admin.h \
+		../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		../NBABasketball/fan.h \
+		../NBABasketball/tripselection.h \
 		../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
 		../../../../Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/QtSql \
@@ -731,20 +796,64 @@ main.o: ../NBABasketball/main.cpp ../NBABasketball/login.h \
 		../../../../Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
 		../../../../Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlresult.h \
 		../../../../Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqltablemodel.h \
-		../../../../Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/qtsqlversion.h
+		../../../../Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/qtsqlversion.h \
+		../../../../Qt/5.11.2/clang_64/lib/QtCore.framework/Headers/QStandardPaths \
+		../../../../Qt/5.11.2/clang_64/lib/QtCore.framework/Headers/qstandardpaths.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../NBABasketball/main.cpp
 
 admin.o: ../NBABasketball/admin.cpp ../NBABasketball/admin.h \
 		../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
-		ui_admin.h
+		ui_admin.h \
+		../../../../Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/QtSql \
+		../../../../Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		../../../../Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqldatabase.h \
+		../../../../Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqldriver.h \
+		../../../../Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		../../../../Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlerror.h \
+		../../../../Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlfield.h \
+		../../../../Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlindex.h \
+		../../../../Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlquery.h \
+		../../../../Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		../../../../Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlrecord.h \
+		../../../../Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		../../../../Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		../../../../Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlresult.h \
+		../../../../Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		../../../../Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/qtsqlversion.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o admin.o ../NBABasketball/admin.cpp
 
 login.o: ../NBABasketball/login.cpp ../NBABasketball/login.h \
 		../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		ui_mainwindow.h
+		../NBABasketball/admin.h \
+		../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		../NBABasketball/fan.h \
+		../NBABasketball/tripselection.h \
+		ui_login.h \
+		../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/QErrorMessage \
+		../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qerrormessage.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o login.o ../NBABasketball/login.cpp
+
+fan.o: ../NBABasketball/fan.cpp ../NBABasketball/fan.h \
+		../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		../NBABasketball/tripselection.h \
+		ui_fan.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o fan.o ../NBABasketball/fan.cpp
+
+tripselection.o: ../NBABasketball/tripselection.cpp ../NBABasketball/tripselection.h \
+		../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		ui_tripselection.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o tripselection.o ../NBABasketball/tripselection.cpp
+
+map.o: ../NBABasketball/map.cpp ../NBABasketball/map.h \
+		../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		ui_map.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o map.o ../NBABasketball/map.cpp
 
 qrc_resources.o: qrc_resources.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_resources.o qrc_resources.cpp
@@ -754,6 +863,15 @@ moc_admin.o: moc_admin.cpp
 
 moc_login.o: moc_login.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_login.o moc_login.cpp
+
+moc_fan.o: moc_fan.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_fan.o moc_fan.cpp
+
+moc_tripselection.o: moc_tripselection.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_tripselection.o moc_tripselection.cpp
+
+moc_map.o: moc_map.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_map.o moc_map.cpp
 
 ####### Install
 
