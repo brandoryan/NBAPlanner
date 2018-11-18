@@ -29,7 +29,7 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QPushButton" name="viewArenaInfo">
+  <widget class="QPushButton" name="viewTripSummaries">
    <property name="geometry">
     <rect>
      <x>410</x>
@@ -39,7 +39,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>View Arena Info</string>
+    <string>View Trip Summaries</string>
    </property>
    <property name="autoDefault">
     <bool>false</bool>

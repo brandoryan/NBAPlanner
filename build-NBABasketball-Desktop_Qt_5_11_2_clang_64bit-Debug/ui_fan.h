@@ -21,7 +21,7 @@ class Ui_fan
 {
 public:
     QPushButton *logoutButton;
-    QPushButton *viewArenaInfo;
+    QPushButton *viewTripSummaries;
     QLabel *label;
     QLabel *label_2;
     QPushButton *createTripButton;
@@ -35,10 +35,10 @@ public:
         logoutButton->setObjectName(QStringLiteral("logoutButton"));
         logoutButton->setGeometry(QRect(410, 420, 191, 41));
         logoutButton->setAutoDefault(false);
-        viewArenaInfo = new QPushButton(fan);
-        viewArenaInfo->setObjectName(QStringLiteral("viewArenaInfo"));
-        viewArenaInfo->setGeometry(QRect(410, 320, 191, 41));
-        viewArenaInfo->setAutoDefault(false);
+        viewTripSummaries = new QPushButton(fan);
+        viewTripSummaries->setObjectName(QStringLiteral("viewTripSummaries"));
+        viewTripSummaries->setGeometry(QRect(410, 320, 191, 41));
+        viewTripSummaries->setAutoDefault(false);
         label = new QLabel(fan);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(420, 80, 161, 20));
@@ -65,7 +65,7 @@ public:
     {
         fan->setWindowTitle(QApplication::translate("fan", "NBA Fan Menu", nullptr));
         logoutButton->setText(QApplication::translate("fan", "Logout", nullptr));
-        viewArenaInfo->setText(QApplication::translate("fan", "View Arena Info", nullptr));
+        viewTripSummaries->setText(QApplication::translate("fan", "View Trip Summaries", nullptr));
         label->setText(QApplication::translate("fan", "NBA Fan Menu", nullptr));
         label_2->setText(QApplication::translate("fan", "What would you like to do?", nullptr));
         createTripButton->setText(QApplication::translate("fan", "Create a Trip", nullptr));
