@@ -28,7 +28,6 @@ class Ui_admin
 public:
     QLabel *label;
     QLabel *label_2;
-    QLabel *label_3;
     QTableWidget *tableWidget;
     QLabel *capacityText;
     QTextEdit *capacityNumber;
@@ -56,12 +55,7 @@ public:
         label->setGeometry(QRect(470, 10, 81, 16));
         label_2 = new QLabel(admin);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(420, 480, 101, 16));
-        label_3 = new QLabel(admin);
-        label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(820, 550, 171, 51));
-        label_3->setFrameShape(QFrame::Box);
-        label_3->setWordWrap(true);
+        label_2->setGeometry(QRect(450, 480, 101, 16));
         tableWidget = new QTableWidget(admin);
         tableWidget->setObjectName(QStringLiteral("tableWidget"));
         tableWidget->setGeometry(QRect(10, 30, 990, 431));
@@ -74,13 +68,14 @@ public:
         QFont font;
         font.setPointSize(15);
         capacityNumber->setFont(font);
+        capacityNumber->setReadOnly(true);
         logoutButton = new QPushButton(admin);
         logoutButton->setObjectName(QStringLiteral("logoutButton"));
-        logoutButton->setGeometry(QRect(10, 650, 141, 51));
+        logoutButton->setGeometry(QRect(10, 660, 141, 51));
         logoutButton->setAutoDefault(false);
         horizontalLayoutWidget = new QWidget(admin);
         horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
-        horizontalLayoutWidget->setGeometry(QRect(30, 510, 751, 131));
+        horizontalLayoutWidget->setGeometry(QRect(60, 510, 751, 131));
         horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
@@ -153,7 +148,6 @@ public:
         admin->setWindowTitle(QApplication::translate("admin", "Administrator Menu", nullptr));
         label->setText(QApplication::translate("admin", "Data Viewer", nullptr));
         label_2->setText(QApplication::translate("admin", "Display Options", nullptr));
-        label_3->setText(QApplication::translate("admin", "Double Click a Team to see all information related to it, including souvenirs", nullptr));
         capacityText->setText(QApplication::translate("admin", "Total Seating Capacity", nullptr));
         logoutButton->setText(QApplication::translate("admin", "Logout", nullptr));
         allInformation->setText(QApplication::translate("admin", "Display All Information", nullptr));

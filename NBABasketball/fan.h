@@ -23,7 +23,7 @@ signals:
 private slots:
     void on_createTripButton_clicked();
     void on_logoutButton_clicked();
-    void on_BackButton_clicked();
+    void backButtonClicked();
 
 private:
     Ui::fan *ui;

@@ -679,7 +679,43 @@ qrc_resources.cpp: ../NBABasketball/resources.qrc \
 		../NBABasketball/nba.db \
 		../NBABasketball/marker.png \
 		../NBABasketball/map.png \
-		../NBABasketball/refresh.png
+		../NBABasketball/refresh.png \
+		../NBABasketball/teamLogos/pacers.png \
+		../NBABasketball/teamLogos/blazers.png \
+		../NBABasketball/teamLogos/clippers.png \
+		../NBABasketball/teamLogos/hawks.png \
+		../NBABasketball/teamLogos/rockets.png \
+		../NBABasketball/teamLogos/kings.png \
+		../NBABasketball/teamLogos/mavericks.png \
+		../NBABasketball/teamLogos/suns.png \
+		../NBABasketball/teamLogos/cavaliers.png \
+		../NBABasketball/teamLogos/jazz.png \
+		../NBABasketball/teamLogos/spurs.png \
+		../NBABasketball/teamLogos/timberwolves.png \
+		../NBABasketball/teamLogos/magics.png \
+		../NBABasketball/teamLogos/celtics.png \
+		../NBABasketball/teamLogos/warriors.png \
+		../NBABasketball/teamLogos/wizards.png \
+		../NBABasketball/teamLogos/nets.png \
+		../NBABasketball/teamLogos/sonics.png \
+		../NBABasketball/teamLogos/raptors.png \
+		../NBABasketball/teamLogos/hornets.png \
+		../NBABasketball/teamLogos/thunder.png \
+		../NBABasketball/teamLogos/bucks.png \
+		../NBABasketball/teamLogos/lakers.png \
+		../NBABasketball/teamLogos/76ers.png \
+		../NBABasketball/teamLogos/pelicans.png \
+		../NBABasketball/teamLogos/bulls.png \
+		../NBABasketball/teamLogos/nuggets.png \
+		../NBABasketball/teamLogos/knicks.png \
+		../NBABasketball/teamLogos/grizzlies.png \
+		../NBABasketball/teamLogos/pistons.png \
+		../NBABasketball/teamLogos/heat.png \
+		../NBABasketball/souvenirLogos/basketball.png \
+		../NBABasketball/souvenirLogos/pennant.png \
+		../NBABasketball/souvenirLogos/picture.png \
+		../NBABasketball/souvenirLogos/default.png \
+		../NBABasketball/souvenirLogos/jersey.png
 	/Users/brandonryan/Qt/5.11.2/clang_64/bin/rcc -name resources ../NBABasketball/resources.qrc -o qrc_resources.cpp
 
 compiler_moc_predefs_make_all: moc_predefs.h
@@ -705,6 +741,7 @@ moc_login.cpp: ../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/QM
 		../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
 		../NBABasketball/fan.h \
 		../NBABasketball/tripselection.h \
+		../NBABasketball/map.h \
 		../NBABasketball/login.h \
 		moc_predefs.h \
 		../../../../Qt/5.11.2/clang_64/bin/moc
@@ -713,6 +750,7 @@ moc_login.cpp: ../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/QM
 moc_fan.cpp: ../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
 		../NBABasketball/tripselection.h \
+		../NBABasketball/map.h \
 		../NBABasketball/fan.h \
 		moc_predefs.h \
 		../../../../Qt/5.11.2/clang_64/bin/moc
@@ -720,6 +758,7 @@ moc_fan.cpp: ../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/QDia
 
 moc_tripselection.cpp: ../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		../NBABasketball/map.h \
 		../NBABasketball/tripselection.h \
 		moc_predefs.h \
 		../../../../Qt/5.11.2/clang_64/bin/moc
@@ -779,6 +818,7 @@ main.o: ../NBABasketball/main.cpp ../NBABasketball/login.h \
 		../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
 		../NBABasketball/fan.h \
 		../NBABasketball/tripselection.h \
+		../NBABasketball/map.h \
 		../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
 		../../../../Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/QtSql \
@@ -831,6 +871,7 @@ login.o: ../NBABasketball/login.cpp ../NBABasketball/login.h \
 		../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
 		../NBABasketball/fan.h \
 		../NBABasketball/tripselection.h \
+		../NBABasketball/map.h \
 		ui_login.h \
 		../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/QErrorMessage \
 		../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qerrormessage.h
@@ -840,13 +881,34 @@ fan.o: ../NBABasketball/fan.cpp ../NBABasketball/fan.h \
 		../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
 		../NBABasketball/tripselection.h \
+		../NBABasketball/map.h \
 		ui_fan.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o fan.o ../NBABasketball/fan.cpp
 
 tripselection.o: ../NBABasketball/tripselection.cpp ../NBABasketball/tripselection.h \
 		../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		../../../../Qt/5.11.2/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
-		ui_tripselection.h
+		../NBABasketball/map.h \
+		ui_tripselection.h \
+		../../../../Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/QSqlQuery \
+		../../../../Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlquery.h \
+		../../../../Qt/5.11.2/clang_64/lib/QtCore.framework/Headers/QtDebug \
+		../../../../Qt/5.11.2/clang_64/lib/QtCore.framework/Headers/qdebug.h \
+		../../../../Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/QtSql \
+		../../../../Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		../../../../Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqldatabase.h \
+		../../../../Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqldriver.h \
+		../../../../Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		../../../../Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlerror.h \
+		../../../../Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlfield.h \
+		../../../../Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlindex.h \
+		../../../../Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		../../../../Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlrecord.h \
+		../../../../Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		../../../../Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		../../../../Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqlresult.h \
+		../../../../Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		../../../../Qt/5.11.2/clang_64/lib/QtSql.framework/Headers/qtsqlversion.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o tripselection.o ../NBABasketball/tripselection.cpp
 
 map.o: ../NBABasketball/map.cpp ../NBABasketball/map.h \

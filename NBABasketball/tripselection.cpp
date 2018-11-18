@@ -1,5 +1,8 @@
 #include "tripselection.h"
 #include "ui_tripselection.h"
+#include <QSqlQuery>
+#include <QtDebug>
+#include <QtSql>
 
 tripSelection::tripSelection(QWidget *parent) :
     QDialog(parent),
@@ -10,6 +13,25 @@ tripSelection::tripSelection(QWidget *parent) :
     // Loading a refresh icon onto the refresh button
     ui->refreshButton->setIcon(QIcon(":/refresh.png"));
     ui->refreshButton->setIconSize(QSize(30, 20));
+
+    QListWidgetItem *itm = new QListWidgetItem;
+    QSqlQuery query;
+
+    // Updates the list widget with all the arenas in the database
+    QString queryCommand = "select name,icon from teams";
+    if(query.exec(queryCommand)) {
+        while(query.next()) {
+            if(query.value(0).toString() != NULL) {
+                itm = new QListWidgetItem;
+                itm->setText(query.value(0).toString());
+                itm->setIcon(QIcon(query.value(1).toString()));
+                ui->listWidget->addItem(itm);
+            }
+        }
+    }
+    else {
+        qDebug() << "error";
+    }
 }
 
 tripSelection::~tripSelection()
@@ -39,12 +61,33 @@ void tripSelection::on_removeButton_clicked()
 
 void tripSelection::on_backButton_clicked()
 {
-    this->close();
     emit BackButtonClicked();
+    this->close();
 }
 
 void tripSelection::on_beginTripButton_clicked()
 {
     mapMenu.open();
     this->close();
+}
+
+void tripSelection::on_refreshButton_clicked()
+{
+    QListWidgetItem *itm = new QListWidgetItem;
+    QSqlQuery query;
+
+    ui->listWidget->clear();
+    ui->listWidget_2->clear();
+
+    // Updates the list widget with all the arenas in the database
+    if(query.exec("select name,icon from teams")) {
+        while(query.next()) {
+            if(query.value(0).toString() != NULL) {
+                itm = new QListWidgetItem;
+                itm->setText(query.value(0).toString());
+                itm->setIcon(QIcon(query.value(1).toString()));
+                ui->listWidget->addItem(itm);
+            }
+        }
+    }
 }

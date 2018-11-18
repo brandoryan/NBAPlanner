@@ -29,7 +29,7 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>420</x>
+     <x>450</x>
      <y>480</y>
      <width>101</width>
      <height>16</height>
@@ -37,25 +37,6 @@
    </property>
    <property name="text">
     <string>Display Options</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_3">
-   <property name="geometry">
-    <rect>
-     <x>820</x>
-     <y>550</y>
-     <width>171</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="frameShape">
-    <enum>QFrame::Box</enum>
-   </property>
-   <property name="text">
-    <string>Double Click a Team to see all information related to it, including souvenirs</string>
-   </property>
-   <property name="wordWrap">
-    <bool>true</bool>
    </property>
   </widget>
   <widget class="QTableWidget" name="tableWidget">
@@ -95,12 +76,15 @@
      <pointsize>15</pointsize>
     </font>
    </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
   </widget>
   <widget class="QPushButton" name="logoutButton">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>650</y>
+     <y>660</y>
      <width>141</width>
      <height>51</height>
     </rect>
@@ -115,7 +99,7 @@
   <widget class="QWidget" name="horizontalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>60</x>
      <y>510</y>
      <width>751</width>
      <height>131</height>

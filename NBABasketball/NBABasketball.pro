@@ -24,22 +24,22 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
-        main.cpp \
-        admin.cpp \
+    main.cpp \
+    admin.cpp \
     login.cpp \
     fan.cpp \
     tripselection.cpp \
     map.cpp
 
 HEADERS += \
-        admin.h \
+    admin.h \
     login.h \
     fan.h \
     tripselection.h \
     map.h
 
 FORMS += \
-        admin.ui \
+    admin.ui \
     login.ui \
     fan.ui \
     tripselection.ui \
@@ -51,4 +51,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
-        resources.qrc
+    resources.qrc

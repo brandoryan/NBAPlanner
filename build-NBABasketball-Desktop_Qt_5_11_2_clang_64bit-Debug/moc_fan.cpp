@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_fan_t {
     QByteArrayData data[6];
-    char stringdata0[99];
+    char stringdata0[95];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -36,12 +36,12 @@ QT_MOC_LITERAL(1, 4, 19), // "LogoutButtonClicked"
 QT_MOC_LITERAL(2, 24, 0), // ""
 QT_MOC_LITERAL(3, 25, 27), // "on_createTripButton_clicked"
 QT_MOC_LITERAL(4, 53, 23), // "on_logoutButton_clicked"
-QT_MOC_LITERAL(5, 77, 21) // "on_BackButton_clicked"
+QT_MOC_LITERAL(5, 77, 17) // "backButtonClicked"
 
     },
     "fan\0LogoutButtonClicked\0\0"
     "on_createTripButton_clicked\0"
-    "on_logoutButton_clicked\0on_BackButton_clicked"
+    "on_logoutButton_clicked\0backButtonClicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -86,7 +86,7 @@ void fan::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **
         case 0: _t->LogoutButtonClicked(); break;
         case 1: _t->on_createTripButton_clicked(); break;
         case 2: _t->on_logoutButton_clicked(); break;
-        case 3: _t->on_BackButton_clicked(); break;
+        case 3: _t->backButtonClicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {

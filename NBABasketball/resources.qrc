@@ -4,5 +4,41 @@
         <file>refresh.png</file>
         <file>map.png</file>
         <file>marker.png</file>
+        <file>teamLogos/76ers.png</file>
+        <file>teamLogos/blazers.png</file>
+        <file>teamLogos/bucks.png</file>
+        <file>teamLogos/bulls.png</file>
+        <file>teamLogos/cavaliers.png</file>
+        <file>teamLogos/celtics.png</file>
+        <file>teamLogos/clippers.png</file>
+        <file>teamLogos/grizzlies.png</file>
+        <file>teamLogos/hawks.png</file>
+        <file>teamLogos/heat.png</file>
+        <file>teamLogos/hornets.png</file>
+        <file>teamLogos/jazz.png</file>
+        <file>teamLogos/kings.png</file>
+        <file>teamLogos/knicks.png</file>
+        <file>teamLogos/lakers.png</file>
+        <file>teamLogos/magics.png</file>
+        <file>teamLogos/mavericks.png</file>
+        <file>teamLogos/nets.png</file>
+        <file>teamLogos/nuggets.png</file>
+        <file>teamLogos/pacers.png</file>
+        <file>teamLogos/pelicans.png</file>
+        <file>teamLogos/pistons.png</file>
+        <file>teamLogos/raptors.png</file>
+        <file>teamLogos/rockets.png</file>
+        <file>teamLogos/sonics.png</file>
+        <file>teamLogos/spurs.png</file>
+        <file>teamLogos/suns.png</file>
+        <file>teamLogos/thunder.png</file>
+        <file>teamLogos/timberwolves.png</file>
+        <file>teamLogos/warriors.png</file>
+        <file>teamLogos/wizards.png</file>
+        <file>souvenirLogos/basketball.png</file>
+        <file>souvenirLogos/default.png</file>
+        <file>souvenirLogos/jersey.png</file>
+        <file>souvenirLogos/pennant.png</file>
+        <file>souvenirLogos/picture.png</file>
     </qresource>
 </RCC>

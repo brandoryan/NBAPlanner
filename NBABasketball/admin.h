@@ -15,6 +15,8 @@ public:
     explicit admin(QWidget *parent = nullptr);
     ~admin();
 
+signals:
+    void LogoutButtonClicked();
 
 private slots:
     void on_teamsByTeamName_clicked();
@@ -27,8 +29,7 @@ private slots:
     void on_allInformation_clicked();
     void on_logoutButton_clicked();
 
-signals:
-    void LogoutButtonClicked();
+
 
 private:
     Ui::admin *ui;

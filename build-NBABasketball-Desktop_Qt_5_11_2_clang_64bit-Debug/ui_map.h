@@ -45,6 +45,7 @@ public:
         textEdit = new QTextEdit(map);
         textEdit->setObjectName(QStringLiteral("textEdit"));
         textEdit->setGeometry(QRect(760, 30, 231, 51));
+        textEdit->setReadOnly(true);
         SouvenirList = new QListWidget(map);
         SouvenirList->setObjectName(QStringLiteral("SouvenirList"));
         SouvenirList->setGeometry(QRect(760, 100, 231, 271));
@@ -58,12 +59,13 @@ public:
         schoolTotal = new QLineEdit(map);
         schoolTotal->setObjectName(QStringLiteral("schoolTotal"));
         schoolTotal->setGeometry(QRect(890, 410, 81, 21));
+        schoolTotal->setReadOnly(true);
         label_4 = new QLabel(map);
         label_4->setObjectName(QStringLiteral("label_4"));
         label_4->setGeometry(QRect(790, 380, 59, 16));
         label = new QLabel(map);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(10, 20, 731, 491));
+        label->setGeometry(QRect(10, 40, 731, 491));
         label->setFrameShape(QFrame::Box);
         label->setFrameShadow(QFrame::Raised);
         label->setLineWidth(3);
@@ -75,9 +77,11 @@ public:
         tripTotal = new QLineEdit(map);
         tripTotal->setObjectName(QStringLiteral("tripTotal"));
         tripTotal->setGeometry(QRect(890, 440, 81, 21));
+        tripTotal->setReadOnly(true);
         spinBox = new QSpinBox(map);
         spinBox->setObjectName(QStringLiteral("spinBox"));
         spinBox->setGeometry(QRect(890, 380, 81, 22));
+        spinBox->setReadOnly(true);
         spinBox->setMaximum(99);
         nextCampusButton = new QPushButton(map);
         nextCampusButton->setObjectName(QStringLiteral("nextCampusButton"));

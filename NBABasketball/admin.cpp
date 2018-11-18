@@ -7,7 +7,6 @@ admin::admin(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
     ui->tableWidget->setColumnCount(8);
     ui->tableWidget->setHorizontalHeaderLabels(QStringList() << "   Conference     " << "   Division   " << "     Team Name        " << "       Location      " << "        Arena Name        " << "    Stadium Capacity    " << "  Joined League   " << "Coach");
     ui->tableWidget->resizeColumnsToContents();

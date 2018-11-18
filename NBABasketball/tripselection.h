@@ -25,6 +25,7 @@ private slots:
     void on_removeButton_clicked();
     void on_backButton_clicked();
     void on_beginTripButton_clicked();
+    void on_refreshButton_clicked();
 
 private:
     Ui::tripSelection *ui;

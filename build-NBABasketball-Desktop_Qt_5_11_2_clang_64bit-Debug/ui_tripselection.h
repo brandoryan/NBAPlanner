@@ -65,6 +65,7 @@ public:
     QRadioButton *kruskalsAlgorithm;
     QRadioButton *depthFirstSearchAlgorithm;
     QRadioButton *primsAlgorithm;
+    QLabel *label_5;
 
     void setupUi(QDialog *tripSelection)
     {
@@ -149,6 +150,7 @@ public:
         distanceDisplay->setObjectName(QStringLiteral("distanceDisplay"));
         distanceDisplay->setGeometry(QRect(825, 537, 121, 21));
         distanceDisplay->setFont(font2);
+        distanceDisplay->setReadOnly(true);
         label_3 = new QLabel(tripSelection);
         label_3->setObjectName(QStringLiteral("label_3"));
         label_3->setGeometry(QRect(715, 210, 101, 31));
@@ -425,6 +427,11 @@ public:
 
         horizontalLayout_2->addLayout(verticalLayout_4);
 
+        label_5 = new QLabel(tripSelection);
+        label_5->setObjectName(QStringLiteral("label_5"));
+        label_5->setGeometry(QRect(410, 140, 171, 61));
+        label_5->setFrameShape(QFrame::Box);
+        label_5->setWordWrap(true);
 
         retranslateUi(tripSelection);
 
@@ -459,6 +466,7 @@ public:
         kruskalsAlgorithm->setText(QApplication::translate("tripSelection", "Kruskal's", nullptr));
         depthFirstSearchAlgorithm->setText(QApplication::translate("tripSelection", "DFS", nullptr));
         primsAlgorithm->setText(QApplication::translate("tripSelection", "Prim's", nullptr));
+        label_5->setText(QApplication::translate("tripSelection", "Double Click a Team to see all information regarding souvenirs", nullptr));
     } // retranslateUi
 
 };

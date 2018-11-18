@@ -7,7 +7,7 @@ fan::fan(QWidget *parent) :
     ui(new Ui::fan)
 {
     ui->setupUi(this);
-    connect(&tripSelectionMenu, SIGNAL(BackButtonClicked()), this, SLOT(on_BackButton_clicked()));
+    connect(&tripSelectionMenu, SIGNAL(BackButtonClicked()), this, SLOT(backButtonClicked()));
 }
 
 fan::~fan()
@@ -28,7 +28,7 @@ void fan::on_logoutButton_clicked()
     this->close();
 }
 
-void fan::on_BackButton_clicked()
+void fan::backButtonClicked()
 {
     this->open();
 }
