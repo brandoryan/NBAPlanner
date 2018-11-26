@@ -26,6 +26,7 @@ private slots:
     void on_backButton_clicked();
     void on_beginTripButton_clicked();
     void on_refreshButton_clicked();
+//    void on_listWidget_itemDoubleClicked(QListWidgetItem *item);
 
 private:
     Ui::tripSelection *ui;

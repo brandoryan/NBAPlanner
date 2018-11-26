@@ -91,3 +91,55 @@ void tripSelection::on_refreshButton_clicked()
         }
     }
 }
+/*
+void tripSelection::on_listWidget_itemDoubleClicked(QListWidgetItem *item)
+{
+    // Will display the distances from this school to all the other schools
+    QListWidget *t = new QListWidget();
+    t->setWindowFlags(Qt::Window);
+    t->resize(410,350);
+    t->setAttribute(Qt::WA_DeleteOnClose);
+    t->move(500,200);
+    t->setWindowTitle("Souvenir Viewer: " + item->text());
+
+    // Changing the school name to match database table name
+    // i.e. Arizona State University -> ArizonaStateUniversity
+    QString school = item->text();
+    school.replace(" ", "");
+    school.replace(",", "");
+
+    int rows = 0, x = 0, y = 0;
+    QSqlQuery query;
+
+    // Getting the number of rows in the schools database
+    QString queryCommand = "select count(distance) from " + school;
+    query.exec(queryCommand);
+    if(query.next()) {
+        rows = query.value(0).toInt();
+    }
+
+    // Populating the table with the name of the school and distance to that school
+    queryCommand = "select toschool, distance from " + school;
+    QString itemText;
+    QListWidgetItem *itm = new QListWidgetItem;
+    if(query.exec(queryCommand)) {
+        while(query.next()) {
+            itm = new QListWidgetItem;
+            itemText += query.value(0).toString();
+            itm->setText(itemText);
+            itm = new QListWidgetItem;
+            itm->setText(query.value(1).toString() + " mi.");
+            y=0;
+        }
+    }
+    else {
+        qDebug() << query.lastError();
+    }
+
+    t->setEditTriggers(QAbstractItemView::NoEditTriggers);
+
+    // Displaying the list
+    t->show();
+
+}
+*/

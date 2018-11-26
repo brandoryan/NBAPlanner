@@ -17,13 +17,16 @@ admin::admin(QWidget *parent) :
 
     QSqlQuery query;
     QTableWidgetItem *itm;
+
     int rows = 0, x = 0, y = 0;
 
     // Accesses the data table based on the name of the school
-    QString queryCommand = "select COUNT(id) FROM teams";
+    QString queryCommand = "select COUNT(id), name FROM teams";
     query.exec(queryCommand);
     if(query.next()) {
         rows = query.value(0).toInt();
+
+        ui->comboBox->addItem(query.value(1).toString());
     }
 
     ui->tableWidget->setRowCount(rows);

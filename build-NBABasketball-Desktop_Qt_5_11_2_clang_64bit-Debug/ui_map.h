@@ -81,7 +81,7 @@ public:
         spinBox = new QSpinBox(map);
         spinBox->setObjectName(QStringLiteral("spinBox"));
         spinBox->setGeometry(QRect(890, 380, 81, 22));
-        spinBox->setReadOnly(true);
+        spinBox->setReadOnly(false);
         spinBox->setMaximum(99);
         nextCampusButton = new QPushButton(map);
         nextCampusButton->setObjectName(QStringLiteral("nextCampusButton"));

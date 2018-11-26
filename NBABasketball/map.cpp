@@ -1,5 +1,6 @@
 #include "map.h"
 #include "ui_map.h"
+#include <QPainter>
 
 map::map(QWidget *parent) :
     QDialog(parent),
@@ -7,10 +8,13 @@ map::map(QWidget *parent) :
 {
     ui->setupUi(this);
 
+
+
     // Displaying the map of the US with all the schools
     QString filename = ":/map.png";
     QPixmap pix;
     ui->label->setAlignment(Qt::AlignCenter);
+
 
     // Loading the image of the map
     if(pix.load(filename)){
