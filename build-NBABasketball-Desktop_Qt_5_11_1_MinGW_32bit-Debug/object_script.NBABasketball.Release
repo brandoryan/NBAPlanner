@@ -1,0 +1,14 @@
+INPUT(
+./release\main.o
+./release\admin.o
+./release\login.o
+./release\fan.o
+./release\tripselection.o
+./release\map.o
+./release\qrc_resources.o
+./release\moc_admin.o
+./release\moc_login.o
+./release\moc_fan.o
+./release\moc_tripselection.o
+./release\moc_map.o
+);

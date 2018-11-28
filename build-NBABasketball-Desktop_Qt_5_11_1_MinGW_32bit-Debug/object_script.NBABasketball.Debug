@@ -1,0 +1,14 @@
+INPUT(
+./debug\main.o
+./debug\admin.o
+./debug\login.o
+./debug\fan.o
+./debug\tripselection.o
+./debug\map.o
+./debug\qrc_resources.o
+./debug\moc_admin.o
+./debug\moc_login.o
+./debug\moc_fan.o
+./debug\moc_tripselection.o
+./debug\moc_map.o
+);

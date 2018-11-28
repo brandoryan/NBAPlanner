@@ -11,7 +11,9 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QDialog>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
@@ -27,22 +29,25 @@ class Ui_admin
 public:
     QLabel *label;
     QLabel *label_2;
-    QLabel *label_3;
-    QLabel *label_4;
     QTableWidget *tableWidget;
-    QLabel *label_5;
     QLabel *capacityText;
     QTextEdit *capacityNumber;
-    QWidget *verticalLayoutWidget;
-    QVBoxLayout *verticalLayout;
+    QPushButton *logoutButton;
+    QWidget *horizontalLayoutWidget;
+    QHBoxLayout *horizontalLayout;
+    QVBoxLayout *verticalLayout_2;
     QPushButton *allInformation;
     QPushButton *coachesAndTeamsByTeamName;
     QPushButton *southeastDivisionEasternTeamsByTeamName;
     QPushButton *teamAndArenaNamesByAscendingYearJoined;
+    QVBoxLayout *verticalLayout;
     QPushButton *easternTeamsByTeamName;
     QPushButton *arenasAndTeamsBySeatingCapacity;
     QPushButton *teamsByTeamName;
     QPushButton *teamsByArenaName;
+    QComboBox *comboBox;
+    QLabel *label_3;
+    QPushButton *pushButton;
 
     void setupUi(QDialog *admin)
     {
@@ -54,23 +59,10 @@ public:
         label->setGeometry(QRect(470, 10, 81, 16));
         label_2 = new QLabel(admin);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(420, 480, 101, 16));
-        label_3 = new QLabel(admin);
-        label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(60, 530, 171, 51));
-        label_3->setFrameShape(QFrame::Box);
-        label_3->setWordWrap(true);
-        label_4 = new QLabel(admin);
-        label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(750, 530, 161, 91));
-        label_4->setFrameShape(QFrame::Box);
-        label_4->setWordWrap(true);
+        label_2->setGeometry(QRect(450, 480, 101, 16));
         tableWidget = new QTableWidget(admin);
         tableWidget->setObjectName(QStringLiteral("tableWidget"));
         tableWidget->setGeometry(QRect(10, 30, 990, 431));
-        label_5 = new QLabel(admin);
-        label_5->setObjectName(QStringLiteral("label_5"));
-        label_5->setGeometry(QRect(670, 560, 91, 16));
         capacityText = new QLabel(admin);
         capacityText->setObjectName(QStringLiteral("capacityText"));
         capacityText->setGeometry(QRect(860, 470, 141, 20));
@@ -80,60 +72,85 @@ public:
         QFont font;
         font.setPointSize(15);
         capacityNumber->setFont(font);
-        verticalLayoutWidget = new QWidget(admin);
-        verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(280, 520, 380, 275));
-        verticalLayout = new QVBoxLayout(verticalLayoutWidget);
-        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
-        allInformation = new QPushButton(verticalLayoutWidget);
+        capacityNumber->setReadOnly(true);
+        logoutButton = new QPushButton(admin);
+        logoutButton->setObjectName(QStringLiteral("logoutButton"));
+        logoutButton->setGeometry(QRect(10, 660, 141, 51));
+        logoutButton->setAutoDefault(false);
+        horizontalLayoutWidget = new QWidget(admin);
+        horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
+        horizontalLayoutWidget->setGeometry(QRect(60, 510, 751, 136));
+        horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        verticalLayout_2 = new QVBoxLayout();
+        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
+        allInformation = new QPushButton(horizontalLayoutWidget);
         allInformation->setObjectName(QStringLiteral("allInformation"));
         allInformation->setAutoDefault(false);
 
-        verticalLayout->addWidget(allInformation);
+        verticalLayout_2->addWidget(allInformation);
 
-        coachesAndTeamsByTeamName = new QPushButton(verticalLayoutWidget);
+        coachesAndTeamsByTeamName = new QPushButton(horizontalLayoutWidget);
         coachesAndTeamsByTeamName->setObjectName(QStringLiteral("coachesAndTeamsByTeamName"));
         coachesAndTeamsByTeamName->setAutoDefault(false);
 
-        verticalLayout->addWidget(coachesAndTeamsByTeamName);
+        verticalLayout_2->addWidget(coachesAndTeamsByTeamName);
 
-        southeastDivisionEasternTeamsByTeamName = new QPushButton(verticalLayoutWidget);
+        southeastDivisionEasternTeamsByTeamName = new QPushButton(horizontalLayoutWidget);
         southeastDivisionEasternTeamsByTeamName->setObjectName(QStringLiteral("southeastDivisionEasternTeamsByTeamName"));
         southeastDivisionEasternTeamsByTeamName->setAutoDefault(false);
 
-        verticalLayout->addWidget(southeastDivisionEasternTeamsByTeamName);
+        verticalLayout_2->addWidget(southeastDivisionEasternTeamsByTeamName);
 
-        teamAndArenaNamesByAscendingYearJoined = new QPushButton(verticalLayoutWidget);
+        teamAndArenaNamesByAscendingYearJoined = new QPushButton(horizontalLayoutWidget);
         teamAndArenaNamesByAscendingYearJoined->setObjectName(QStringLiteral("teamAndArenaNamesByAscendingYearJoined"));
         teamAndArenaNamesByAscendingYearJoined->setAutoDefault(false);
 
-        verticalLayout->addWidget(teamAndArenaNamesByAscendingYearJoined);
+        verticalLayout_2->addWidget(teamAndArenaNamesByAscendingYearJoined);
 
-        easternTeamsByTeamName = new QPushButton(verticalLayoutWidget);
+
+        horizontalLayout->addLayout(verticalLayout_2);
+
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        easternTeamsByTeamName = new QPushButton(horizontalLayoutWidget);
         easternTeamsByTeamName->setObjectName(QStringLiteral("easternTeamsByTeamName"));
         easternTeamsByTeamName->setAutoDefault(false);
 
         verticalLayout->addWidget(easternTeamsByTeamName);
 
-        arenasAndTeamsBySeatingCapacity = new QPushButton(verticalLayoutWidget);
+        arenasAndTeamsBySeatingCapacity = new QPushButton(horizontalLayoutWidget);
         arenasAndTeamsBySeatingCapacity->setObjectName(QStringLiteral("arenasAndTeamsBySeatingCapacity"));
         arenasAndTeamsBySeatingCapacity->setAutoDefault(false);
 
         verticalLayout->addWidget(arenasAndTeamsBySeatingCapacity);
 
-        teamsByTeamName = new QPushButton(verticalLayoutWidget);
+        teamsByTeamName = new QPushButton(horizontalLayoutWidget);
         teamsByTeamName->setObjectName(QStringLiteral("teamsByTeamName"));
         teamsByTeamName->setAutoDefault(false);
 
         verticalLayout->addWidget(teamsByTeamName);
 
-        teamsByArenaName = new QPushButton(verticalLayoutWidget);
+        teamsByArenaName = new QPushButton(horizontalLayoutWidget);
         teamsByArenaName->setObjectName(QStringLiteral("teamsByArenaName"));
         teamsByArenaName->setAutoDefault(false);
 
         verticalLayout->addWidget(teamsByArenaName);
 
+
+        horizontalLayout->addLayout(verticalLayout);
+
+        comboBox = new QComboBox(admin);
+        comboBox->setObjectName(QStringLiteral("comboBox"));
+        comboBox->setGeometry(QRect(870, 560, 121, 41));
+        label_3 = new QLabel(admin);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setGeometry(QRect(870, 540, 121, 21));
+        label_3->setAlignment(Qt::AlignCenter);
+        pushButton = new QPushButton(admin);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setGeometry(QRect(893, 595, 71, 31));
 
         retranslateUi(admin);
 
@@ -145,10 +162,8 @@ public:
         admin->setWindowTitle(QApplication::translate("admin", "Administrator Menu", nullptr));
         label->setText(QApplication::translate("admin", "Data Viewer", nullptr));
         label_2->setText(QApplication::translate("admin", "Display Options", nullptr));
-        label_3->setText(QApplication::translate("admin", "Double Click a Team to see all information related to it, including souvenirs", nullptr));
-        label_4->setText(QApplication::translate("admin", "As well as total capacity of all NBA teams, if two teams use the same arena, count the capacity of the arena only once", nullptr));
-        label_5->setText(QApplication::translate("admin", "<-------------", nullptr));
         capacityText->setText(QApplication::translate("admin", "Total Seating Capacity", nullptr));
+        logoutButton->setText(QApplication::translate("admin", "Logout", nullptr));
         allInformation->setText(QApplication::translate("admin", "Display All Information", nullptr));
         coachesAndTeamsByTeamName->setText(QApplication::translate("admin", "Teams and Coaches by Team Name", nullptr));
         southeastDivisionEasternTeamsByTeamName->setText(QApplication::translate("admin", "Southeast Division Teams of Eastern Conference by Team Name", nullptr));
@@ -157,6 +172,8 @@ public:
         arenasAndTeamsBySeatingCapacity->setText(QApplication::translate("admin", "Teams and Arenas by Seating Capacity", nullptr));
         teamsByTeamName->setText(QApplication::translate("admin", "Teams By Team Name", nullptr));
         teamsByArenaName->setText(QApplication::translate("admin", "Teams By Arena Name", nullptr));
+        label_3->setText(QApplication::translate("admin", "Souvenir Info", nullptr));
+        pushButton->setText(QApplication::translate("admin", "Open", nullptr));
     } // retranslateUi
 
 };
