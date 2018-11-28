@@ -1,0 +1,52 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Resources/Images/adminLogin.png</file>
+        <file>Resources/Images/AdminLoginLogo.png</file>
+        <file>Resources/Images/leftArrow.png</file>
+        <file>Resources/Fonts/billy-argel_candy-inc/BILLY-ARGEL-CANDY-INC-FONT-ok.jpg</file>
+        <file>Resources/Fonts/billy-argel_candy-inc/CANDY___.otf</file>
+        <file>Resources/Fonts/billy-argel_candy-inc/READ ME.txt</file>
+        <file>Resources/Data/NBAdata.txt</file>
+        <file>Resources/Data/Distances.txt</file>
+        <file>Resources/Images/NBALogo.jpg</file>
+        <file>Resources/Icons/Atlanta Hawks.png</file>
+        <file>Resources/Icons/Boston Celtics.png</file>
+        <file>Resources/Icons/Brooklyn Nets.png</file>
+        <file>Resources/Icons/Charlotte Hornets.png</file>
+        <file>Resources/Icons/Chicago Bulls.png</file>
+        <file>Resources/Icons/Cleveland Cavaliers.png</file>
+        <file>Resources/Icons/Dallas Mavericks.png</file>
+        <file>Resources/Icons/Denver Nuggets.png</file>
+        <file>Resources/Icons/Detroit Pistons.png</file>
+        <file>Resources/Icons/Golden State Warriors.png</file>
+        <file>Resources/Icons/Houston Rockets.png</file>
+        <file>Resources/Icons/Indiana Pacers.png</file>
+        <file>Resources/Icons/Los Angeles Clippers.png</file>
+        <file>Resources/Icons/Los Angeles Lakers.png</file>
+        <file>Resources/Icons/Memphis Grizzlies.png</file>
+        <file>Resources/Icons/Miami Heat.png</file>
+        <file>Resources/Icons/Milwaukee Bucks.png</file>
+        <file>Resources/Icons/Minnesota Timberwolves.png</file>
+        <file>Resources/Icons/New Orleans Pelicans.png</file>
+        <file>Resources/Icons/New York Knicks.png</file>
+        <file>Resources/Icons/Oklahoma City Thunder.png</file>
+        <file>Resources/Icons/Orlando Magic.png</file>
+        <file>Resources/Icons/Philadelphia 76ers.png</file>
+        <file>Resources/Icons/Phoenix Suns.png</file>
+        <file>Resources/Icons/Portland Trail Blazers.png</file>
+        <file>Resources/Icons/Sacramento Kings.png</file>
+        <file>Resources/Icons/San Antonio Spurs.png</file>
+        <file>Resources/Icons/Seattle Supersonics.png</file>
+        <file>Resources/Icons/Toronto Raptors.png</file>
+        <file>Resources/Icons/Utah Jazz.png</file>
+        <file>Resources/Icons/Washington Wizards.png</file>
+        <file>Resources/Fonts/richardson-sports/NCAA Michigan St Spartans.otf</file>
+        <file>Resources/Fonts/richardson-sports/Richardson Brand Accelerator.otf</file>
+        <file>Resources/Fonts/richardson-sports/Richardson Brand Lightning Bolt.otf</file>
+        <file>Resources/Fonts/richardson-sports/Richardson Brand United.otf</file>
+        <file>Resources/Fonts/the-fontry_old-sport/OLD SPORT 01 COLLEGE NCV.ttf</file>
+        <file>Resources/Fonts/the-fontry_old-sport/OLD SPORT 02 ATHLETIC NCV.ttf</file>
+        <file>Resources/Images/Basketball.jpg</file>
+        <file>Resources/Images/BasketballTest.jpg</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,1075 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AdminWindow</class>
+ <widget class="QMainWindow" name="AdminWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1056</width>
+    <height>570</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow{
+	background-color: rgb(236, 236, 236);
+	margin:0 px;
+}
+
+QLabel#label_HeaderNavBarBackground{
+	background-color:rgb(0, 46, 109);
+}
+
+QLabel[accessibleName=&quot;whiteText&quot;]{
+	color: white;
+	font-family:'Harmonia Sans Pro,Arial,sans-serif';
+
+}
+
+QLabel[accessibleName=&quot;darkText&quot;]{
+	color: #353535;
+	font-family:'Harmonia Sans Pro,Arial,sans-serif';
+}
+
+
+QLabel[accessibleName=transparentBar]{
+	background-color: rgba(31, 34, 31, .50);
+	border-radius: 10px;
+}
+
+QPushButton[accessibleName=&quot;redButton&quot;]{
+	font-family:'Harmonia Sans Pro,Arial,sans-serif';
+	font-size: 20px;
+	background-color:rgb(213, 0, 50);
+	color:white;
+	border-radius:10px;
+}
+
+QPushButton[accessibleName=&quot;redButton&quot;]:hover
+{
+	background-color:#A4070F;
+}
+
+QPushButton[accessibleName=&quot;blueButton&quot;]
+{
+	font-family:'Harmonia Sans Pro,Arial,sans-serif';
+	background-color: #337ab7;
+	color: white;
+	border-radius:5px;
+}
+
+QPushButton[accessibleName=&quot;blueButton&quot;]:hover
+{	
+	background-color: #094C83;
+
+}
+
+QLineEdit[accessibleName=&quot;inputField&quot;]{
+	border-radius:5px;
+	border: 1px solid #cccccc;
+}
+
+QDoubleSpinBox
+{
+		border-radius:5px;
+	    border: 1px solid #cccccc;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="pushButton_NBALogoHome">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>0</y>
+      <width>151</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="resources.qrc">
+      <normaloff>:/Resources/Images/NBALogo.jpg</normaloff>:/Resources/Images/NBALogo.jpg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>128</width>
+      <height>128</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_NavPageTitleHeader">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>10</y>
+      <width>671</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Harmonia Sans Pro,Arial,sans-serif</family>
+      <pointsize>50</pointsize>
+     </font>
+    </property>
+    <property name="accessibleName">
+     <string>whiteText</string>
+    </property>
+    <property name="text">
+     <string>NBA Trip Planner</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_HeaderNavBarBackground">
+    <property name="geometry">
+     <rect>
+      <x>-10</x>
+      <y>-10</y>
+      <width>1081</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(23, 64, 139);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_adminLogout">
+    <property name="geometry">
+     <rect>
+      <x>920</x>
+      <y>10</y>
+      <width>101</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>17</pointsize>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: white;</string>
+    </property>
+    <property name="text">
+     <string>Logout</string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>64</width>
+      <height>64</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>90</y>
+      <width>1061</width>
+      <height>481</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>2</number>
+    </property>
+    <widget class="QWidget" name="MainPage">
+     <widget class="QLabel" name="label_seatingCap">
+      <property name="geometry">
+       <rect>
+        <x>660</x>
+        <y>90</y>
+        <width>181</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>110</y>
+        <width>141</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Location:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>70</y>
+        <width>141</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Stadium Name:</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_addSouvenir">
+      <property name="geometry">
+       <rect>
+        <x>840</x>
+        <y>290</y>
+        <width>113</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="accessibleName">
+       <string>blueButton</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#pushButton_addSouvenir
+{
+    font-family:'Harmonia Sans Pro,Arial,sans-serif';
+	background-color: rgb(23, 64, 139);
+	color: white;
+	border-radius:5px;
+}
+
+QPushButton#pushButton_addSouvenir:hover
+{	
+	background-color: #337ab7;
+}</string>
+      </property>
+      <property name="text">
+       <string>Add</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_10">
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>190</y>
+        <width>161</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Coach:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_coach">
+      <property name="geometry">
+       <rect>
+        <x>660</x>
+        <y>190</y>
+        <width>181</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+     <widget class="QTableView" name="tableView_Teams">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>60</y>
+        <width>241</width>
+        <height>391</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_AddDataFromFile">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>60</y>
+        <width>113</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="accessibleName">
+       <string>blueButton</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#pushButton_AddDataFromFile
+{
+    font-family:'Harmonia Sans Pro,Arial,sans-serif';
+	background-color: rgb(23, 64, 139);
+	color: white;
+	border-radius:5px;
+}
+
+QPushButton#pushButton_AddDataFromFile:hover
+{	
+	background-color: #337ab7;
+}</string>
+      </property>
+      <property name="text">
+       <string>Add From File</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_12">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>240</y>
+        <width>371</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Harmonia Sans Pro,Arial,sans-serif</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="accessibleName">
+       <string>darkText</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">	color: #353535;
+	font-family:'Harmonia Sans Pro,Arial,sans-serif';
+	font-size: 30px;</string>
+      </property>
+      <property name="text">
+       <string>Team Souveniers</string>
+      </property>
+     </widget>
+     <widget class="QTableView" name="tableView_Souveniers">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>280</y>
+        <width>361</width>
+        <height>171</height>
+       </rect>
+      </property>
+      <property name="showGrid">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_stadiumName">
+      <property name="geometry">
+       <rect>
+        <x>660</x>
+        <y>70</y>
+        <width>181</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_updateSouvenir">
+      <property name="geometry">
+       <rect>
+        <x>840</x>
+        <y>330</y>
+        <width>113</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="accessibleName">
+       <string>blueButton</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#pushButton_updateSouvenir
+{
+    font-family:'Harmonia Sans Pro,Arial,sans-serif';
+	background-color: rgb(23, 64, 139);
+	color: white;
+	border-radius:5px;
+}
+
+QPushButton#pushButton_updateSouvenir:hover
+{	
+	background-color: #337ab7;
+}</string>
+      </property>
+      <property name="text">
+       <string>Update</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>130</y>
+        <width>111</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Conference:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>90</y>
+        <width>141</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Seating Capacity:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_division">
+      <property name="geometry">
+       <rect>
+        <x>660</x>
+        <y>150</y>
+        <width>181</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_conference">
+      <property name="geometry">
+       <rect>
+        <x>660</x>
+        <y>130</y>
+        <width>181</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>25</y>
+        <width>251</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Harmonia Sans Pro,Arial,sans-serif</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="accessibleName">
+       <string>darkText</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">	color: #353535;
+	font-family:'Harmonia Sans Pro,Arial,sans-serif';
+	font-size: 30px;</string>
+      </property>
+      <property name="text">
+       <string>Teams </string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_yearJoined">
+      <property name="geometry">
+       <rect>
+        <x>660</x>
+        <y>170</y>
+        <width>181</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>150</y>
+        <width>111</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Division:</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_updateStadiumInfo">
+      <property name="geometry">
+       <rect>
+        <x>840</x>
+        <y>70</y>
+        <width>113</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="accessibleName">
+       <string>blueButton</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#pushButton_updateStadiumInfo
+{
+    font-family:'Harmonia Sans Pro,Arial,sans-serif';
+	background-color: rgb(23, 64, 139);
+	color: white;
+	border-radius:5px;
+}
+
+QPushButton#pushButton_updateStadiumInfo:hover
+{	
+	background-color: #337ab7;
+}</string>
+      </property>
+      <property name="text">
+       <string>Update</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_location">
+      <property name="geometry">
+       <rect>
+        <x>660</x>
+        <y>110</y>
+        <width>181</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_deleteSouvenir">
+      <property name="geometry">
+       <rect>
+        <x>840</x>
+        <y>370</y>
+        <width>113</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="accessibleName">
+       <string>blueButton</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#pushButton_deleteSouvenir
+{
+    font-family:'Harmonia Sans Pro,Arial,sans-serif';
+	background-color: rgb(23, 64, 139);
+	color: white;
+	border-radius:5px;
+}
+
+QPushButton#pushButton_deleteSouvenir:hover
+{	
+	background-color: #337ab7;
+}</string>
+      </property>
+      <property name="text">
+       <string>Delete</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>170</y>
+        <width>161</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Year Joined:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>30</y>
+        <width>251</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Harmonia Sans Pro,Arial,sans-serif</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="accessibleName">
+       <string>darkText</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">	color: #353535;
+	font-family:'Harmonia Sans Pro,Arial,sans-serif';
+	font-size: 30px;</string>
+      </property>
+      <property name="text">
+       <string>Stadium Info</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="AddUpdateSouvenir">
+     <widget class="QLabel" name="label_addUpdateHEader">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>30</y>
+        <width>1021</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Harmonia Sans Pro,Arial,sans-serif</family>
+        <pointsize>40</pointsize>
+       </font>
+      </property>
+      <property name="accessibleName">
+       <string>darkText</string>
+      </property>
+      <property name="text">
+       <string>update Souvenier</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_souvenirName">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>120</y>
+        <width>251</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="accessibleName">
+       <string>inputField</string>
+      </property>
+      <property name="readOnly">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_submitAddUpdate">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>240</y>
+        <width>251</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="accessibleName">
+       <string>blueButton</string>
+      </property>
+      <property name="text">
+       <string>Submit</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_cancelAddUpdate">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>280</y>
+        <width>251</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="accessibleName">
+       <string>blueButton</string>
+      </property>
+      <property name="text">
+       <string>Cancel</string>
+      </property>
+     </widget>
+     <widget class="QDoubleSpinBox" name="doubleSpinBox_souvenirPrice">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>160</y>
+        <width>251</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="buttonSymbols">
+       <enum>QAbstractSpinBox::NoButtons</enum>
+      </property>
+      <property name="correctionMode">
+       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
+      </property>
+      <property name="prefix">
+       <string/>
+      </property>
+      <property name="minimum">
+       <double>0.990000000000000</double>
+      </property>
+      <property name="maximum">
+       <double>999.990000000000009</double>
+      </property>
+      <property name="singleStep">
+       <double>0.010000000000000</double>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>120</y>
+        <width>81</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Harmonia Sans Pro,Arial,sans-serif</family>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">	color: #353535;
+	font-family:'Harmonia Sans Pro,Arial,sans-serif';</string>
+      </property>
+      <property name="text">
+       <string>Name:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_14">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>160</y>
+        <width>81</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Harmonia Sans Pro,Arial,sans-serif</family>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">	color: #353535;
+	font-family:'Harmonia Sans Pro,Arial,sans-serif';</string>
+      </property>
+      <property name="text">
+       <string>Cost:</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="UpdateStadium">
+     <widget class="QSpinBox" name="spinBox_yearOpened_2">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>250</y>
+        <width>251</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">	border-radius:5px;
+	border: 1px solid #cccccc;</string>
+      </property>
+      <property name="buttonSymbols">
+       <enum>QAbstractSpinBox::NoButtons</enum>
+      </property>
+      <property name="minimum">
+       <number>1900</number>
+      </property>
+      <property name="maximum">
+       <number>9999</number>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="spinBox_SeatinCap">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>170</y>
+        <width>251</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">	border-radius:5px;
+	border: 1px solid #cccccc;</string>
+      </property>
+      <property name="buttonSymbols">
+       <enum>QAbstractSpinBox::NoButtons</enum>
+      </property>
+      <property name="minimum">
+       <number>10000</number>
+      </property>
+      <property name="maximum">
+       <number>100000</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_addUpdateHEader_2">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>10</y>
+        <width>1021</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Harmonia Sans Pro,Arial,sans-serif</family>
+        <pointsize>40</pointsize>
+       </font>
+      </property>
+      <property name="accessibleName">
+       <string>darkText</string>
+      </property>
+      <property name="text">
+       <string>Update Stadium Info</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_cancelAddUpdate_2">
+      <property name="geometry">
+       <rect>
+        <x>570</x>
+        <y>400</y>
+        <width>251</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="accessibleName">
+       <string>blueButton</string>
+      </property>
+      <property name="text">
+       <string>Cancel</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_submitUpdateStadium">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>400</y>
+        <width>251</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="accessibleName">
+       <string>blueButton</string>
+      </property>
+      <property name="text">
+       <string>Submit</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_15">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>250</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Harmonia Sans Pro,Arial,sans-serif</family>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">	color: #353535;
+	font-family:'Harmonia Sans Pro,Arial,sans-serif';</string>
+      </property>
+      <property name="text">
+       <string>Year Opened:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_16">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>170</y>
+        <width>191</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Harmonia Sans Pro,Arial,sans-serif</family>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">	color: #353535;
+	font-family:'Harmonia Sans Pro,Arial,sans-serif';</string>
+      </property>
+      <property name="text">
+       <string>Seat Capacity:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_Location">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>210</y>
+        <width>251</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="accessibleName">
+       <string>inputField</string>
+      </property>
+      <property name="inputMask">
+       <string/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="maxLength">
+       <number>100</number>
+      </property>
+      <property name="readOnly">
+       <bool>false</bool>
+      </property>
+      <property name="placeholderText">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_18">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>210</y>
+        <width>121</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Harmonia Sans Pro,Arial,sans-serif</family>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">	color: #353535;
+	font-family:'Harmonia Sans Pro,Arial,sans-serif';</string>
+      </property>
+      <property name="text">
+       <string>Location:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_19">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>130</y>
+        <width>191</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Harmonia Sans Pro,Arial,sans-serif</family>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">	color: #353535;
+	font-family:'Harmonia Sans Pro,Arial,sans-serif';</string>
+      </property>
+      <property name="text">
+       <string>Stadium Name:</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_StadiumName">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>130</y>
+        <width>251</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="accessibleName">
+       <string>inputField</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="maxLength">
+       <number>100</number>
+      </property>
+      <property name="readOnly">
+       <bool>false</bool>
+      </property>
+      <property name="placeholderText">
+       <string/>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <zorder>stackedWidget</zorder>
+   <zorder>label_HeaderNavBarBackground</zorder>
+   <zorder>pushButton_NBALogoHome</zorder>
+   <zorder>label_NavPageTitleHeader</zorder>
+   <zorder>pushButton_adminLogout</zorder>
+  </widget>
+ </widget>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+ <buttongroups>
+  <buttongroup name="buttonGroup"/>
+  <buttongroup name="buttonGroup_2"/>
+  <buttongroup name="buttonGroup_3"/>
+ </buttongroups>
+</ui>

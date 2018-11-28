@@ -1,0 +1,276 @@
+State Farm Arena
+Spectrum Center
+244.8
+State Farm Arena
+FedEx Forum
+383.8
+State Farm Arena
+Smoothie King Center
+469.1
+State Farm Arena
+Amway Center
+438.8
+TD Garden
+Madison Square Garden
+215.3
+TD Garden
+Scotiabank Arena
+550
+Barclays Center
+Madison Square Garden
+5.1
+Barclays Center	
+Wells Fargo Center
+97.4
+Spectrum Center	
+State Farm Arena
+244.8
+Spectrum Center
+Bankers Life Fieldhouse
+585.1
+Spectrum Center	
+American Airlines Arena
+730.9
+Spectrum Center
+Capital One Arena
+402
+United Center
+Little Caesars Arena
+282.6
+United Center	
+Bankers Life Fieldhouse
+181.6
+United Center
+Fiserv Forum
+92.1
+Quicken Loans Arena
+Little Caesars Arena
+164.9
+Quicken Loans Arena	
+Bankers Life Fieldhouse
+315.5
+Quicken Loans Arena
+Wells Fargo Center
+431.2
+Quicken Loans Arena
+Capital One Arena
+371
+American Airlines Center
+Toyota Center
+239.8
+American Airlines Center	
+Chesapeake Energy Arena
+206.7
+American Airlines Center
+AT&T Center
+273.8
+Pepsi Center	
+Staples Center
+1016.1
+Pepsi Center	
+Target Center
+913.9
+Pepsi Center	
+Chesapeake Energy Arena
+679.6
+Pepsi Center	
+Talking Stick Resort Arena
+862.4
+Pepsi Center
+Vivint Smart Home Arena
+519.1
+Little Caesars Arena	
+United Center
+282.6
+Little Caesars Arena	
+Quicken Loans Arena
+164.9
+Little Caesars Arena
+Target Center
+694.7
+Little Caesars Arena	
+Madison Square Garden
+616.1
+Little Caesars Arena	
+Scotiabank Arena
+231
+Oracle Arena	
+Staples Center
+385.1
+Oracle Arena	
+Golden 1 Center
+87.9
+Toyota Center	
+American Airlines Center
+239.8
+Toyota Center
+Smoothie King Center
+347.7
+Toyota Center
+AT&T Center
+197.4
+Bankers Life Fieldhouse	
+Spectrum Center
+585.1
+Bankers Life Fieldhouse
+United Center
+181.6
+Bankers Life Fieldhouse
+Quicken Loans Arena
+315.5
+Staples Center	
+Staples Center
+0
+Staples Center	
+Pepsi Center
+1016.1
+Staples Center
+Oracle Arena
+385.1
+Staples Center
+Talking Stick Resort Arena
+373
+Staples Center
+Golden 1 Center
+388.4
+Staples Center
+Vivint Smart Home Arena
+688.4
+FedEx Forum
+State Farm Arena
+383.8
+FedEx Forum
+Smoothie King Center
+395
+FedEx Forum
+Chesapeake Energy Arena
+466
+American Airlines Arena
+Spectrum Center
+730.9
+American Airlines Arena
+Smoothie King Center
+866.1
+American Airlines Arena	
+Amway Center
+235.6
+Fiserv Forum
+United Center
+92.1
+Fiserv Forum
+Target Center
+337.1
+Target Center
+Pepsi Center
+913.9
+Target Center
+Little Caesars Arena
+694.7
+Target Center
+Fiserv Forum
+337.1
+Target Center
+Moda Center
+1729.3
+Smoothie King Center
+State Farm Arena
+469.1
+Smoothie King Center
+Toyota Center
+347.7
+Smoothie King Center
+FedEx Forum
+395
+Smoothie King Center
+American Airlines Arena
+866.1
+Madison Square Garden
+TD Garden
+215.3
+Madison Square Garden
+Barclays Center
+5.1
+Madison Square Garden
+Little Caesars Arena
+616.1
+Chesapeake Energy Arena	
+American Airlines Center
+206.7
+Chesapeake Energy Arena
+Pepsi Center
+679.6
+Chesapeake Energy Arena
+FedEx Forum
+466
+Amway Center
+State Farm Arena
+438.8
+Amway Center
+American Airlines Arena
+235.6
+Wells Fargo Center
+Barclays Center
+97.4
+Wells Fargo Center
+Quicken Loans Arena
+431.2
+Wells Fargo Center
+Capital One Arena
+140
+Talking Stick Resort Arena
+Pepsi Center
+862.4
+Talking Stick Resort Arena
+Staples Center
+373
+Moda Center
+Target Center
+1792.3
+Moda Center
+Golden 1 Center
+579.7
+Moda Center
+Vivint Smart Home Arena
+765.5
+Golden 1 Center
+Oracle Arena
+87.9
+Golden 1 Center
+Staples Center
+388.4
+Golden 1 Center
+Moda Center
+579.7
+AT&T Center
+American Airlines Center
+273.8
+AT&T Center
+Toyota Center
+197.4
+Scotiabank Arena
+TD Garden
+550
+Scotiabank Arena
+Little Caesars Arena
+231
+Scotiabank Arena
+Madison Square Garden
+491.1
+Vivint Smart Home Arena
+Pepsi Center
+519.1
+Vivint Smart Home Arena
+Staples Center
+688.4
+Vivint Smart Home Arena
+Moda Center
+765.5
+Capital One Arena
+Spectrum Center
+402
+Capital One Arena
+Quicken Loans Arena
+371
+Capital One Arena
+Wells Fargo Center
+140
