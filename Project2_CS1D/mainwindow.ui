@@ -102,7 +102,7 @@ QLineEdit[accessibleName=&quot;inputField&quot;]{
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="MainPage">
      <property name="styleSheet">
@@ -238,7 +238,7 @@ QPushButton#pushButton_ToViewStadiumsPage:hover
       <property name="geometry">
        <rect>
         <x>360</x>
-        <y>100</y>
+        <y>110</y>
         <width>331</width>
         <height>31</height>
        </rect>
@@ -284,7 +284,7 @@ QPushButton#pushButton_ToViewStadiumsPage:hover
       <property name="geometry">
        <rect>
         <x>360</x>
-        <y>260</y>
+        <y>280</y>
         <width>331</width>
         <height>32</height>
        </rect>
@@ -306,7 +306,7 @@ QPushButton#pushButton_ToViewStadiumsPage:hover
       <property name="geometry">
        <rect>
         <x>360</x>
-        <y>220</y>
+        <y>240</y>
         <width>331</width>
         <height>32</height>
        </rect>
@@ -328,7 +328,7 @@ QPushButton#pushButton_ToViewStadiumsPage:hover
       <property name="geometry">
        <rect>
         <x>360</x>
-        <y>140</y>
+        <y>150</y>
         <width>331</width>
         <height>31</height>
        </rect>
@@ -346,10 +346,10 @@ QPushButton#pushButton_ToViewStadiumsPage:hover
      <widget class="QLabel" name="label_whiteBackground">
       <property name="geometry">
        <rect>
-        <x>180</x>
+        <x>0</x>
         <y>0</y>
-        <width>681</width>
-        <height>391</height>
+        <width>1061</width>
+        <height>481</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -378,23 +378,6 @@ QPushButton#pushButton_ToViewStadiumsPage:hover
        <string/>
       </property>
      </widget>
-     <widget class="QLabel" name="label_blackBackground">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>-5</y>
-        <width>1061</width>
-        <height>481</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(102, 102, 102);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <zorder>label_blackBackground</zorder>
      <zorder>label_whiteBackground</zorder>
      <zorder>label_loginHeader</zorder>
      <zorder>pushButton_submitLogin</zorder>
@@ -467,9 +450,9 @@ QPushButton#pushButton_ToViewStadiumsPage:hover
      <widget class="QLabel" name="label_teamNameHeader">
       <property name="geometry">
        <rect>
-        <x>110</x>
+        <x>0</x>
         <y>0</y>
-        <width>891</width>
+        <width>1051</width>
         <height>101</height>
        </rect>
       </property>
@@ -765,9 +748,9 @@ QPushButton#pushButton_ToViewStadiumsPage:hover
      <widget class="QLabel" name="label_TransparentBackground_3">
       <property name="geometry">
        <rect>
-        <x>110</x>
+        <x>40</x>
         <y>0</y>
-        <width>891</width>
+        <width>971</width>
         <height>101</height>
        </rect>
       </property>
@@ -806,9 +789,9 @@ background-color: rgba(153,153,153,0.5);
      <widget class="QLabel" name="label_teamNameHeader_2">
       <property name="geometry">
        <rect>
-        <x>60</x>
+        <x>10</x>
         <y>-10</y>
-        <width>981</width>
+        <width>1041</width>
         <height>101</height>
        </rect>
       </property>
@@ -1338,7 +1321,7 @@ background-color: transparent;
        <rect>
         <x>290</x>
         <y>430</y>
-        <width>371</width>
+        <width>601</width>
         <height>41</height>
        </rect>
       </property>
@@ -1670,30 +1653,7 @@ background-color: transparent;
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="TripStopPage">
-     <widget class="QLabel" name="label_TransparentBackground_4">
-      <property name="geometry">
-       <rect>
-        <x>90</x>
-        <y>-10</y>
-        <width>891</width>
-        <height>151</height>
-       </rect>
-      </property>
-      <property name="accessibleName">
-       <string>transparentBar</string>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">	background-color: rgba(31, 34, 31, .30);
-
-	border-radius: 10px;
-</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </widget>
+    <widget class="QWidget" name="TripStopPage"/>
     <widget class="QWidget" name="TripDrivingPage"/>
     <widget class="QWidget" name="TripEndedPage">
      <widget class="QPushButton" name="pushButton_backToHome">

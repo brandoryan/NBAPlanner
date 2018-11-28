@@ -167,12 +167,6 @@ void DatabaseManager::initializeStadiumsTable(QSqlQuery query)
                ");");
 }
 
-/***************************************************************************//**
- * @brief DatabaseManager::initializeSouvenirsTable
- * @param query
- *
- * Creates souvenirs table
- ******************************************************************************/
 void DatabaseManager::initializeSouvenirsTable(QSqlQuery query)
 {
     query.exec("CREATE TABLE souvenirs( "
@@ -336,14 +330,6 @@ void DatabaseManager::addNewStadium(const STRING &stadiumName,
     }
 }
 
-/***************************************************************************//**
- * @brief DatabaseManager::addNewSouvenir
- * @param itemName
- * @param itemPrice
- * @param stadiumName
- *
- * Adds new souvenir item to souvenirs table in database
- ******************************************************************************/
 void DatabaseManager::addNewSouvenir(const STRING &itemName,
                                      const double &itemPrice,
                                      const STRING &stadiumName)
@@ -395,15 +381,6 @@ void DatabaseManager::addNewDistance(const STRING &startStadium,
     }
 }
 
-
-/***************************************************************************//**
- * @brief DatabaseManager::updateSouvenir
- * @param itemName
- * @param itemPrice
- * @param stadiumName
- *
- * updates sovenirs price
- ******************************************************************************/
 void DatabaseManager::updateSouvenir(const STRING &itemName,
                                      const double &itemPrice,
                                      const STRING &stadiumName)
@@ -743,12 +720,3 @@ bool DatabaseManager::authenticateUserLogin(const  STRING &username,
 
     return loginStatus;
 }
-
-// FOR TESTING
-// ************************************************
-//   Outputs data from query Model
-//     qDebug() << (model->columnCount());
-//     for(int i = 0; i < model->rowCount(); ++i)
-//     {
-//         qDebug() << model->record(i).value(0).toString();
-//     }

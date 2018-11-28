@@ -6,20 +6,13 @@
 #include <QTableView>
 #include <QMovie>
 #include <QPainter>
+#include <unordered_map>
 #include "admintablemodel.h"
 #include "teamsmodel.h"
 #include "stadiumsmodel.h"
 #include "stadiumsteamscombinedmodel.h"
 #include "souvenirsmodel.h"
-/***************************************************************************//**
- * @brief The MainWindowPages enum
- *
- * Indexes of enum are correlated to the indexes of the stacked widget.
- * This is used for more readable page navigation.
- *
- * ex. to change to Admin Login page you would use
- * ui->stackedWidget->setCurrentIndex(ADMIN_LOGIN_PAGE);
- ******************************************************************************/
+
 enum MainWindowPages
 {
     MAIN_HOME_WINDOW,
@@ -63,6 +56,7 @@ class MainWindow : public QMainWindow
         void on_pushButton_backToHome_clicked();
         void on_pushButton_backToHome_6_clicked();
         void on_pushButton_backToHome_7_clicked();
+        void on_pushButton_AddCustomStop_clicked();
 
         // Used for Admin Login
         void on_pushButton_submitLogin_clicked();

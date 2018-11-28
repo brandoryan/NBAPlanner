@@ -6,15 +6,17 @@
 
 class TeamsModel: public Model
 {
-    public:
-        TeamsModel();
-        ~TeamsModel();
+public:
+    TeamsModel();
+    ~TeamsModel();
 
-        // Refreshes modesl when DB changes
-        void refreshModel();
-    private:
+    QStringList getTeamNames();
 
-
-    };
+    // Refreshes modesl when DB changes
+    void refreshModel();
+private:
+    QStringList teamNames;
+    void        setTeamNames();
+};
 
 #endif // TEAMSMODEL_H

@@ -8,6 +8,7 @@ TeamsModel::TeamsModel()
 
     sortedModel = new QSortFilterProxyModel;
     setSortedModelOptions();
+    setTeamNames();
 }
 
 TeamsModel::~TeamsModel()
@@ -15,6 +16,18 @@ TeamsModel::~TeamsModel()
     delete model;
 }
 
+void TeamsModel::setTeamNames()
+{
+    for(int i = 0; i < sortedModel->rowCount(); i ++)
+    {
+       teamNames.append(sortedModel->data(sortedModel->index(i,0)).toString());
+    }
+}
+
+QStringList TeamsModel::getTeamNames()
+{
+    return teamNames;
+}
 
 
 /***************************************************************************//**

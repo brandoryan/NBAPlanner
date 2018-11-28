@@ -67,12 +67,7 @@ void AdminWindow::setFonts()
     QFont fontMichSt = QFont("NCAA Michigan St Spartans", 50, 1);
     ui->label_NavPageTitleHeader->setFont(fontMichSt);
 }
-/***************************************************************************//**
- * @brief AdminPage::autoSizeTableView
- *
- * Utility Function called in initializeTableModels() method.
- * Function will auto resize the table columns to fit the data.
- ******************************************************************************/
+
 void AdminWindow::autoSizeTableView()
 {
     int MAX_COLS = ui->tableView_Teams->horizontalHeader()->count();
@@ -299,14 +294,6 @@ void AdminWindow::on_pushButton_adminLogout_clicked()
 }
 
 
-/***************************************************************************//**
- * @brief AdminPage::on_pushButton_addSouvenir_clicked
- *
- * Navigates to the 'Add/Update' page. The Page header is set to "Add".
- * Class member addOrUpdate is set to 'Add'. This is because the same
- * page is used for edit or add so it allows to distinguish what tasks need to
- * be executed.
- ******************************************************************************/
 void AdminWindow::on_pushButton_addSouvenir_clicked()
 {
     addOrUpdate = "Add";
@@ -316,16 +303,6 @@ void AdminWindow::on_pushButton_addSouvenir_clicked()
     ui->lineEdit_souvenirName->setReadOnly(false);
 }
 
-/***************************************************************************//**
- * @brief AdminPage::on_pushButton_updateSouvenir_clicked
- *
- * Navigates to the 'Add/Update' page. The Page header is set to "Update".
- * Class member addOrUpdate is set to 'Add'. This is because the same
- * page is used for edit or add so it allows to distinguish what tasks need to
- * be executed. In this case because it is update, function
- * fills line edits in update page with data from user selected row.
- *
- ******************************************************************************/
 void AdminWindow::on_pushButton_updateSouvenir_clicked()
 {
     addOrUpdate = "Update";
@@ -347,11 +324,6 @@ void AdminWindow::on_pushButton_updateSouvenir_clicked()
 
 }
 
-/***************************************************************************//**
- * @brief AdminPage::on_pushButton_cancelAddUpdate_clicked
- *
- * Navigates from add/update souvenir page to the main home admin page
- ******************************************************************************/
 void AdminWindow::on_pushButton_cancelAddUpdate_clicked()
 {
     ui->stackedWidget->setCurrentIndex(MAIN_HOME_WINDOW);

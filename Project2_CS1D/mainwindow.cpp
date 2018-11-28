@@ -2,8 +2,6 @@
 #include "adminwindow.h"
 #include "ui_mainwindow.h"
 
-//#include "graph.h"
-
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -43,8 +41,19 @@ void MainWindow::setTableModelConfigs()
     autoSizeTableView(ui->tableView_StadiumData);
 
     // Custom Trip Combo Box (Start Location)
-    QStringList list = stadiumsModel.getStadiumNames();
+    QStringList list = teamsModel.getTeamNames();
     ui->comboBox_customStartPoint->addItems(list);
+
+
+    // Custom Trip Table
+    ui->tableView_CustomStopsTable->setModel(teamsModel.getSortedModel());
+    ui->tableView_CustomStopsTable->setColumnHidden(TEAMS_COACH_NAME, true);
+    ui->tableView_CustomStopsTable->setColumnHidden(TEAMS_CONFERENCE, true);
+    ui->tableView_CustomStopsTable->setColumnHidden(TEAMS_DIVISION, true);
+    ui->tableView_CustomStopsTable->setColumnHidden(TEAMS_LOCATION, true);
+    ui->tableView_CustomStopsTable->setColumnHidden(TEAMS_STADIUM_NAME, true);
+    ui->tableView_CustomStopsTable->setColumnHidden(TEAMS_YEAR_JOINED, true);
+    autoSizeTableView(ui->tableView_CustomStopsTable);
 
     // Souvenir Table Setup
     ui->tableView_stadiumSouvenirs_2->setModel(souvenirsModel.getSortedModel());
@@ -369,11 +378,11 @@ void MainWindow::on_pushButton_cancelLogin_clicked()
 /***************************************************************************//**
  * @brief MainWindow::on_pushButton_ToPlanTripPage_clicked
  *
- * Navigates from the Main page to the Plan Page
+ * Navigates from the Main page to the Custom Trip Page
  ******************************************************************************/
 void MainWindow::on_pushButton_ToPlanTripPage_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(PLAN_TRIP_PAGE);
+    ui->stackedWidget->setCurrentIndex(CUSTOM_TRIP_PAGE);
 }
 
 
@@ -422,7 +431,7 @@ void MainWindow::on_pushButton_toViewSouvenirsPage_clicked()
 /***************************************************************************//**
  * @brief MainWindow::on_pushButton_backToHome_3_clicked
  *
- * Navigates from the Single team info page back to the stadiums page
+ * Navigates from the single team info page back to the stadiums page
  ******************************************************************************/
 void MainWindow::on_pushButton_backToHome_3_clicked()
 {
@@ -432,7 +441,7 @@ void MainWindow::on_pushButton_backToHome_3_clicked()
 /***************************************************************************//**
  * @brief MainWindow::on_pushButton_backToHome_7_clicked
  *
- * Navigates from the Single team info page back to the stadiums page
+ * Navigates from the team souvenirs info page back to the stadiums page
  ******************************************************************************/
 void MainWindow::on_pushButton_backToHome_7_clicked()
 {
@@ -483,14 +492,15 @@ void MainWindow::setFonts()
 void MainWindow::setImageToTeamLogo()
 {
     QString team = stadiumsTeamsModel.getSelectedRowItem(ST_TEAM_NAME);
-    QImage image(":/Resources/Icons/" + team + ".png");
+    QImage  image(":/Resources/Icons/" + team + ".png");
+    QPixmap pixmap = QPixmap::fromImage(image);
     QPainter p;
 
-    p.begin(&image);
+    p.begin(&pixmap);
     p.setCompositionMode(QPainter::CompositionMode_DestinationIn);
     p.fillRect(image.rect(), QColor(0, 0, 0, 50));
     p.end();
-    ui->label_Logo->setPixmap(QPixmap::fromImage(image));
+    ui->label_Logo->setPixmap(pixmap);
 }
 
 
