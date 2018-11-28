@@ -47,7 +47,7 @@ public:
     QPushButton *teamsByArenaName;
     QComboBox *comboBox;
     QLabel *label_3;
-    QPushButton *pushButton;
+    QPushButton *souvButton;
 
     void setupUi(QDialog *admin)
     {
@@ -143,14 +143,15 @@ public:
 
         comboBox = new QComboBox(admin);
         comboBox->setObjectName(QStringLiteral("comboBox"));
-        comboBox->setGeometry(QRect(870, 560, 121, 41));
+        comboBox->setGeometry(QRect(820, 560, 201, 41));
         label_3 = new QLabel(admin);
         label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(870, 540, 121, 21));
+        label_3->setGeometry(QRect(850, 540, 121, 21));
         label_3->setAlignment(Qt::AlignCenter);
-        pushButton = new QPushButton(admin);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(893, 595, 71, 31));
+        souvButton = new QPushButton(admin);
+        souvButton->setObjectName(QStringLiteral("souvButton"));
+        souvButton->setGeometry(QRect(880, 590, 71, 31));
+        souvButton->setAutoDefault(false);
 
         retranslateUi(admin);
 
@@ -173,7 +174,7 @@ public:
         teamsByTeamName->setText(QApplication::translate("admin", "Teams By Team Name", nullptr));
         teamsByArenaName->setText(QApplication::translate("admin", "Teams By Arena Name", nullptr));
         label_3->setText(QApplication::translate("admin", "Souvenir Info", nullptr));
-        pushButton->setText(QApplication::translate("admin", "Open", nullptr));
+        souvButton->setText(QApplication::translate("admin", "Open", nullptr));
     } // retranslateUi
 
 };

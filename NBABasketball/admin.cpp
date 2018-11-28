@@ -17,17 +17,15 @@ admin::admin(QWidget *parent) :
 
     QSqlQuery query;
     QTableWidgetItem *itm;
-
     int rows = 0, x = 0, y = 0;
 
     // Accesses the data table based on the name of the school
-    QString queryCommand = "select COUNT(id), name FROM teams";
+    QString queryCommand = "select COUNT(id) FROM teams";
     query.exec(queryCommand);
     if(query.next()) {
         rows = query.value(0).toInt();
-
-        ui->comboBox->addItem(query.value(1).toString());
     }
+
 
     ui->tableWidget->setRowCount(rows);
 
@@ -43,6 +41,7 @@ admin::admin(QWidget *parent) :
                 itm->setText(query.value(1).toString());
                 ui->tableWidget->setItem(x,y++,itm);
                 itm = new QTableWidgetItem;
+                 ui->comboBox->addItem(query.value(2).toString());
                 itm->setText(query.value(2).toString());
                 ui->tableWidget->setItem(x,y++,itm);
                 itm = new QTableWidgetItem;
@@ -427,4 +426,49 @@ void admin::on_logoutButton_clicked()
     // Emits the signal to login widget to transition back to login window
     emit LogoutButtonClicked();
     this->close();
+}
+
+void admin::on_souvButton_clicked()
+{
+    QDialog *window = new QDialog;
+    QString teamName = ui->comboBox->currentText();
+    QString queryCommand = "select id from teams where name = '"+teamName+"'";
+    QSqlQuery query;
+    QString id;
+    if(query.exec(queryCommand)) {
+        while(query.next()) {
+            if(query.value(0).toString() != NULL) {
+                id = query.value(0).toString();
+            }
+        }
+    }
+
+    int y = 0, counter = 0, x = 0;
+    QTableWidget *souvenirTable = new QTableWidget;
+    QTableWidgetItem *itm = new QTableWidgetItem;
+
+    souvenirTable->setRowCount(4);
+    souvenirTable->setColumnCount(2);
+    souvenirTable->setHorizontalHeaderLabels(QStringList() << "   Souvenir     " << "   Price   ");
+
+    queryCommand = "select souvenir, price from souvenirs where id = '"+id+"'";
+    if(query.exec(queryCommand)) {
+        while(query.next()) {
+            if(query.value(0).toString() != NULL) {
+                itm = new QTableWidgetItem;
+                itm->setText(query.value(0).toString());
+                souvenirTable->setItem(x,y++,itm);
+                itm = new QTableWidgetItem;
+                itm->setText(query.value(1).toString());
+                souvenirTable->setItem(x++,y,itm);
+                y=0;
+                counter++;
+            }
+        }
+    }
+
+    souvenirTable->setWindowFlags(Qt::Window);
+    souvenirTable->resize(500,500);
+    souvenirTable->setAttribute(Qt::WA_DeleteOnClose);
+    souvenirTable->show();
 }

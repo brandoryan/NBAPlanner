@@ -71,7 +71,7 @@ public:
     {
         if (tripSelection->objectName().isEmpty())
             tripSelection->setObjectName(QStringLiteral("tripSelection"));
-        tripSelection->resize(1022, 873);
+        tripSelection->resize(1103, 873);
         removeButton = new QPushButton(tripSelection);
         removeButton->setObjectName(QStringLiteral("removeButton"));
         removeButton->setGeometry(QRect(455, 400, 81, 61));
@@ -125,7 +125,7 @@ public:
         beginTripButton->setAutoDefault(false);
         label_4 = new QLabel(tripSelection);
         label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(155, 210, 150, 31));
+        label_4->setGeometry(QRect(104, 210, 201, 31));
         QPalette palette1;
         palette1.setBrush(QPalette::Active, QPalette::WindowText, brush);
         palette1.setBrush(QPalette::Active, QPalette::Text, brush);
@@ -153,7 +153,7 @@ public:
         distanceDisplay->setReadOnly(true);
         label_3 = new QLabel(tripSelection);
         label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(715, 210, 101, 31));
+        label_3->setGeometry(QRect(675, 210, 141, 31));
         QPalette palette2;
         palette2.setBrush(QPalette::Active, QPalette::WindowText, brush);
         palette2.setBrush(QPalette::Active, QPalette::Text, brush);
@@ -181,7 +181,7 @@ public:
         optimizeButton->setAutoDefault(false);
         frame_2 = new QFrame(tripSelection);
         frame_2->setObjectName(QStringLiteral("frame_2"));
-        frame_2->setGeometry(QRect(300, 550, 391, 121));
+        frame_2->setGeometry(QRect(310, 540, 421, 181));
         QPalette palette3;
         palette3.setBrush(QPalette::Active, QPalette::WindowText, brush);
         palette3.setBrush(QPalette::Active, QPalette::Base, brush1);
@@ -198,7 +198,7 @@ public:
         frame_2->setFrameShadow(QFrame::Plain);
         horizontalLayoutWidget = new QWidget(frame_2);
         horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
-        horizontalLayoutWidget->setGeometry(QRect(10, 0, 371, 121));
+        horizontalLayoutWidget->setGeometry(QRect(0, 0, 421, 181));
         horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
@@ -321,7 +321,7 @@ public:
         frame_3->setFrameShadow(QFrame::Plain);
         horizontalLayoutWidget_2 = new QWidget(frame_3);
         horizontalLayoutWidget_2->setObjectName(QStringLiteral("horizontalLayoutWidget_2"));
-        horizontalLayoutWidget_2->setGeometry(QRect(10, 0, 191, 101));
+        horizontalLayoutWidget_2->setGeometry(QRect(10, 0, 274, 149));
         horizontalLayout_2 = new QHBoxLayout(horizontalLayoutWidget_2);
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
         horizontalLayout_2->setContentsMargins(0, 0, 0, 0);

@@ -28,8 +28,7 @@ private slots:
     void on_southeastDivisionEasternTeamsByTeamName_clicked();
     void on_allInformation_clicked();
     void on_logoutButton_clicked();
-
-
+    void on_souvButton_clicked();
 
 private:
     Ui::admin *ui;

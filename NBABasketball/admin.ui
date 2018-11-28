@@ -199,9 +199,9 @@
   <widget class="QComboBox" name="comboBox">
    <property name="geometry">
     <rect>
-     <x>870</x>
+     <x>820</x>
      <y>560</y>
-     <width>121</width>
+     <width>201</width>
      <height>41</height>
     </rect>
    </property>
@@ -209,7 +209,7 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>870</x>
+     <x>850</x>
      <y>540</y>
      <width>121</width>
      <height>21</height>
@@ -222,17 +222,20 @@
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="souvButton">
    <property name="geometry">
     <rect>
-     <x>893</x>
-     <y>595</y>
+     <x>880</x>
+     <y>590</y>
      <width>71</width>
      <height>31</height>
     </rect>
    </property>
    <property name="text">
     <string>Open</string>
+   </property>
+   <property name="autoDefault">
+    <bool>false</bool>
    </property>
   </widget>
  </widget>
