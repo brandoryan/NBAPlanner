@@ -800,7 +800,7 @@ QPushButton#pushButton_deleteSouvenir:hover
      </widget>
     </widget>
     <widget class="QWidget" name="UpdateStadium">
-     <widget class="QSpinBox" name="spinBox_yearOpened_2">
+     <widget class="QSpinBox" name="spinBox_yearJoined_2">
       <property name="geometry">
        <rect>
         <x>360</x>
@@ -929,7 +929,7 @@ QPushButton#pushButton_deleteSouvenir:hover
 	font-family:'Harmonia Sans Pro,Arial,sans-serif';</string>
       </property>
       <property name="text">
-       <string>Year Opened:</string>
+       <string>Year Joined:</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_16">
@@ -1067,9 +1067,4 @@ QPushButton#pushButton_deleteSouvenir:hover
   <include location="resources.qrc"/>
  </resources>
  <connections/>
- <buttongroups>
-  <buttongroup name="buttonGroup"/>
-  <buttongroup name="buttonGroup_2"/>
-  <buttongroup name="buttonGroup_3"/>
- </buttongroups>
 </ui>

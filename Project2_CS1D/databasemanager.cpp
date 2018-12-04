@@ -154,7 +154,8 @@ void DatabaseManager::initializeTeamTable(QSqlQuery query)
                       "conferenceName   TEXT, "
                       "divisionName     TEXT, "
                       "location         TEXT, "
-                      "yearJoined       INTEGER"
+                      "yearJoined       INTEGER,"
+                      "seatingCap       INTEGER"
                ");");
 }
 
@@ -222,14 +223,13 @@ void DatabaseManager::readTeamAndStadiumsFromFile(STRING fileName)
         teamName      = input.readLine();
         location      = input.readLine();
         stadiumName   = input.readLine();
-
         seatCap       = input.readLine().toInt();
         yearJoined    = input.readLine().toInt();
         coachName     = input.readLine();
 
         input.skipWhiteSpace();
 
-        addNewTeam(teamName, stadiumName, coachName, conference, division, location, yearJoined);
+        addNewTeam(teamName, stadiumName, coachName, conference, division, location, yearJoined, seatCap);
         addNewStadium(stadiumName, seatCap);
 
         // Adds default souvenir items to for each stadium
@@ -280,14 +280,15 @@ void DatabaseManager::addNewTeam(const STRING &teamName,
                                  const STRING &conferenceName,
                                  const STRING &divisionName,
                                  const STRING &location,
-                                 const int    &yrJoined)
+                                 const int    &yrJoined,
+                                 const int    &seatingCap)
 {
     QSqlQuery query;
 
     query.prepare("INSERT into teams "
-                        "(teamName, stadiumName, coachName, conferenceName, divisionName, location, yearJoined) "
+                        "(teamName, stadiumName, coachName, conferenceName, divisionName, location, yearJoined, seatingCap) "
                   "VALUES "
-                        "(:teamName, :stadiumName, :coachName, :conferenceName, :divisionName, :location, :yrJoined)");
+                        "(:teamName, :stadiumName, :coachName, :conferenceName, :divisionName, :location, :yrJoined, :seatingCap)");
 
     query.bindValue(":teamName",    teamName);
     query.bindValue(":stadiumName", stadiumName);
@@ -296,6 +297,7 @@ void DatabaseManager::addNewTeam(const STRING &teamName,
     query.bindValue(":divisionName", divisionName);
     query.bindValue(":location", location);
     query.bindValue(":yrJoined", yrJoined);
+    query.bindValue(":seatingCap", seatingCap);
 
     if(!query.exec()){
 
@@ -526,6 +528,31 @@ void DatabaseManager::updateStadium(const STRING &stadiumName,
 
 }
 
+void DatabaseManager::updateTeam(const STRING &stadiumName,
+                                 const STRING &location,
+                                 const int    &seatCap)
+{
+    QSqlQuery query;
+
+    query.prepare("UPDATE teams "
+                  "SET    "
+                          "stadiumName   = :stadiumName "
+                          "location      = :location "
+                          "seatingCap    = :seatCap "
+                  "WHERE   teamName      = :teamName;");
+
+    query.bindValue(":stadiumName", stadiumName);
+    query.bindValue(":location", location);
+    query.bindValue(":seatingCap", seatCap);
+
+    if(!query.exec()){
+        qDebug() << (query.lastError().text());
+        STRING error = "Team NOT UPDATED\n\nERROR: " +
+                        query.lastError().text();
+        throw error;
+    }
+}
+
 /***************************************************************************//**
  * @brief DatabaseManager::deleteSouvenir
  * @param itemName
@@ -581,7 +608,8 @@ QSqlQueryModel *DatabaseManager::getTeamsModel()
                           "conferenceName as 'Conference', "
                           "divisionName   as 'Division', "
                           "location       as 'Location', "
-                          "yearJoined     as 'yrJoined' "
+                          "yearJoined     as 'Year Joined', "
+                          "seatingCap     as 'Capacity' "
                      "FROM teams;");
 
      return model;
@@ -622,7 +650,7 @@ QSqlQueryModel *DatabaseManager::getStadiumsAndTeamsModel()
     model->setQuery("SELECT "
                          "teamName               as 'Team Name', "
                          "stadiums.stadiumName   as 'Stadium Name', "
-                         "seatingCap             as 'Capacity', "
+                         "teams.seatingCap       as 'Capacity', "
                          "conferenceName         as 'Conference', "
                          "divisionName           as 'Division', "
                          "location               as 'Location', "

@@ -8,12 +8,21 @@ TeamsModel::TeamsModel()
 
     sortedModel = new QSortFilterProxyModel;
     setSortedModelOptions();
+    seatingCapTotal = dbConn->getSeatingCapacitySum();
     setTeamNames();
 }
 
 TeamsModel::~TeamsModel()
 {
     delete model;
+}
+
+void TeamsModel::updateTeam(const STRING stadiumName,
+                            const STRING location,
+                            const int    seatCap)
+{
+    dbConn->updateTeam(stadiumName, location, seatCap);
+    refreshModel();
 }
 
 void TeamsModel::setTeamNames()
@@ -29,6 +38,10 @@ QStringList TeamsModel::getTeamNames()
     return teamNames;
 }
 
+int TeamsModel::getSeatingCapTotal() const
+{
+    return seatingCapTotal;
+}
 
 /***************************************************************************//**
  * @brief TeamsModel::refreshTeamsModel

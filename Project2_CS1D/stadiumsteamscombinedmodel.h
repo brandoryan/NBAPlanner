@@ -7,10 +7,7 @@ class stadiumsTeamsCombinedModel: public Model
     public:
         stadiumsTeamsCombinedModel();
         ~stadiumsTeamsCombinedModel();
-        int getSeatingCapTotal() const;
-
 private:
-        int  seatingCapTotal;
         void refreshModel();
 };
 

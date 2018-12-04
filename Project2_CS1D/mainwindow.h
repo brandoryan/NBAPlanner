@@ -10,8 +10,9 @@
 #include "admintablemodel.h"
 #include "teamsmodel.h"
 #include "stadiumsmodel.h"
-#include "stadiumsteamscombinedmodel.h"
 #include "souvenirsmodel.h"
+//#include "graph.h"
+//#include "trip.h"
 
 enum MainWindowPages
 {
@@ -58,6 +59,9 @@ class MainWindow : public QMainWindow
         void on_pushButton_backToHome_7_clicked();
         void on_pushButton_AddCustomStop_clicked();
 
+        // Custom trip
+        void on_pushButton_StartCustomTrip_clicked();
+
         // Used for Admin Login
         void on_pushButton_submitLogin_clicked();
         void on_lineEdit_userName_returnPressed();
@@ -72,7 +76,7 @@ class MainWindow : public QMainWindow
 
 
         // Table Sort Actions
-        void setGenericSortOptions(stadiumsTeamsColumns columnToSortBy);
+        void setGenericSortOptions(teamsColumns columnToSortBy);
         void on_radioButton_sortTeamName_clicked();
         void on_radioButton_sortStadiumName_clicked();
         void on_radioButton_sortYearJoined_clicked();
@@ -90,7 +94,6 @@ private:
         TeamsModel     teamsModel;
         StadiumsModel  stadiumsModel;
         SouvenirsModel souvenirsModel;
-        stadiumsTeamsCombinedModel stadiumsTeamsModel;
 
         // Table configuration setup
         void setFonts();
@@ -99,6 +102,7 @@ private:
         void setStadiumInfo();
         void hideExtraColumns();
         void clearFilters();
+        void loadPageActions(STRING nextStop);
 
         void setColHeaderWidth();
         void setImageToTeamLogo();

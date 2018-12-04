@@ -102,7 +102,7 @@ QLineEdit[accessibleName=&quot;inputField&quot;]{
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>8</number>
     </property>
     <widget class="QWidget" name="MainPage">
      <property name="styleSheet">
@@ -1653,7 +1653,54 @@ background-color: transparent;
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="TripStopPage"/>
+    <widget class="QWidget" name="TripStopPage">
+     <widget class="QLabel" name="label_tripStopHeader">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>5</y>
+        <width>951</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QTableView" name="tableView_stadiumSouvenirs">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>170</y>
+        <width>561</width>
+        <height>221</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Harmonia Sans Pro,Arial,sans-serif</family>
+        <pointsize>17</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-family:'Harmonia Sans Pro,Arial,sans-serif';
+background-color: transparent;
+color: white;
+</string>
+      </property>
+      <property name="showGrid">
+       <bool>false</bool>
+      </property>
+      <attribute name="horizontalHeaderVisible">
+       <bool>false</bool>
+      </attribute>
+      <attribute name="verticalHeaderVisible">
+       <bool>false</bool>
+      </attribute>
+     </widget>
+    </widget>
     <widget class="QWidget" name="TripDrivingPage"/>
     <widget class="QWidget" name="TripEndedPage">
      <widget class="QPushButton" name="pushButton_backToHome">
