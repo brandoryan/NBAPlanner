@@ -1,6 +1,14 @@
 #include "mainwindow.h"
 #include "adminwindow.h"
 #include "ui_mainwindow.h"
+#include "trip.h"
+#include "distances.h"
+#include "mstgraph.h"
+#include <QMessageBox>
+#include <QSpacerItem>
+#include <QGridLayout>
+#include "databasemanager.h"
+#include "distancesmodel.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -545,13 +553,23 @@ void MainWindow::loadPageActions(STRING nextStop)
 
 void MainWindow::on_pushButton_StartCustomTrip_clicked()
 {
+    dbConn = DatabaseManager::getInstance();
     std:: string userSelectedStartStadium = ui->comboBox_customStartPoint->currentText().toUtf8().constData();
     bool fastestRoute = ui->checkBox_takeFastestRoute->isChecked();
 
 
     if(fastestRoute)
     {
-        loadPageActions(trip.getNextStop());
+        mstGraph myGraph(dbConn->getDistances());
+        QString MST = myGraph.getMstPrintout();
+        qDebug() << MST;
+        QMessageBox about;
+        about.setText(MST);
+        about.setStandardButtons(QMessageBox::Ok);
+        QSpacerItem* horizontalSpacer = new QSpacerItem(590,0,QSizePolicy::Minimum,QSizePolicy::Expanding);
+        QGridLayout* layout = (QGridLayout*)about.layout();
+        layout->addItem(horizontalSpacer,layout->rowCount(),0,1,layout->columnCount());
+        about.exec();
     }
     else
     {

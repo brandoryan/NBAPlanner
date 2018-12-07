@@ -2,6 +2,8 @@
 #define DISTANCESMODEL_H
 
 #include "model.h"
+#include <QString>
+#include <QDebug>
 
 struct Distances {
     STRING startTeam;
@@ -13,10 +15,12 @@ class DistancesModel: public Model
 {
 public:
     DistancesModel();
+    DistancesModel(QString s, QString f, int d);
     ~DistancesModel();
 
     void refreshModel();
-private:
+
+//private:
     QVector<Distances> teamDistances;
 };
 

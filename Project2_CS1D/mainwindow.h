@@ -13,6 +13,7 @@
 #include "souvenirsmodel.h"
 #include "graph.h"
 #include "trip.h"
+#include "databasemanager.h"
 
 enum MainWindowPages
 {
@@ -110,6 +111,10 @@ private:
         Trip trip;
 
         unordered_map<string, string> customStops;
+
+        DatabaseManager *dbConn;
+
+
 };
 
 #endif // MAINWINDOW_H

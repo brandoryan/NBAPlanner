@@ -35,7 +35,13 @@ SOURCES += \
     souvenirsmodel.cpp \
     model.cpp \
     stadiumsteamscombinedmodel.cpp \
-    distancesmodel.cpp
+    distancesmodel.cpp \
+    edge.cpp \
+    graph.cpp \
+    trip.cpp \
+    vertex.cpp \
+    distances.cpp \
+    mstgraph.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -47,7 +53,16 @@ HEADERS += \
     souvenirsmodel.h \
     model.h \
     stadiumsteamscombinedmodel.h \
-    distancesmodel.h
+    distancesmodel.h \
+    edge.h \
+    graph.h \
+    trip.h \
+    vertex.h \
+    D:/Project 2/Project2_CS1D/distances.h \
+    D:/Project 2/Project2_CS1D/distances.h \
+    D:/Project 2/Project2_CS1D/distances.h \
+    distances.h \
+    mstgraph.h
 
 FORMS += \
         mainwindow.ui \

@@ -749,3 +749,19 @@ bool DatabaseManager::authenticateUserLogin(const  STRING &username,
 
     return loginStatus;
 }
+
+QVector<distances> DatabaseManager::getDistances() const
+{
+    QVector<distances> allDistances;
+
+    QSqlQuery query;
+
+    query.exec("SELECT startTeam, endTeam, distance from distances");
+
+    while(query.next())
+    {
+        allDistances.push_back(distances(query.value(0).toString(),query.value(1).toString(),query.value(2).toInt()));
+    }
+
+    return allDistances;
+}

@@ -5,6 +5,7 @@
 #include <QtDebug>
 #include <QFileInfo>
 #include <QMessageBox>
+#include "distances.h"
 
 typedef QString         STRING;
 typedef QVector<STRING> strVECTOR;
@@ -84,6 +85,7 @@ public:
     void updateStadiumName(const STRING orignalName, const STRING newName);
     QSqlQuery updateStadiumNameStadiumTable(const STRING orignalName, const STRING newName);
 
+    QVector<distances> getDistances() const;
 private:
     DatabaseManager();
     ~DatabaseManager();
@@ -92,7 +94,7 @@ private:
     static DatabaseManager* _instance;
 
     // Database connection
-    QSqlDatabase dbConn;
+
     bool connectDB();
     void closeDB();
 
@@ -108,6 +110,7 @@ private:
     void updateNameTeamTable(const STRING orignalName, const STRING newName);
     void updateNameDistanceTable(const STRING orignalName, const STRING newName);
     void updateNameDistanceTable2(const STRING orignalName, const STRING newName);
+    QSqlDatabase dbConn;
 };
 
 #endif // DATABASEMANAGER_H

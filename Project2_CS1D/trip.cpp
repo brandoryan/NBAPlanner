@@ -69,7 +69,7 @@ void Trip::startBFSTrip(STRING startLocation)
  */
 void Trip::startMST()
 {
-    STRING startLocation = "Comerica Park";
+    STRING startLocation = "Los Angeles Lakers";
     Vertex *startStadium = stadiums.getVertex(startLocation.toUtf8().constData());
     stadiums.MST(startStadium);
     totalDistance = stadiums.getTotalDistance();
@@ -161,7 +161,7 @@ void Trip::setShortestPathDijkstra(STRING destinationStadium)
  */
 unordered_map<string, pair<int, string>> Trip::getMST()
 {
-    STRING startLocation = "Petco Park";
+    STRING startLocation = "Los Angeles Lakers";
     Vertex *startStadium = stadiums.getVertex(startLocation.toUtf8().constData());
     stadiums.MST(startStadium);
     return stadiums.getMST();
