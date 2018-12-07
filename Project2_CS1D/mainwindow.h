@@ -11,8 +11,8 @@
 #include "teamsmodel.h"
 #include "stadiumsmodel.h"
 #include "souvenirsmodel.h"
-//#include "graph.h"
-//#include "trip.h"
+#include "graph.h"
+#include "trip.h"
 
 enum MainWindowPages
 {
@@ -106,6 +106,10 @@ private:
 
         void setColHeaderWidth();
         void setImageToTeamLogo();
+
+        Trip trip;
+
+        unordered_map<string, string> customStops;
 };
 
 #endif // MAINWINDOW_H

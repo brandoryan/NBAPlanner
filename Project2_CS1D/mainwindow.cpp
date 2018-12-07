@@ -6,6 +6,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+    DistancesModel test;
     ui->setupUi(this);
     ui->stackedWidget->setCurrentIndex(MAIN_HOME_WINDOW);
 
@@ -510,53 +511,52 @@ void MainWindow::on_pushButton_NBALogoHome_clicked()
     ui->stackedWidget->setCurrentIndex(MAIN_HOME_WINDOW);
 }
 
-//void MainWindow::on_pushButton_AddCustomStop_clicked()
-//{
-//    int row = ui->tableView_CustomStopsTable->selectionModel()->currentIndex().row();
-//    std::string userSelectedStop  = ui->tableView_CustomStopsTable->model()->data(ui->tableView_CustomStopsTable
-//                                                                                       ->model()->index(row,1)).toString().toUtf8().constData();
-//    if(customStops.count(userSelectedStop) == 1)
-//    {
-//        qDebug() << ("Already Selected");
-//    }
-//    else
-//    {
-//        qDebug() << ("Adding" + QString::fromStdString(userSelectedStop));
-//        customStops[userSelectedStop];
-//        trip.addNewCustomStop(QString::fromStdString(userSelectedStop));
-//    }
+void MainWindow::on_pushButton_AddCustomStop_clicked()
+{
+    int row = ui->tableView_CustomStopsTable->selectionModel()->currentIndex().row();
+    std::string userSelectedStop  = ui->tableView_CustomStopsTable->model()->data(ui->tableView_CustomStopsTable
+                                                                                       ->model()->index(row,1)).toString().toUtf8().constData();
+    if(customStops.count(userSelectedStop) == 1)
+    {
+        qDebug() << ("Already Selected");
+    }
+    else
+    {
+        qDebug() << ("Adding" + QString::fromStdString(userSelectedStop));
+        customStops[userSelectedStop];
+        trip.addNewCustomStop(QString::fromStdString(userSelectedStop));
+    }
 
-//}
+}
 
-//void MainWindow::loadPageActions(STRING nextStop)
-//{
-//     QRegExp pat;
+void MainWindow::loadPageActions(STRING nextStop)
+{
+     QRegExp pat;
 
-//    ui->stackedWidget->setCurrentIndex(TRIP_STOP_PAGE);
-//    ui->label_tripStopHeader->setText(nextStop + " Souvenirs7");
+    ui->stackedWidget->setCurrentIndex(TRIP_STOP_PAGE);
+    ui->label_tripStopHeader->setText(nextStop);
 
-//    pat.setPattern(nextStop);
-//    souvenirsModel.setFilter(pat);
-//    souvenirsModel.setFilterColumn(SOUVENIRS_STADIUM_NAME);
-//    autoSizeTableView(ui->tableView_stadiumSouvenirs);
-//    ui->tableView_stadiumSouvenirs->setColumnHidden(SOUVENIRS_STADIUM_NAME, true);
-//}
+    pat.setPattern(nextStop);
+    souvenirsModel.setFilter(pat);
+    souvenirsModel.setFilterColumn(SOUVENIRS_STADIUM_NAME);
+    autoSizeTableView(ui->tableView_stadiumSouvenirs);
+    ui->tableView_stadiumSouvenirs->setColumnHidden(SOUVENIRS_STADIUM_NAME, true);
+}
 
-//void MainWindow::on_pushButton_StartCustomTrip_clicked()
-//{
-//    std:: string userSelectedStartStadium = ui->comboBox_customStartPoint->currentText().toUtf8().constData();
-//    bool fastestRoute = ui->checkBox_takeFastestRoute->isChecked();
+void MainWindow::on_pushButton_StartCustomTrip_clicked()
+{
+    std:: string userSelectedStartStadium = ui->comboBox_customStartPoint->currentText().toUtf8().constData();
+    bool fastestRoute = ui->checkBox_takeFastestRoute->isChecked();
 
 
-//    if(fastestRoute)
-//    {
-//        trip.startBFSTrip("Orlando Magic");
-//        loadPageActions(trip.getNextStop());
-//    }
-//    else
-//    {
-//        trip.addNewCustomStop(QString::fromStdString(userSelectedStartStadium));
-//        trip.startCustomOrder();
-//        loadPageActions(trip.getNextStop());
-//    }
-//}
+    if(fastestRoute)
+    {
+        loadPageActions(trip.getNextStop());
+    }
+    else
+    {
+        trip.addNewCustomStop(QString::fromStdString(userSelectedStartStadium));
+        trip.startCustomOrder();
+        loadPageActions(trip.getNextStop());
+    }
+}
