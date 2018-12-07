@@ -19,16 +19,16 @@ Toronto Raptors
 Brooklyn Nets
 New York Knicks
 5.1
-Brooklyn Nets	
+Brooklyn Nets
 Philadelphia 76ers
 97.4
-Charlotte Hornets	
+Charlotte Hornets
 Atlanta Hawks
 244.8
 Charlotte Hornets
 Indiana Pacers
 585.1
-Charlotte Hornets	
+Charlotte Hornets
 Miami Heat
 730.9
 Charlotte Hornets
@@ -37,7 +37,7 @@ Washington Wizards
 Chicago Bulls
 Detroit Pistons
 282.6
-Chicago Bulls	
+Chicago Bulls
 Indiana Pacers
 181.6
 Chicago Bulls
@@ -46,7 +46,7 @@ Milwaukee Bucks
 Cleveland Cavaliers
 Detroit Pistons
 164.9
-Cleveland Cavaliers	
+Cleveland Cavaliers
 Indiana Pacers
 315.5
 Cleveland Cavaliers
@@ -58,55 +58,55 @@ Washington Wizards
 Dallas Mavericks
 Houston Rockets
 239.8
-Dallas Mavericks	
+Dallas Mavericks
 Oklahoma City Thunder
 206.7
 Dallas Mavericks
 San Antonio Spurs
 273.8
-Denver Nuggets	
+Denver Nuggets
 Los Angeles Lakers
 1016.1
-Denver Nuggets	
+Denver Nuggets
 Los Angeles Clippers
 1016.1
-Denver Nuggets	
+Denver Nuggets
 Minnesota Timberwolves
 913.9
-Denver Nuggets	
+Denver Nuggets
 Oklahoma City Thunder
 679.6
-Denver Nuggets	
+Denver Nuggets
 Phoenix Suns
 862.4
 Denver Nuggets
 Utah Jazz
 519.1
-Detroit Pistons	
+Detroit Pistons
 Chicago Bulls
 282.6
-Detroit Pistons	
+Detroit Pistons
 Cleveland Cavaliers
 164.9
 Detroit Pistons
 Minnesota Timberwolves
 694.7
-Detroit Pistons	
+Detroit Pistons
 New York Knicks
 616.1
-Detroit Pistons	
+Detroit Pistons
 Toronto Raptors
 231
-Golden State Warriors	
+Golden State Warriors
 Los Angeles Lakers
 385.1
-Golden State Warriors	
+Golden State Warriors
 Los Angeles Clippers
 385.1
-Golden State Warriors	
+Golden State Warriors
 Sacramento Kings
 87.9
-Houston Rockets	
+Houston Rockets
 Dallas Mavericks
 239.8
 Houston Rockets
@@ -115,7 +115,7 @@ New Orleans Pelicans
 Houston Rockets
 San Antonio Spurs
 197.4
-Indiana Pacers	
+Indiana Pacers
 Charlotte Hornets
 585.1
 Indiana Pacers
@@ -130,7 +130,7 @@ Los Angeles Clippers
 Los Angeles Clippers
 Los Angeles Lakers
 0
-Los Angeles Lakers	
+Los Angeles Lakers
 Denver Nuggets
 1016.1
 Los Angeles Clippers
@@ -217,7 +217,7 @@ Brooklyn Nets
 New York Knicks
 Detroit Pistons
 616.1
-Oklahoma City Thunder	
+Oklahoma City Thunder
 Dallas Mavericks
 206.7
 Oklahoma City Thunder
