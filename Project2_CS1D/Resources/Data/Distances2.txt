@@ -1,12 +1,12 @@
-Moda Center
-Seattle Stadium
+Portland Trail Blazers
+Seattle Supersonics
 173.8
-Golden 1 Center
-Seattle Stadium
+Sacramento Kings
+Seattle Supersonics
 752.4
-Seattle Stadium
-Moda Center
+Seattle Supersonics
+Portland Trail Blazers
 173.8
-Seattle Stadium
-Golden 1 Center
+Seattle Supersonics
+Sacramento Kings
 752.4

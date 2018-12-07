@@ -1,276 +1,309 @@
-State Farm Arena
-Spectrum Center
+Atlanta Hawks
+Charlotte Hornets
 244.8
-State Farm Arena
-FedEx Forum
+Atlanta Hawks
+Memphis Grizzlies
 383.8
-State Farm Arena
-Smoothie King Center
+Atlanta Hawks
+New Orleans Pelicans
 469.1
-State Farm Arena
-Amway Center
+Atlanta Hawks
+Orlando Magic
 438.8
-TD Garden
-Madison Square Garden
+Boston Celtics
+New York Knicks
 215.3
-TD Garden
-Scotiabank Arena
+Boston Celtics
+Toronto Raptors
 550
-Barclays Center
-Madison Square Garden
+Brooklyn Nets
+New York Knicks
 5.1
-Barclays Center	
-Wells Fargo Center
+Brooklyn Nets	
+Philadelphia 76ers
 97.4
-Spectrum Center	
-State Farm Arena
+Charlotte Hornets	
+Atlanta Hawks
 244.8
-Spectrum Center
-Bankers Life Fieldhouse
+Charlotte Hornets
+Indiana Pacers
 585.1
-Spectrum Center	
-American Airlines Arena
+Charlotte Hornets	
+Miami Heat
 730.9
-Spectrum Center
-Capital One Arena
+Charlotte Hornets
+Washington Wizards
 402
-United Center
-Little Caesars Arena
+Chicago Bulls
+Detroit Pistons
 282.6
-United Center	
-Bankers Life Fieldhouse
+Chicago Bulls	
+Indiana Pacers
 181.6
-United Center
-Fiserv Forum
+Chicago Bulls
+Milwaukee Bucks
 92.1
-Quicken Loans Arena
-Little Caesars Arena
+Cleveland Cavaliers
+Detroit Pistons
 164.9
-Quicken Loans Arena	
-Bankers Life Fieldhouse
+Cleveland Cavaliers	
+Indiana Pacers
 315.5
-Quicken Loans Arena
-Wells Fargo Center
+Cleveland Cavaliers
+Philadelphia 76ers
 431.2
-Quicken Loans Arena
-Capital One Arena
+Cleveland Cavaliers
+Washington Wizards
 371
-American Airlines Center
-Toyota Center
+Dallas Mavericks
+Houston Rockets
 239.8
-American Airlines Center	
-Chesapeake Energy Arena
+Dallas Mavericks	
+Oklahoma City Thunder
 206.7
-American Airlines Center
-AT&T Center
+Dallas Mavericks
+San Antonio Spurs
 273.8
-Pepsi Center	
-Staples Center
+Denver Nuggets	
+Los Angeles Lakers
 1016.1
-Pepsi Center	
-Target Center
+Denver Nuggets	
+Los Angeles Clippers
+1016.1
+Denver Nuggets	
+Minnesota Timberwolves
 913.9
-Pepsi Center	
-Chesapeake Energy Arena
+Denver Nuggets	
+Oklahoma City Thunder
 679.6
-Pepsi Center	
-Talking Stick Resort Arena
+Denver Nuggets	
+Phoenix Suns
 862.4
-Pepsi Center
-Vivint Smart Home Arena
+Denver Nuggets
+Utah Jazz
 519.1
-Little Caesars Arena	
-United Center
+Detroit Pistons	
+Chicago Bulls
 282.6
-Little Caesars Arena	
-Quicken Loans Arena
+Detroit Pistons	
+Cleveland Cavaliers
 164.9
-Little Caesars Arena
-Target Center
+Detroit Pistons
+Minnesota Timberwolves
 694.7
-Little Caesars Arena	
-Madison Square Garden
+Detroit Pistons	
+New York Knicks
 616.1
-Little Caesars Arena	
-Scotiabank Arena
+Detroit Pistons	
+Toronto Raptors
 231
-Oracle Arena	
-Staples Center
+Golden State Warriors	
+Los Angeles Lakers
 385.1
-Oracle Arena	
-Golden 1 Center
+Golden State Warriors	
+Los Angeles Clippers
+385.1
+Golden State Warriors	
+Sacramento Kings
 87.9
-Toyota Center	
-American Airlines Center
+Houston Rockets	
+Dallas Mavericks
 239.8
-Toyota Center
-Smoothie King Center
+Houston Rockets
+New Orleans Pelicans
 347.7
-Toyota Center
-AT&T Center
+Houston Rockets
+San Antonio Spurs
 197.4
-Bankers Life Fieldhouse	
-Spectrum Center
+Indiana Pacers	
+Charlotte Hornets
 585.1
-Bankers Life Fieldhouse
-United Center
+Indiana Pacers
+Chicago Bulls
 181.6
-Bankers Life Fieldhouse
-Quicken Loans Arena
+Indiana Pacers
+Cleveland Cavaliers
 315.5
-Staples Center	
-Staples Center
+Los Angeles Lakers
+Los Angeles Clippers
 0
-Staples Center	
-Pepsi Center
+Los Angeles Clippers
+Los Angeles Lakers
+0
+Los Angeles Lakers	
+Denver Nuggets
 1016.1
-Staples Center
-Oracle Arena
+Los Angeles Clippers
+Denver Nuggets
+1016.1
+Los Angeles Lakers
+Golden State Warriors
 385.1
-Staples Center
-Talking Stick Resort Arena
+Los Angeles Clippers
+Golden State Warriors
+385.1
+Los Angeles Lakers
+Phoenix Suns
 373
-Staples Center
-Golden 1 Center
+Los Angeles Clippers
+Phoenix Suns
+373
+Los Angeles Lakers
+Sacramento Kings
 388.4
-Staples Center
-Vivint Smart Home Arena
+Los Angeles Clippers
+Sacramento Kings
+388.4
+Los Angeles Lakers
+Utah Jazz
 688.4
-FedEx Forum
-State Farm Arena
+Los Angeles Clippers
+Utah Jazz
+688.4
+Memphis Grizzlies
+Atlanta Hawks
 383.8
-FedEx Forum
-Smoothie King Center
+Memphis Grizzlies
+New Orleans Pelicans
 395
-FedEx Forum
-Chesapeake Energy Arena
+Memphis Grizzlies
+Oklahoma City Thunder
 466
-American Airlines Arena
-Spectrum Center
+Miami Heat
+Charlotte Hornets
 730.9
-American Airlines Arena
-Smoothie King Center
+Miami Heat
+New Orleans Pelicans
 866.1
-American Airlines Arena	
-Amway Center
+Miami Heat
+Orlando Magic
 235.6
-Fiserv Forum
-United Center
+Milwaukee Bucks
+Chicago Bulls
 92.1
-Fiserv Forum
-Target Center
+Milwaukee Bucks
+Minnesota Timberwolves
 337.1
-Target Center
-Pepsi Center
+Minnesota Timberwolves
+Denver Nuggets
 913.9
-Target Center
-Little Caesars Arena
+Minnesota Timberwolves
+Detroit Pistons
 694.7
-Target Center
-Fiserv Forum
+Minnesota Timberwolves
+Milwaukee Bucks
 337.1
-Target Center
-Moda Center
+Minnesota Timberwolves
+Portland Trail Blazers
 1729.3
-Smoothie King Center
-State Farm Arena
+New Orleans Pelicans
+Atlanta Hawks
 469.1
-Smoothie King Center
-Toyota Center
+New Orleans Pelicans
+Houston Rockets
 347.7
-Smoothie King Center
-FedEx Forum
+New Orleans Pelicans
+Memphis Grizzlies
 395
-Smoothie King Center
-American Airlines Arena
+New Orleans Pelicans
+Miami Heat
 866.1
-Madison Square Garden
-TD Garden
+New York Knicks
+Boston Celtics
 215.3
-Madison Square Garden
-Barclays Center
+New York Knicks
+Brooklyn Nets
 5.1
-Madison Square Garden
-Little Caesars Arena
+New York Knicks
+Detroit Pistons
 616.1
-Chesapeake Energy Arena	
-American Airlines Center
+Oklahoma City Thunder	
+Dallas Mavericks
 206.7
-Chesapeake Energy Arena
-Pepsi Center
+Oklahoma City Thunder
+Denver Nuggets
 679.6
-Chesapeake Energy Arena
-FedEx Forum
+Oklahoma City Thunder
+Memphis Grizzlies
 466
-Amway Center
-State Farm Arena
+Orlando Magic
+Atlanta Hawks
 438.8
-Amway Center
-American Airlines Arena
+Orlando Magic
+Miami Heat
 235.6
-Wells Fargo Center
-Barclays Center
+Philadelphia 76ers
+Brooklyn Nets
 97.4
-Wells Fargo Center
-Quicken Loans Arena
+Philadelphia 76ers
+Cleveland Cavaliers
 431.2
-Wells Fargo Center
-Capital One Arena
+Philadelphia 76ers
+Washington Wizards
 140
-Talking Stick Resort Arena
-Pepsi Center
+Phoenix Suns
+Denver Nuggets
 862.4
-Talking Stick Resort Arena
-Staples Center
+Phoenix Suns
+Los Angeles Lakers
 373
-Moda Center
-Target Center
+Phoenix Suns
+Los Angeles Clippers
+373
+Portland Trail Blazers
+Minnesota Timberwolves
 1792.3
-Moda Center
-Golden 1 Center
+Portland Trail Blazers
+Sacramento Kings
 579.7
-Moda Center
-Vivint Smart Home Arena
+Portland Trail Blazers
+Utah Jazz
 765.5
-Golden 1 Center
-Oracle Arena
+Sacramento Kings
+Golden State Warriors
 87.9
-Golden 1 Center
-Staples Center
+Sacramento Kings
+Los Angeles Lakers
 388.4
-Golden 1 Center
-Moda Center
+Sacramento Kings
+Los Angeles Clippers
+388.4
+Sacramento Kings
+Portland Trail Blazers
 579.7
-AT&T Center
-American Airlines Center
+San Antonio Spurs
+Dallas Mavericks
 273.8
-AT&T Center
-Toyota Center
+San Antonio Spurs
+Houston Rockets
 197.4
-Scotiabank Arena
-TD Garden
+Toronto Raptors
+Boston Celtics
 550
-Scotiabank Arena
-Little Caesars Arena
+Toronto Raptors
+Detroit Pistons
 231
-Scotiabank Arena
-Madison Square Garden
+Toronto Raptors
+New York Knicks
 491.1
-Vivint Smart Home Arena
-Pepsi Center
+Utah Jazz
+Denver Nuggets
 519.1
-Vivint Smart Home Arena
-Staples Center
+Utah Jazz
+Los Angeles Lakers
 688.4
-Vivint Smart Home Arena
-Moda Center
+Utah Jazz
+Los Angeles Clippers
+688.4
+Utah Jazz
+Portland Trail Blazers
 765.5
-Capital One Arena
-Spectrum Center
+Washington Wizards
+Charlotte Hornets
 402
-Capital One Arena
-Quicken Loans Arena
+Washington Wizards
+Cleveland Cavaliers
 371
-Capital One Arena
-Wells Fargo Center
+Washington Wizards
+Philadelphia 76ers
 140
