@@ -1,0 +1,309 @@
+Atlanta Hawks
+Charlotte Hornets
+244.8
+Atlanta Hawks
+Memphis Grizzlies
+383.8
+Atlanta Hawks
+New Orleans Pelicans
+469.1
+Atlanta Hawks
+Orlando Magic
+438.8
+Boston Celtics
+New York Knicks
+215.3
+Boston Celtics
+Toronto Raptors
+550
+Brooklyn Nets
+New York Knicks
+5.1
+Brooklyn Nets
+Philadelphia 76ers
+97.4
+Charlotte Hornets
+Atlanta Hawks
+244.8
+Charlotte Hornets
+Indiana Pacers
+585.1
+Charlotte Hornets
+Miami Heat
+730.9
+Charlotte Hornets
+Washington Wizards
+402
+Chicago Bulls
+Detroit Pistons
+282.6
+Chicago Bulls
+Indiana Pacers
+181.6
+Chicago Bulls
+Milwaukee Bucks
+92.1
+Cleveland Cavaliers
+Detroit Pistons
+164.9
+Cleveland Cavaliers
+Indiana Pacers
+315.5
+Cleveland Cavaliers
+Philadelphia 76ers
+431.2
+Cleveland Cavaliers
+Washington Wizards
+371
+Dallas Mavericks
+Houston Rockets
+239.8
+Dallas Mavericks
+Oklahoma City Thunder
+206.7
+Dallas Mavericks
+San Antonio Spurs
+273.8
+Denver Nuggets
+Los Angeles Lakers
+1016.1
+Denver Nuggets
+Los Angeles Clippers
+1016.1
+Denver Nuggets
+Minnesota Timberwolves
+913.9
+Denver Nuggets
+Oklahoma City Thunder
+679.6
+Denver Nuggets
+Phoenix Suns
+862.4
+Denver Nuggets
+Utah Jazz
+519.1
+Detroit Pistons
+Chicago Bulls
+282.6
+Detroit Pistons
+Cleveland Cavaliers
+164.9
+Detroit Pistons
+Minnesota Timberwolves
+694.7
+Detroit Pistons
+New York Knicks
+616.1
+Detroit Pistons
+Toronto Raptors
+231
+Golden State Warriors
+Los Angeles Lakers
+385.1
+Golden State Warriors
+Los Angeles Clippers
+385.1
+Golden State Warriors
+Sacramento Kings
+87.9
+Houston Rockets
+Dallas Mavericks
+239.8
+Houston Rockets
+New Orleans Pelicans
+347.7
+Houston Rockets
+San Antonio Spurs
+197.4
+Indiana Pacers
+Charlotte Hornets
+585.1
+Indiana Pacers
+Chicago Bulls
+181.6
+Indiana Pacers
+Cleveland Cavaliers
+315.5
+Los Angeles Lakers
+Los Angeles Clippers
+0
+Los Angeles Clippers
+Los Angeles Lakers
+0
+Los Angeles Lakers
+Denver Nuggets
+1016.1
+Los Angeles Clippers
+Denver Nuggets
+1016.1
+Los Angeles Lakers
+Golden State Warriors
+385.1
+Los Angeles Clippers
+Golden State Warriors
+385.1
+Los Angeles Lakers
+Phoenix Suns
+373
+Los Angeles Clippers
+Phoenix Suns
+373
+Los Angeles Lakers
+Sacramento Kings
+388.4
+Los Angeles Clippers
+Sacramento Kings
+388.4
+Los Angeles Lakers
+Utah Jazz
+688.4
+Los Angeles Clippers
+Utah Jazz
+688.4
+Memphis Grizzlies
+Atlanta Hawks
+383.8
+Memphis Grizzlies
+New Orleans Pelicans
+395
+Memphis Grizzlies
+Oklahoma City Thunder
+466
+Miami Heat
+Charlotte Hornets
+730.9
+Miami Heat
+New Orleans Pelicans
+866.1
+Miami Heat
+Orlando Magic
+235.6
+Milwaukee Bucks
+Chicago Bulls
+92.1
+Milwaukee Bucks
+Minnesota Timberwolves
+337.1
+Minnesota Timberwolves
+Denver Nuggets
+913.9
+Minnesota Timberwolves
+Detroit Pistons
+694.7
+Minnesota Timberwolves
+Milwaukee Bucks
+337.1
+Minnesota Timberwolves
+Portland Trail Blazers
+1729.3
+New Orleans Pelicans
+Atlanta Hawks
+469.1
+New Orleans Pelicans
+Houston Rockets
+347.7
+New Orleans Pelicans
+Memphis Grizzlies
+395
+New Orleans Pelicans
+Miami Heat
+866.1
+New York Knicks
+Boston Celtics
+215.3
+New York Knicks
+Brooklyn Nets
+5.1
+New York Knicks
+Detroit Pistons
+616.1
+Oklahoma City Thunder
+Dallas Mavericks
+206.7
+Oklahoma City Thunder
+Denver Nuggets
+679.6
+Oklahoma City Thunder
+Memphis Grizzlies
+466
+Orlando Magic
+Atlanta Hawks
+438.8
+Orlando Magic
+Miami Heat
+235.6
+Philadelphia 76ers
+Brooklyn Nets
+97.4
+Philadelphia 76ers
+Cleveland Cavaliers
+431.2
+Philadelphia 76ers
+Washington Wizards
+140
+Phoenix Suns
+Denver Nuggets
+862.4
+Phoenix Suns
+Los Angeles Lakers
+373
+Phoenix Suns
+Los Angeles Clippers
+373
+Portland Trail Blazers
+Minnesota Timberwolves
+1792.3
+Portland Trail Blazers
+Sacramento Kings
+579.7
+Portland Trail Blazers
+Utah Jazz
+765.5
+Sacramento Kings
+Golden State Warriors
+87.9
+Sacramento Kings
+Los Angeles Lakers
+388.4
+Sacramento Kings
+Los Angeles Clippers
+388.4
+Sacramento Kings
+Portland Trail Blazers
+579.7
+San Antonio Spurs
+Dallas Mavericks
+273.8
+San Antonio Spurs
+Houston Rockets
+197.4
+Toronto Raptors
+Boston Celtics
+550
+Toronto Raptors
+Detroit Pistons
+231
+Toronto Raptors
+New York Knicks
+491.1
+Utah Jazz
+Denver Nuggets
+519.1
+Utah Jazz
+Los Angeles Lakers
+688.4
+Utah Jazz
+Los Angeles Clippers
+688.4
+Utah Jazz
+Portland Trail Blazers
+765.5
+Washington Wizards
+Charlotte Hornets
+402
+Washington Wizards
+Cleveland Cavaliers
+371
+Washington Wizards
+Philadelphia 76ers
+140

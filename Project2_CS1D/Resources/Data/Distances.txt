@@ -19,16 +19,16 @@ Scotiabank Arena
 Barclays Center
 Madison Square Garden
 5.1
-Barclays Center	
+Barclays Center
 Wells Fargo Center
 97.4
-Spectrum Center	
+Spectrum Center
 State Farm Arena
 244.8
 Spectrum Center
 Bankers Life Fieldhouse
 585.1
-Spectrum Center	
+Spectrum Center
 American Airlines Arena
 730.9
 Spectrum Center
@@ -37,7 +37,7 @@ Capital One Arena
 United Center
 Little Caesars Arena
 282.6
-United Center	
+United Center
 Bankers Life Fieldhouse
 181.6
 United Center
@@ -46,7 +46,7 @@ Fiserv Forum
 Quicken Loans Arena
 Little Caesars Arena
 164.9
-Quicken Loans Arena	
+Quicken Loans Arena
 Bankers Life Fieldhouse
 315.5
 Quicken Loans Arena
@@ -58,49 +58,49 @@ Capital One Arena
 American Airlines Center
 Toyota Center
 239.8
-American Airlines Center	
+American Airlines Center
 Chesapeake Energy Arena
 206.7
 American Airlines Center
 AT&T Center
 273.8
-Pepsi Center	
+Pepsi Center
 Staples Center
 1016.1
-Pepsi Center	
+Pepsi Center
 Target Center
 913.9
-Pepsi Center	
+Pepsi Center
 Chesapeake Energy Arena
 679.6
-Pepsi Center	
+Pepsi Center
 Talking Stick Resort Arena
 862.4
 Pepsi Center
 Vivint Smart Home Arena
 519.1
-Little Caesars Arena	
+Little Caesars Arena
 United Center
 282.6
-Little Caesars Arena	
+Little Caesars Arena
 Quicken Loans Arena
 164.9
 Little Caesars Arena
 Target Center
 694.7
-Little Caesars Arena	
+Little Caesars Arena
 Madison Square Garden
 616.1
-Little Caesars Arena	
+Little Caesars Arena
 Scotiabank Arena
 231
-Oracle Arena	
+Oracle Arena
 Staples Center
 385.1
-Oracle Arena	
+Oracle Arena
 Golden 1 Center
 87.9
-Toyota Center	
+Toyota Center
 American Airlines Center
 239.8
 Toyota Center
@@ -109,7 +109,7 @@ Smoothie King Center
 Toyota Center
 AT&T Center
 197.4
-Bankers Life Fieldhouse	
+Bankers Life Fieldhouse
 Spectrum Center
 585.1
 Bankers Life Fieldhouse
@@ -118,10 +118,10 @@ United Center
 Bankers Life Fieldhouse
 Quicken Loans Arena
 315.5
-Staples Center	
+Staples Center
 Staples Center
 0
-Staples Center	
+Staples Center
 Pepsi Center
 1016.1
 Staples Center
@@ -151,7 +151,7 @@ Spectrum Center
 American Airlines Arena
 Smoothie King Center
 866.1
-American Airlines Arena	
+American Airlines Arena
 Amway Center
 235.6
 Fiserv Forum
@@ -193,7 +193,7 @@ Barclays Center
 Madison Square Garden
 Little Caesars Arena
 616.1
-Chesapeake Energy Arena	
+Chesapeake Energy Arena
 American Airlines Center
 206.7
 Chesapeake Energy Arena
