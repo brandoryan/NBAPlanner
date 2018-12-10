@@ -39,7 +39,8 @@ SOURCES += \
     trip.cpp \
     graph.cpp \
     edge.cpp \
-    vertex.cpp
+    vertex.cpp \
+    shoppingcart.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -55,7 +56,8 @@ HEADERS += \
     trip.h \
     graph.h \
     edge.h \
-    vertex.h
+    vertex.h \
+    shoppingcart.h
 
 FORMS += \
         mainwindow.ui \

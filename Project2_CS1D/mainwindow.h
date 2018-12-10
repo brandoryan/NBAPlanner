@@ -13,6 +13,7 @@
 #include "souvenirsmodel.h"
 #include "graph.h"
 #include "trip.h"
+#include "shoppingcart.h"
 
 enum MainWindowPages
 {
@@ -85,7 +86,13 @@ class MainWindow : public QMainWindow
 
         // Get User Table Selection
         void on_tableView_StadiumData_clicked(const QModelIndex &index);
+        void on_tableView_stadiumSouvenirs_clicked(const QModelIndex &index);
         void on_tableView_stadiumSouvenirs_2_clicked(const QModelIndex &index);
+
+        void on_pushButton_purchaseItem_clicked();
+        void setEndTripDetailsTable();
+        void on_pushButton_PerformBFS_clicked();
+        void on_pushButton_PerformDFS_clicked();
 
 private:
         Ui::MainWindow *ui;
@@ -109,6 +116,7 @@ private:
         void setImageToTeamLogo();
 
         Trip trip;
+        ShoppingCart cart;
 
         unordered_map<string, string> customStops;
 };

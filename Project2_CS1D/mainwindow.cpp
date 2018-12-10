@@ -57,6 +57,7 @@ void MainWindow::setTableModelConfigs()
     autoSizeTableView(ui->tableView_CustomStopsTable);
 
     // Souvenir Table Setup
+    ui->tableView_stadiumSouvenirs->setModel(souvenirsModel.getSortedModel());
     ui->tableView_stadiumSouvenirs_2->setModel(souvenirsModel.getSortedModel());
 
 }
@@ -131,7 +132,7 @@ void MainWindow::on_tableView_StadiumData_clicked(const QModelIndex &index)
     stadiumsModel.setFilter(regex);
     souvenirsModel.setFilter(regex);
 
-   // Set to zero because the above filter will filter the stadium model so there is only 1 entery in it
+    // Set to zero because the above filter will filter the stadium model so there is only 1 entery in it
     stadiumsModel.setSelectedRowData(0);
 
     setStadiumInfo();
@@ -257,7 +258,7 @@ void MainWindow::setGenericSortOptions(teamsColumns columnToSortBy)
     ui->tableView_StadiumData->sortByColumn(columnToSortBy, Qt::AscendingOrder);
 }
 
-                /************************************
+/************************************
                  *===================================
                  *     Related to Souvenirs Table
                  ************************************/
@@ -302,7 +303,7 @@ void MainWindow::on_pushButton_submitLogin_clicked()
 
     if(admin->isMissingFields())
     {
-         QMessageBox::critical(this,tr("Missing Input!"), admin->getErrorMessage() );
+        QMessageBox::critical(this,tr("Missing Input!"), admin->getErrorMessage() );
     }
     else
     {
@@ -346,7 +347,7 @@ void MainWindow::on_lineEdit_userName_returnPressed()
  ******************************************************************************/
 void MainWindow::on_lineEdit_password_returnPressed()
 {
-     ui->pushButton_submitLogin->click();
+    ui->pushButton_submitLogin->click();
 }
 
 
@@ -514,7 +515,7 @@ void MainWindow::on_pushButton_AddCustomStop_clicked()
 {
     int row = ui->tableView_CustomStopsTable->selectionModel()->currentIndex().row();
     std::string userSelectedStop  = ui->tableView_CustomStopsTable->model()->data(ui->tableView_CustomStopsTable
-                                                                                       ->model()->index(row,1)).toString().toUtf8().constData();
+                                                                                  ->model()->index(row,1)).toString().toUtf8().constData();
     if(customStops.count(userSelectedStop) == 1)
     {
         qDebug() << ("Already Selected");
@@ -530,7 +531,7 @@ void MainWindow::on_pushButton_AddCustomStop_clicked()
 
 void MainWindow::loadPageActions(STRING nextStop)
 {
-     QRegExp pat;
+    QRegExp pat;
 
     ui->stackedWidget->setCurrentIndex(TRIP_STOP_PAGE);
     ui->label_tripStopHeader->setText(nextStop);
@@ -545,14 +546,21 @@ void MainWindow::loadPageActions(STRING nextStop)
 void MainWindow::on_pushButton_StartCustomTrip_clicked()
 {
     std:: string userSelectedStartStadium = ui->comboBox_customStartPoint->currentText().toUtf8().constData();
-    bool fastestRoute = ui->checkBox_takeFastestRoute->isChecked();
+    bool fastestRoute  = ui->checkBox_takeFastestRoute->isChecked();
+    bool dijkstraRoute = ui->checkBox_DijkstraRoute->isChecked();
 
 
-    if(fastestRoute)
+    if (fastestRoute)
     {
-//        trip.planShortestPathDijkstra("Pepsi Center");
-//        trip.setShortestPathDijkstra("Spectrum Center");
-        trip.startBFSTrip("Pepsi Center");
+        trip.startFastestCustom(QString::fromStdString(userSelectedStartStadium));
+        loadPageActions(trip.getNextStop());
+    }
+    else if (dijkstraRoute)
+    {
+        STRING destinationStadium;
+        destinationStadium = teamsModel.getSelectedRowItem(TEAMS_STADIUM_NAME);
+        trip.planShortestPathDijkstra(QString::fromStdString(userSelectedStartStadium));
+        trip.setShortestPathDijkstra(destinationStadium);
         loadPageActions(trip.getNextStop());
     }
     else
@@ -571,24 +579,104 @@ void MainWindow::on_pushButton_nextStadium_clicked()
 {
     STRING nameOfNextStop;
 
-//    if(!cart.isEmpty())
-//        cart.completePurchase();
+    if(!cart.isEmpty())
+        cart.completePurchase();
 
-     nameOfNextStop = trip.getNextStop();
+    nameOfNextStop = trip.getNextStop();
 
     // Clears purchase fields after each stop
-//    ui->lineEdit_selectedSouvenirToPurchase->clear();
-//    ui->spinBox_Quantity->setValue(1);
+    ui->lineEdit_selectedSouvenirToPurchase->clear();
+    ui->spinBox_Quantity->setValue(1);
 
     if(nameOfNextStop == "end")
     {
-//          setEndTripDetailsTable();
-          ui->stackedWidget->setCurrentIndex(MAIN_HOME_WINDOW);
-//          ui->label_totalDistance->setText(STRING::number(trip.getTotalDistance()));
-//          ui->label_totalSpent->setText(STRING::number(cart.getAllPurchasesTotal()));
+        setEndTripDetailsTable();
+        ui->stackedWidget->setCurrentIndex(TRIP_ENDED_PAGE);
+        ui->label_totalDistance->setText(STRING::number(trip.getTotalDistance()));
+        ui->label_totalSpent->setText(STRING::number(cart.getAllPurchasesTotal()));
     }
     else
     {
         loadPageActions(nameOfNextStop);
     }
+}
+
+/***************************************************************************//**
+ * @brief MainWindow::on_pushButton_purchaseItem_clicked
+ * This function adds the selected item to the cart
+ ******************************************************************************/
+void MainWindow::on_pushButton_purchaseItem_clicked()
+{
+    if(ui->lineEdit_selectedSouvenirToPurchase->text().isEmpty())
+    {
+        QMessageBox::StandardButton errorBox;
+        STRING missingItem = "Please select what souvenir you want to purchase";
+        errorBox = QMessageBox::warning(this, "ERROR", missingItem);
+    }
+    else
+    {
+        STRING itemName    = souvenirsModel.getSelectedRowItem(SOUVENIRS_ITEM_NAME);
+        double price       = souvenirsModel.getSelectedRowItem(SOUVENIRS_ITEM_PRICE).toDouble();
+        STRING stadiumName = souvenirsModel.getSelectedRowItem(SOUVENIRS_STADIUM_NAME);
+        int    quantity    = ui->spinBox_Quantity->value();
+
+        cart.addToCart(stadiumName, price, quantity);
+
+        QMessageBox::information(this, tr("Item Purchased"), STRING(itemName + " was succesfully added!") );
+    }
+
+}
+
+/***************************************************************************//**
+ * @brief MainWindow::on_tableView_stadiumSouvenirs_clicked
+ * @param index
+ *
+ * sets the 'Selected Item' field to the name of the user selected item from the
+ * souvenir table. Used for purchasing;
+ *
+ ******************************************************************************/
+void MainWindow::on_tableView_stadiumSouvenirs_clicked(const QModelIndex &index)
+{
+    int    souvenirRow = index.row();
+
+    souvenirsModel.setSelectedRowData(souvenirRow);
+
+    ui->lineEdit_selectedSouvenirToPurchase->setText(souvenirsModel.getSelectedRowItem(SOUVENIRS_ITEM_NAME));
+}
+
+/***************************************************************************//**
+ * @brief MainWindow::setEndTripDetailsTable
+ * This function sets all widget cells in tableWidget_tripData to display
+ ******************************************************************************/
+void MainWindow::setEndTripDetailsTable()
+{
+    int rowCount = cart.getPurchaseHistorySize();
+
+    ui->tableWidget_TripData->setRowCount(rowCount);
+    for(auto r=0; r< rowCount; r++){
+        ui->tableWidget_TripData->setItem(r, 0,  new QTableWidgetItem(cart.getPurchaseHistory(r).seller));
+        ui->tableWidget_TripData->setItem(r, 1,  new QTableWidgetItem(STRING::number(cart.getPurchaseHistory(r).numberOfItems)));
+        ui->tableWidget_TripData->setItem(r, 2,  new QTableWidgetItem(STRING::number(cart.getPurchaseHistory(r).grandTotal)));
+    }
+    STRING noPurchaes = "No Purchases Made";
+    if(rowCount == 0)
+    {
+        ui->tableWidget_TripData->setRowCount(1);
+        ui->tableWidget_TripData->setItem(0, 0,  new QTableWidgetItem(noPurchaes));
+    }
+
+}
+
+void MainWindow::on_pushButton_PerformBFS_clicked()
+{
+    trip.startBFSTrip("Staples Center");
+    setEndTripDetailsTable();
+    ui->stackedWidget->setCurrentIndex(TRIP_ENDED_PAGE);
+}
+
+void MainWindow::on_pushButton_PerformDFS_clicked()
+{
+    trip.startDFSTrip("Amway Center");
+    setEndTripDetailsTable();
+    ui->stackedWidget->setCurrentIndex(TRIP_ENDED_PAGE);
 }

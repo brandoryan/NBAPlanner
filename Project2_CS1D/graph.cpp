@@ -47,11 +47,6 @@ void Graph::generateGraphFromModel()
         startVertex = getVertex(start);
         endVertex   = getVertex(end);
 
-        qDebug() << "DISTANCES:\n"
-                 << QString::fromStdString(startVertex->getName()) << endl
-                 << QString::fromStdString(endVertex->getName())   << endl
-                 << distance << endl;
-
         addEdge(startVertex, endVertex, distance);
     }
 
@@ -160,6 +155,7 @@ void Graph::DFS(Vertex *startingPoint)
 
     path.push(startingPoint);
     DFSRecursiveHelper(startingPoint);
+    qDebug() << "TOTAL DISTANCE: " << totalDistance << endl;
 }
 
 /******************************************************************************
