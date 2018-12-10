@@ -7,18 +7,7 @@ stadiumsTeamsCombinedModel::stadiumsTeamsCombinedModel()
     model = dbConn->getStadiumsAndTeamsModel();
 
     sortedModel = new QSortFilterProxyModel;
-    seatingCapTotal = dbConn->getSeatingCapacitySum();
     setSortedModelOptions();
-}
-
-stadiumsTeamsCombinedModel::~stadiumsTeamsCombinedModel()
-{
-    delete model;
-}
-
-int stadiumsTeamsCombinedModel::getSeatingCapTotal() const
-{
-    return seatingCapTotal;
 }
 
 /***************************************************************************//**

@@ -148,13 +148,14 @@ void DatabaseManager::initializeAdminTable(QSqlQuery query)
 void DatabaseManager::initializeTeamTable(QSqlQuery query)
 {
     query.exec("CREATE TABLE teams( "
-                      "teamName     TEXT primary key, "
-                      "stadiumName  TEXT, "
-                      "coachName    TEXT, "
+                      "teamName         TEXT primary key, "
+                      "stadiumName      TEXT, "
+                      "coachName        TEXT, "
                       "conferenceName   TEXT, "
                       "divisionName     TEXT, "
                       "location         TEXT, "
-                      "yearJoined       INTEGER"
+                      "yearJoined       INTEGER,"
+                      "seatingCap       INTEGER"
                ");");
 }
 
@@ -180,8 +181,8 @@ void DatabaseManager::initializeSouvenirsTable(QSqlQuery query)
 void DatabaseManager::initializeDistancesTable(QSqlQuery query)
 {
     query.exec("CREATE TABLE distances( "
-                      "startStadium TEXT, "
-                      "endStadium   TEXT, "
+                      "startTeam    TEXT, "
+                      "endTeam      TEXT, "
                       "distance     REAL"
                ");");
 }
@@ -222,14 +223,13 @@ void DatabaseManager::readTeamAndStadiumsFromFile(STRING fileName)
         teamName      = input.readLine();
         location      = input.readLine();
         stadiumName   = input.readLine();
-
         seatCap       = input.readLine().toInt();
         yearJoined    = input.readLine().toInt();
         coachName     = input.readLine();
 
         input.skipWhiteSpace();
 
-        addNewTeam(teamName, stadiumName, coachName, conference, division, location, yearJoined);
+        addNewTeam(teamName, stadiumName, coachName, conference, division, location, yearJoined, seatCap);
         addNewStadium(stadiumName, seatCap);
 
         // Adds default souvenir items to for each stadium
@@ -244,7 +244,7 @@ void DatabaseManager::readTeamAndStadiumsFromFile(STRING fileName)
 
 void DatabaseManager::readDistancesFromFile(STRING fileName)
 {
-    STRING startStadium, endStadium;
+    STRING startTeam, endTeam;
     double distance;
 
     QFile  inFile(fileName);
@@ -261,15 +261,15 @@ void DatabaseManager::readDistancesFromFile(STRING fileName)
     while(!input.atEnd())
     {
         // GET  TABLE INFO
-        startStadium  = input.readLine();
-        endStadium    = input.readLine();
+        startTeam  = input.readLine();
+        endTeam    = input.readLine();
 
         distance      = input.readLine().toDouble();
 
-        qDebug() << (startStadium);
-        qDebug() << (endStadium);
+        qDebug() << (startTeam);
+        qDebug() << (endTeam);
         qDebug() << (distance);
-        addNewDistance(startStadium, endStadium, distance);
+        addNewDistance(startTeam, endTeam, distance);
     }
 }
 
@@ -280,14 +280,15 @@ void DatabaseManager::addNewTeam(const STRING &teamName,
                                  const STRING &conferenceName,
                                  const STRING &divisionName,
                                  const STRING &location,
-                                 const int    &yrJoined)
+                                 const int    &yrJoined,
+                                 const int    &seatingCap)
 {
     QSqlQuery query;
 
     query.prepare("INSERT into teams "
-                        "(teamName, stadiumName, coachName, conferenceName, divisionName, location, yearJoined) "
+                        "(teamName, stadiumName, coachName, conferenceName, divisionName, location, yearJoined, seatingCap) "
                   "VALUES "
-                        "(:teamName, :stadiumName, :coachName, :conferenceName, :divisionName, :location, :yrJoined)");
+                        "(:teamName, :stadiumName, :coachName, :conferenceName, :divisionName, :location, :yrJoined, :seatingCap)");
 
     query.bindValue(":teamName",    teamName);
     query.bindValue(":stadiumName", stadiumName);
@@ -296,6 +297,7 @@ void DatabaseManager::addNewTeam(const STRING &teamName,
     query.bindValue(":divisionName", divisionName);
     query.bindValue(":location", location);
     query.bindValue(":yrJoined", yrJoined);
+    query.bindValue(":seatingCap", seatingCap);
 
     if(!query.exec()){
 
@@ -357,19 +359,19 @@ void DatabaseManager::addNewSouvenir(const STRING &itemName,
 }
 
 
-void DatabaseManager::addNewDistance(const STRING &startStadium,
-                                     const STRING &endStadium,
+void DatabaseManager::addNewDistance(const STRING &startTeam,
+                                     const STRING &endTeam,
                                      const double &distance)
 {
     QSqlQuery query;
 
     query.prepare("INSERT into distances "
-                        "(startStadium, endStadium, distance) "
+                        "(startTeam, endTeam, distance) "
                   "VALUES "
-                        "(:startStadium, :endStadium, :distance)");
+                        "(:startTeam, :endTeam, :distance)");
 
-    query.bindValue(":startStadium", startStadium);
-    query.bindValue(":endStadium",   endStadium);
+    query.bindValue(":startTeam", startTeam);
+    query.bindValue(":endTeam",   endTeam);
     query.bindValue(":distance",     distance);
 
     if(!query.exec()){
@@ -462,8 +464,8 @@ void DatabaseManager::updateNameDistanceTable(const STRING orignalName, const ST
 {
     QSqlQuery query;
     query.prepare("UPDATE distances "
-                 "SET    startStadium = :newName "
-                 "WHERE  startStadium = :orignalName;");
+                 "SET    startTeam = :newName "
+                 "WHERE  startTeam = :orignalName;");
     query.bindValue(":newName", newName);
     query.bindValue(":orignalName", orignalName);
 
@@ -479,8 +481,8 @@ void DatabaseManager::updateNameDistanceTable2(const STRING orignalName, const S
 {
     QSqlQuery query;
     query.prepare("UPDATE distances "
-                 "SET    endStadium = :newName "
-                 "WHERE  endStadium = :orignalName;");
+                 "SET    endTeam = :newName "
+                 "WHERE  endTeam = :orignalName;");
     query.bindValue(":newName", newName);
     query.bindValue(":orignalName", orignalName);
 
@@ -498,12 +500,13 @@ void DatabaseManager::updateStadiumName(const STRING orignalName,
     qDebug() << ("Changing: " + orignalName);
     qDebug() << ("To:" + newName);
 
-      updateNameStadiumTable(orignalName, newName);
+      updateNameStadiumTable(orignalName,   newName);
       updateNameSouvenirTable(orignalName,  newName);
-      updateNameTeamTable(orignalName,  newName);
-      updateNameDistanceTable(orignalName, newName);
+      updateNameTeamTable(orignalName,      newName);
+      updateNameDistanceTable(orignalName,  newName);
       updateNameDistanceTable2(orignalName, newName);
 }
+
 void DatabaseManager::updateStadium(const STRING &stadiumName,
                                     const int    &seatingCap)
 {
@@ -512,7 +515,7 @@ void DatabaseManager::updateStadium(const STRING &stadiumName,
     query.prepare("UPDATE stadiums "
                   "SET    "
                           "seatingCap         = :seatingCap "
-                  "WHERE   stadiumName = :stadiumName;");
+                  "WHERE   stadiumName        = :stadiumName;");
 
     query.bindValue(":stadiumName",      stadiumName);
     query.bindValue(":seatingCap",       seatingCap);
@@ -524,6 +527,31 @@ void DatabaseManager::updateStadium(const STRING &stadiumName,
         throw error;
     }
 
+}
+
+void DatabaseManager::updateTeam(const STRING &stadiumName,
+                                 const STRING &location,
+                                 const int    &seatCap)
+{
+    QSqlQuery query;
+
+    query.prepare("UPDATE teams "
+                  "SET    "
+                          "stadiumName   = :stadiumName "
+                          "location      = :location "
+                          "seatingCap    = :seatCap "
+                  "WHERE   teamName      = :teamName;");
+
+    query.bindValue(":stadiumName", stadiumName);
+    query.bindValue(":location", location);
+    query.bindValue(":seatingCap", seatCap);
+
+    if(!query.exec()){
+        qDebug() << (query.lastError().text());
+        STRING error = "Team NOT UPDATED\n\nERROR: " +
+                        query.lastError().text();
+        throw error;
+    }
 }
 
 /***************************************************************************//**
@@ -581,7 +609,8 @@ QSqlQueryModel *DatabaseManager::getTeamsModel()
                           "conferenceName as 'Conference', "
                           "divisionName   as 'Division', "
                           "location       as 'Location', "
-                          "yearJoined     as 'yrJoined' "
+                          "yearJoined     as 'Year Joined', "
+                          "seatingCap     as 'Capacity' "
                      "FROM teams;");
 
      return model;
@@ -622,7 +651,7 @@ QSqlQueryModel *DatabaseManager::getStadiumsAndTeamsModel()
     model->setQuery("SELECT "
                          "teamName               as 'Team Name', "
                          "stadiums.stadiumName   as 'Stadium Name', "
-                         "seatingCap             as 'Capacity', "
+                         "teams.seatingCap       as 'Capacity', "
                          "conferenceName         as 'Conference', "
                          "divisionName           as 'Division', "
                          "location               as 'Location', "
@@ -662,8 +691,8 @@ QSqlQueryModel *DatabaseManager::getDistancesModel()
      model = new QSqlQueryModel;
 
      model->setQuery("SELECT "
-                          "startStadium, "
-                          "endStadium, "
+                          "startTeam, "
+                          "endTeam, "
                           "distance "
                      "FROM distances;");
 

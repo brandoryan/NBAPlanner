@@ -19,7 +19,8 @@ enum teamsColumns
     TEAMS_CONFERENCE,
     TEAMS_DIVISION,
     TEAMS_LOCATION,
-    TEAMS_YEAR_JOINED
+    TEAMS_YEAR_JOINED,
+    TEAMS_SEAT_CAP
 };
 
 enum stadiumsColumns
@@ -56,14 +57,15 @@ public:
     bool authenticateUserLogin(const STRING &username, const STRING &password);
 
     // Add Methods
-    void addNewTeam(const STRING &teamName, const STRING &stadiumName, const STRING &coachName, const STRING &conferenceName, const STRING &divisionName, const STRING &location, const int &yrJoined);
+    void addNewTeam(const STRING &teamName, const STRING &stadiumName, const STRING &coachName, const STRING &conferenceName, const STRING &divisionName, const STRING &location, const int &yrJoined, const int &seatingCap);
     void addNewStadium(const STRING &stadiumName, const int &seatingCap);
     void addNewSouvenir(const STRING &itemName, const double &itemPrice, const STRING &stadiumName);
-    void addNewDistance(const STRING &startStadium, const STRING &endStadium, const double &distance);
+    void addNewDistance(const STRING &startTeam, const STRING &endTeam, const double &distance);
 
     // Update Methods
     void updateSouvenir(const STRING &itemName, const double &itemPrice, const STRING &stadiumName);
     void updateStadium(const STRING &stadiumName, const int &seatingCap);
+    void updateTeam(const STRING &stadiumName, const STRING &location, const int &seatCap);
 
     // Delete Methods
     void deleteSouvenir(const STRING &itemName, const double &itemPrice, const STRING &stadiumName);

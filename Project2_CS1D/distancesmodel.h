@@ -3,13 +3,21 @@
 
 #include "model.h"
 
+struct Distances {
+    STRING startTeam;
+    STRING endTeam;
+    double distanceBetween;
+};
+
 class DistancesModel: public Model
 {
-    public:
-        DistancesModel();
-        ~DistancesModel();
+public:
+    DistancesModel();
+    ~DistancesModel();
 
-        void refreshModel();
+    void refreshModel();
+private:
+    QVector<Distances> teamDistances;
 };
 
 #endif // DISTANCESMODEL_H

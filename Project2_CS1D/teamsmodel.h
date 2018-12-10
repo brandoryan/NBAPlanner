@@ -10,12 +10,16 @@ public:
     TeamsModel();
     ~TeamsModel();
 
+    void updateTeam(const STRING stadiumName, const STRING location, const int seatCap);
+
     QStringList getTeamNames();
+    int         getSeatingCapTotal() const;
 
     // Refreshes modesl when DB changes
     void refreshModel();
 private:
     QStringList teamNames;
+    int         seatingCapTotal;
     void        setTeamNames();
 };
 

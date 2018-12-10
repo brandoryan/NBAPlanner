@@ -48,6 +48,7 @@ void AdminWindow::setTableSortOptions()
     ui->tableView_Teams->setColumnHidden(4, true);
     ui->tableView_Teams->setColumnHidden(5, true);
     ui->tableView_Teams->setColumnHidden(6, true);
+    ui->tableView_Teams->setColumnHidden(7, true);
     ui->tableView_Teams->sortByColumn(0, Qt::AscendingOrder);
 
     ui->tableView_Souveniers->setSortingEnabled(true);
@@ -96,7 +97,7 @@ void AdminWindow::autoSizeTableView()
 void AdminWindow::setStadiumInfo()
 {
     ui->label_stadiumName->setText(stadiumsModel.getSelectedRowItem(STADIUMS_STADIUM_NAME));
-    ui->label_seatingCap->setText(stadiumsModel.getSelectedRowItem(STADIUMS_SEATING_CAP));
+    ui->label_seatingCap->setText(teamsModel.getSelectedRowItem(TEAMS_SEAT_CAP));
     ui->label_location->setText(teamsModel.getSelectedRowItem(TEAMS_LOCATION));
     ui->label_conference->setText(teamsModel.getSelectedRowItem(TEAMS_CONFERENCE));
     ui->label_division->setText(teamsModel.getSelectedRowItem(TEAMS_DIVISION));
@@ -370,3 +371,69 @@ void AdminWindow::on_pushButton_AddDataFromFile_clicked()
 
 
 }
+
+void AdminWindow::on_pushButton_submitUpdateStadium_clicked()
+{
+    STRING stadiumName      = stadiumsModel.getSelectedRowItem(STADIUMS_STADIUM_NAME);
+    STRING userStadium      = ui->lineEdit_StadiumName->text();
+    STRING location         = ui->lineEdit_Location->text();
+    int    seatingCap       = ui->spinBox_SeatinCap->value();
+
+    qDebug() << (userStadium);
+
+    if(seatingCap < 10000 || seatingCap > 500000 )
+    {
+        QMessageBox::critical(this, tr("ERROR"), STRING("Invalid Seating Capacity, Please input a number between 10,000 and 500,000") );
+    }
+
+    else if (userStadium.isEmpty() || location.isEmpty())
+    {
+        QMessageBox::critical(this, tr("ERROR"), STRING("Input Fields Cannot Be Blank!") );
+    }
+    else
+    {
+        try
+        {
+            stadiumsModel.updateStadium(stadiumName, seatingCap);
+            teamsModel.updateTeam(stadiumName, location, seatingCap);
+
+            if(stadiumName != userStadium)
+            {
+                qDebug() << ("Updating stadiumName");
+
+                stadiumsModel.updateStadiumName(stadiumName, userStadium);
+                teamsModel.updateTeam(stadiumName, location, seatingCap);
+                teamsModel.refreshModel();
+                stadiumsModel.refreshModel();
+                souvenirsModel.refreshModel();
+                distancesModel.refreshModel();
+            }
+            QMessageBox::information(this, tr("Stadium Updated"), STRING(stadiumName + " was successfully Updated!") );
+        }
+        catch(STRING err)
+        {
+            QMessageBox::critical(this,STRING(stadiumName + " was not updated"),err);
+
+        }
+
+        ui->stackedWidget->setCurrentIndex(MAIN_HOME_WINDOW);
+        ui->tableView_Teams->setCurrentIndex(ui->tableView_Teams->model()->index(0,0));
+        ui->tableView_Teams->clicked(ui->tableView_Teams->model()->index(0,0));
+    }
+
+}
+
+/***************************************************************************//**
+ * @brief AdminPage::on_pushButton_updateStadiumInfo_clicked
+ *
+ * Navigates from add/update souvenir page to the main home admin page
+ ******************************************************************************/
+void AdminWindow::on_pushButton_updateStadiumInfo_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(UPDATE_STADIUM_PAGE);
+    ui->label_addUpdateHEader_2->setText("Update " + stadiumsModel.getSelectedRowItem(STADIUMS_STADIUM_NAME));
+    ui->spinBox_SeatinCap->setValue(teamsModel.getSelectedRowItem(TEAMS_SEAT_CAP).toInt());
+    ui->lineEdit_Location->setText(teamsModel.getSelectedRowItem(TEAMS_LOCATION));
+    ui->lineEdit_StadiumName->setText(stadiumsModel.getSelectedRowItem(STADIUMS_STADIUM_NAME));
+}
+

@@ -6,7 +6,6 @@
         <file>Resources/Fonts/billy-argel_candy-inc/BILLY-ARGEL-CANDY-INC-FONT-ok.jpg</file>
         <file>Resources/Fonts/billy-argel_candy-inc/CANDY___.otf</file>
         <file>Resources/Fonts/billy-argel_candy-inc/READ ME.txt</file>
-        <file>Resources/Data/NBAdata.txt</file>
         <file>Resources/Data/Distances.txt</file>
         <file>Resources/Images/NBALogo.jpg</file>
         <file>Resources/Icons/Atlanta Hawks.png</file>
@@ -48,5 +47,8 @@
         <file>Resources/Fonts/the-fontry_old-sport/OLD SPORT 02 ATHLETIC NCV.ttf</file>
         <file>Resources/Images/Basketball.jpg</file>
         <file>Resources/Images/BasketballTest.jpg</file>
+        <file>Resources/Data/Distances2.txt</file>
+        <file>Resources/Data/NBAexpansion.txt</file>
+        <file>Resources/Data/NBAdata.txt</file>
     </qresource>
 </RCC>

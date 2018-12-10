@@ -6,6 +6,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+    DistancesModel test;
     ui->setupUi(this);
     ui->stackedWidget->setCurrentIndex(MAIN_HOME_WINDOW);
 
@@ -30,7 +31,7 @@ MainWindow::~MainWindow()
 void MainWindow::setTableModelConfigs()
 {
     // VIEW TEAM / STADIUM INFO TABLES
-    ui->tableView_StadiumData->setModel(stadiumsTeamsModel.getSortedModel());
+    ui->tableView_StadiumData->setModel(teamsModel.getSortedModel());
     ui->tableView_StadiumData->verticalHeader()->setVisible(false);
     ui->tableView_StadiumData->horizontalHeader()->setVisible(true);
     ui->tableView_StadiumData->horizontalHeader()->setDefaultAlignment(Qt::AlignLeft);
@@ -44,7 +45,6 @@ void MainWindow::setTableModelConfigs()
     QStringList list = teamsModel.getTeamNames();
     ui->comboBox_customStartPoint->addItems(list);
 
-
     // Custom Trip Table
     ui->tableView_CustomStopsTable->setModel(teamsModel.getSortedModel());
     ui->tableView_CustomStopsTable->setColumnHidden(TEAMS_COACH_NAME, true);
@@ -53,6 +53,7 @@ void MainWindow::setTableModelConfigs()
     ui->tableView_CustomStopsTable->setColumnHidden(TEAMS_LOCATION, true);
     ui->tableView_CustomStopsTable->setColumnHidden(TEAMS_STADIUM_NAME, true);
     ui->tableView_CustomStopsTable->setColumnHidden(TEAMS_YEAR_JOINED, true);
+    ui->tableView_CustomStopsTable->setColumnHidden(TEAMS_SEAT_CAP, true);
     autoSizeTableView(ui->tableView_CustomStopsTable);
 
     // Souvenir Table Setup
@@ -67,13 +68,13 @@ void MainWindow::setTableModelConfigs()
  ******************************************************************************/
 void MainWindow::hideExtraColumns()
 {
-    ui->tableView_StadiumData->setColumnHidden(ST_LOCATION, true);
-    ui->tableView_StadiumData->setColumnHidden(ST_STADIUM_NAME, true);
-    ui->tableView_StadiumData->setColumnHidden(ST_SEATING_CAP, true);
-    ui->tableView_StadiumData->setColumnHidden(ST_COACH_NAME, true);
-    ui->tableView_StadiumData->setColumnHidden(ST_CONFERENCE, true);
-    ui->tableView_StadiumData->setColumnHidden(ST_DIVISION, true);
-    ui->tableView_StadiumData->setColumnHidden(ST_YEAR_JOINED, true);
+    ui->tableView_StadiumData->setColumnHidden(TEAMS_LOCATION, true);
+    ui->tableView_StadiumData->setColumnHidden(TEAMS_STADIUM_NAME, true);
+    ui->tableView_StadiumData->setColumnHidden(TEAMS_SEAT_CAP, true);
+    ui->tableView_StadiumData->setColumnHidden(TEAMS_COACH_NAME, true);
+    ui->tableView_StadiumData->setColumnHidden(TEAMS_CONFERENCE, true);
+    ui->tableView_StadiumData->setColumnHidden(TEAMS_DIVISION, true);
+    ui->tableView_StadiumData->setColumnHidden(TEAMS_YEAR_JOINED, true);
     ui->label_extraInfo->hide();
 }
 
@@ -102,17 +103,17 @@ void MainWindow::autoSizeTableView(QTableView *table)
  ******************************************************************************/
 void MainWindow::setStadiumInfo()
 {
-    int number = stadiumsModel.getSelectedRowItem(STADIUMS_SEATING_CAP).toInt();
+    int number = teamsModel.getSelectedRowItem(TEAMS_SEAT_CAP).toInt();
 
-    ui->label_stadiumName->setText(stadiumsModel.getSelectedRowItem(STADIUMS_STADIUM_NAME));
+    ui->label_stadiumName->setText(stadiumsModel.getSelectedRowItem(TEAMS_STADIUM_NAME));
     ui->label_seatingCap->setText(QLocale(QLocale::English).toString(number));
-    ui->label_location->setText(stadiumsTeamsModel.getSelectedRowItem(ST_LOCATION));
-    ui->label_Conference->setText(stadiumsTeamsModel.getSelectedRowItem(ST_CONFERENCE));
-    ui->label_yearJoined->setText(stadiumsTeamsModel.getSelectedRowItem(ST_YEAR_JOINED));
-    ui->label_Coach->setText(stadiumsTeamsModel.getSelectedRowItem(ST_COACH_NAME));
-    ui->label_Division->setText(stadiumsTeamsModel.getSelectedRowItem(ST_DIVISION));
-    ui->label_teamNameHeader->setText(stadiumsTeamsModel.getSelectedRowItem(ST_TEAM_NAME));
-    ui->label_teamNameHeader_2->setText(stadiumsTeamsModel.getSelectedRowItem(ST_TEAM_NAME));
+    ui->label_location->setText(teamsModel.getSelectedRowItem(TEAMS_LOCATION));
+    ui->label_Conference->setText(teamsModel.getSelectedRowItem(TEAMS_CONFERENCE));
+    ui->label_yearJoined->setText(teamsModel.getSelectedRowItem(TEAMS_YEAR_JOINED));
+    ui->label_Coach->setText(teamsModel.getSelectedRowItem(TEAMS_COACH_NAME));
+    ui->label_Division->setText(teamsModel.getSelectedRowItem(TEAMS_DIVISION));
+    ui->label_teamNameHeader->setText(teamsModel.getSelectedRowItem(TEAMS_TEAM_NAME));
+    ui->label_teamNameHeader_2->setText(teamsModel.getSelectedRowItem(TEAMS_TEAM_NAME));
 }
 
 
@@ -122,9 +123,9 @@ void MainWindow::on_tableView_StadiumData_clicked(const QModelIndex &index)
 
     STRING stadiumOfSelectedTeam;
     int    teamTableRow = index.row();
-    stadiumsTeamsModel.setSelectedRowData(teamTableRow);
+    teamsModel.setSelectedRowData(teamTableRow);
 
-    stadiumOfSelectedTeam = stadiumsTeamsModel.getSelectedRowItem(ST_STADIUM_NAME);
+    stadiumOfSelectedTeam = teamsModel.getSelectedRowItem(TEAMS_TEAM_NAME);
     regex.setPattern(stadiumOfSelectedTeam);
 
     stadiumsModel.setFilter(regex);
@@ -147,9 +148,9 @@ void MainWindow::on_radioButton_EasternFilter_clicked()
     QRegExp regex;
     regex.setPattern("Eastern");
 
-    stadiumsTeamsModel.setFilterColumn(ST_CONFERENCE);
-    stadiumsTeamsModel.setFilter(regex);
-    ui->tableView_StadiumData->sortByColumn(ST_TEAM_NAME, Qt::AscendingOrder);
+    teamsModel.setFilterColumn(TEAMS_CONFERENCE);
+    teamsModel.setFilter(regex);
+    ui->tableView_StadiumData->sortByColumn(TEAMS_TEAM_NAME, Qt::AscendingOrder);
 
 }
 
@@ -162,9 +163,9 @@ void MainWindow::on_radioButton_WesternFilter_clicked()
     QRegExp regex;
     regex.setPattern("Western");
 
-    stadiumsTeamsModel.setFilterColumn(ST_CONFERENCE);
-    stadiumsTeamsModel.setFilter(regex);
-    ui->tableView_StadiumData->sortByColumn(ST_TEAM_NAME, Qt::AscendingOrder);
+    teamsModel.setFilterColumn(TEAMS_CONFERENCE);
+    teamsModel.setFilter(regex);
+    ui->tableView_StadiumData->sortByColumn(TEAMS_TEAM_NAME, Qt::AscendingOrder);
 
 }
 
@@ -176,9 +177,9 @@ void MainWindow::on_radioButton_coachFilter_clicked()
 
     QRegExp regex;
 
-    stadiumsTeamsModel.setFilterColumn(ST_COACH_NAME);
-    ui->tableView_StadiumData->setColumnHidden(ST_COACH_NAME, false);
-    ui->tableView_StadiumData->sortByColumn(ST_TEAM_NAME, Qt::AscendingOrder);
+    teamsModel.setFilterColumn(TEAMS_COACH_NAME);
+    ui->tableView_StadiumData->setColumnHidden(TEAMS_COACH_NAME, false);
+    ui->tableView_StadiumData->sortByColumn(TEAMS_TEAM_NAME, Qt::AscendingOrder);
 }
 
 
@@ -189,9 +190,9 @@ void MainWindow::clearFilters()
     QRegExp regex;
     regex.setPattern(".*");
 
-    stadiumsTeamsModel.setFilterColumn(ST_TEAM_NAME);
-    stadiumsTeamsModel.setFilter(regex);
-    ui->tableView_StadiumData->sortByColumn(ST_TEAM_NAME, Qt::AscendingOrder);
+    teamsModel.setFilterColumn(TEAMS_TEAM_NAME);
+    teamsModel.setFilter(regex);
+    ui->tableView_StadiumData->sortByColumn(TEAMS_TEAM_NAME, Qt::AscendingOrder);
 
 }
 
@@ -203,9 +204,9 @@ void MainWindow::on_radioButton_southEastFilter_clicked()
     QRegExp regex;
     regex.setPattern("Southeast");
 
-    stadiumsTeamsModel.setFilterColumn(ST_DIVISION);
-    stadiumsTeamsModel.setFilter(regex);
-    ui->tableView_StadiumData->sortByColumn(ST_TEAM_NAME, Qt::AscendingOrder);
+    teamsModel.setFilterColumn(TEAMS_DIVISION);
+    teamsModel.setFilter(regex);
+    ui->tableView_StadiumData->sortByColumn(TEAMS_TEAM_NAME, Qt::AscendingOrder);
 }
 
 
@@ -216,22 +217,22 @@ void MainWindow::on_radioButton_southWestFilter_clicked()
     QRegExp regex;
     regex.setPattern("Southwest");
 
-    stadiumsTeamsModel.setFilterColumn(ST_DIVISION);
-    stadiumsTeamsModel.setFilter(regex);
-    ui->tableView_StadiumData->sortByColumn(ST_TEAM_NAME, Qt::AscendingOrder);
+    teamsModel.setFilterColumn(TEAMS_DIVISION);
+    teamsModel.setFilter(regex);
+    ui->tableView_StadiumData->sortByColumn(TEAMS_TEAM_NAME, Qt::AscendingOrder);
 }
 
 
 void MainWindow::on_radioButton_sortYearJoined_clicked()
 { 
-    setGenericSortOptions(ST_YEAR_JOINED);
+    setGenericSortOptions(TEAMS_YEAR_JOINED);
 }
 
 void MainWindow::on_radioButton_seatingCap_clicked()
 {
 
-    setGenericSortOptions(ST_SEATING_CAP);
-    int seatingCap = stadiumsTeamsModel.getSeatingCapTotal();
+    setGenericSortOptions(TEAMS_SEAT_CAP);
+    int seatingCap = teamsModel.getSeatingCapTotal();
 
     ui->label_extraInfo->setText("Total Seating Capacity: " + QLocale(QLocale::English).toString(seatingCap));
     ui->label_extraInfo->show();
@@ -239,15 +240,15 @@ void MainWindow::on_radioButton_seatingCap_clicked()
 
 void MainWindow::on_radioButton_sortTeamName_clicked()
 {  
-    setGenericSortOptions(ST_TEAM_NAME);
+    setGenericSortOptions(TEAMS_TEAM_NAME);
 }
 
 void MainWindow::on_radioButton_sortStadiumName_clicked()
 {
-    setGenericSortOptions(ST_STADIUM_NAME);
+    setGenericSortOptions(TEAMS_STADIUM_NAME);
 }
 
-void MainWindow::setGenericSortOptions(stadiumsTeamsColumns columnToSortBy)
+void MainWindow::setGenericSortOptions(teamsColumns columnToSortBy)
 {
     hideExtraColumns();
     clearFilters();
@@ -491,7 +492,7 @@ void MainWindow::setFonts()
 
 void MainWindow::setImageToTeamLogo()
 {
-    QString team = stadiumsTeamsModel.getSelectedRowItem(ST_TEAM_NAME);
+    QString team = teamsModel.getSelectedRowItem(TEAMS_TEAM_NAME);
     QImage  image(":/Resources/Icons/" + team + ".png");
     QPixmap pixmap = QPixmap::fromImage(image);
     QPainter p;
@@ -507,4 +508,87 @@ void MainWindow::setImageToTeamLogo()
 void MainWindow::on_pushButton_NBALogoHome_clicked()
 {
     ui->stackedWidget->setCurrentIndex(MAIN_HOME_WINDOW);
+}
+
+void MainWindow::on_pushButton_AddCustomStop_clicked()
+{
+    int row = ui->tableView_CustomStopsTable->selectionModel()->currentIndex().row();
+    std::string userSelectedStop  = ui->tableView_CustomStopsTable->model()->data(ui->tableView_CustomStopsTable
+                                                                                       ->model()->index(row,1)).toString().toUtf8().constData();
+    if(customStops.count(userSelectedStop) == 1)
+    {
+        qDebug() << ("Already Selected");
+    }
+    else
+    {
+        qDebug() << ("Adding" + QString::fromStdString(userSelectedStop));
+        customStops[userSelectedStop];
+        trip.addNewCustomStop(QString::fromStdString(userSelectedStop));
+    }
+
+}
+
+void MainWindow::loadPageActions(STRING nextStop)
+{
+     QRegExp pat;
+
+    ui->stackedWidget->setCurrentIndex(TRIP_STOP_PAGE);
+    ui->label_tripStopHeader->setText(nextStop);
+
+    pat.setPattern(nextStop);
+    souvenirsModel.setFilter(pat);
+    souvenirsModel.setFilterColumn(SOUVENIRS_STADIUM_NAME);
+    autoSizeTableView(ui->tableView_stadiumSouvenirs);
+    ui->tableView_stadiumSouvenirs->setColumnHidden(SOUVENIRS_STADIUM_NAME, true);
+}
+
+void MainWindow::on_pushButton_StartCustomTrip_clicked()
+{
+    std:: string userSelectedStartStadium = ui->comboBox_customStartPoint->currentText().toUtf8().constData();
+    bool fastestRoute = ui->checkBox_takeFastestRoute->isChecked();
+
+
+    if(fastestRoute)
+    {
+//        trip.planShortestPathDijkstra("Pepsi Center");
+//        trip.setShortestPathDijkstra("Spectrum Center");
+        trip.startBFSTrip("Pepsi Center");
+        loadPageActions(trip.getNextStop());
+    }
+    else
+    {
+        trip.addNewCustomStop(QString::fromStdString(userSelectedStartStadium));
+        trip.startCustomOrder();
+        loadPageActions(trip.getNextStop());
+    }
+}
+
+/***************************************************************************//**
+ * @brief MainWindow::on_pushButton_nextStadium_clicked
+ * Gets the next closest stadium and loads the loadPageActions
+ ******************************************************************************/
+void MainWindow::on_pushButton_nextStadium_clicked()
+{
+    STRING nameOfNextStop;
+
+//    if(!cart.isEmpty())
+//        cart.completePurchase();
+
+     nameOfNextStop = trip.getNextStop();
+
+    // Clears purchase fields after each stop
+//    ui->lineEdit_selectedSouvenirToPurchase->clear();
+//    ui->spinBox_Quantity->setValue(1);
+
+    if(nameOfNextStop == "end")
+    {
+//          setEndTripDetailsTable();
+          ui->stackedWidget->setCurrentIndex(MAIN_HOME_WINDOW);
+//          ui->label_totalDistance->setText(STRING::number(trip.getTotalDistance()));
+//          ui->label_totalSpent->setText(STRING::number(cart.getAllPurchasesTotal()));
+    }
+    else
+    {
+        loadPageActions(nameOfNextStop);
+    }
 }

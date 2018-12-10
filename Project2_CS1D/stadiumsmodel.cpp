@@ -31,7 +31,7 @@ void StadiumsModel::updateStadiumName(STRING ogName, STRING newName)
 
 bool StadiumsModel::addExpansionTeams()
 {
-    dbConn->readTeamAndStadiumsFromFile(":/Resources/Data/NBAdata2.txt");
+    dbConn->readTeamAndStadiumsFromFile(":/Resources/Data/NBAexpansion.txt");
     dbConn->readDistancesFromFile(":/Resources/Data/Distances2.txt");
     refreshModel();
     return true;
@@ -44,6 +44,7 @@ void StadiumsModel::setStadiumNames()
        stadiumNames.append(sortedModel->data(sortedModel->index(i,0)).toString());
     }
 }
+
 /***************************************************************************//**
  * @brief StadiumsModel::refreshModel
  *
